@@ -343,25 +343,12 @@ administration</role>
       to 7</p></caption>
       <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-viability-Viability-fig-viability-relative-overall-output-1.png" />
     </fig>
-    <p>The individual viability for each donor is seen in
-    <xref alt="Figure 2" rid="fig-donor-viabilities">Figure 2</xref>.
-    This fig is inserted as an image.</p>
-    <fig id="fig-donor-viabilities">
-      <caption><p>Figure 2</p></caption>
-      <graphic id="fig-donor-viabilities" mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-viability-Viability-fig-donor-viabilities-output-2.png" />
-    </fig>
-    <p>Absolute overall viability is seen in
-    <xref alt="Figure 3" rid="fig-viability-absolute-overall">Figure 3</xref></p>
-    <fig id="fig-viability-absolute-overall">
-      <caption><p>Figure 3: Note that the concentration of ATP of donor
-      one on day 5 was to high. Data for this donor/day not
-      trustworthy/viability to high</p></caption>
-      <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-viability-Viability-fig-viability-absolute-overall-output-1.png" />
-    </fig>
+    <p>The individual viability for each donor is seen in</p>
+    <p>Absolute overall viability is seen in</p>
     <p>Morphology of the spheroids over time is seen in
-    <xref alt="Figure 4" rid="fig-morph">Figure 4</xref></p>
+    <xref alt="Figure 2" rid="fig-morph">Figure 2</xref></p>
     <fig id="fig-morph">
-      <caption><p>Figure 4</p></caption>
+      <caption><p>Figure 2</p></caption>
       <graphic id="fig-morph" mimetype="image" mime-subtype="png" xlink:href="images/morphology_AS0006.png" />
     </fig>
   </sec>
@@ -370,14 +357,10 @@ administration</role>
   </sec>
   <sec id="activity-1">
     <title>Activity</title>
-    <fig id="fig-act-3a4-il6">
-      <caption><p>Figure 5</p></caption>
-      <graphic id="fig-act-3a4-il6" mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-LCMS-LCMS-fig-act-3a4-il6-output-1.png" />
-    </fig>
-    <fig id="fig-act-3a4-il1b">
-      <caption><p>Figure 6</p></caption>
-      <graphic id="fig-act-3a4-il1b" mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-LCMS-LCMS-fig-act-3a4-il1b-output-1.png" />
-    </fig>
+    <p>We see a marked decrease in 3A4 activity with high concentrations
+    of IL-6, which corresponds well with the litterature. At lower
+    concentrations we see a much more modest decrease in activity with
+    an activity of 86% relative to vehicle control</p>
     <p>Consider looking into outliers in 120 hour 0.01 ng-IL1B, and 120
     hour 0.1 ng-IL6.</p>
   </sec>
@@ -736,6 +719,725 @@ administration</role>
 </fn-group>
 </back>
 
+<sub-article article-type="notebook" id="nb-12-nb-article">
+<front-stub>
+<title-group>
+<article-title>Manuscript 1</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">0000-0001-8050-6447</contrib-id>
+<name>
+<surname>Svendsen</surname>
+<given-names>Andreas Ludvig Ohm</given-names>
+</name>
+<string-name>Andreas Ludvig Ohm Svendsen</string-name>
+
+<email>alosvendsen@health.sdu.dk</email>
+<role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role vocab="https://credit.niso.org" vocab-term="project
+administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
+administration</role>
+<role vocab="https://credit.niso.org" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role>
+<role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
+<xref ref-type="aff" rid="aff-1-nb-article">a</xref>
+<xref ref-type="corresp" rid="cor-1-nb-article">&#x002A;</xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<name>
+<surname>Stage</surname>
+<given-names>Tore B.</given-names>
+</name>
+<string-name>Tore B. Stage</string-name>
+
+<xref ref-type="corresp" rid="cor-2-nb-article">&#x002A;</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1-nb-article">
+<institution-wrap>
+<institution>SDU</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<author-notes>
+<corresp id="cor-1-nb-article">alosvendsen@health.sdu.dk</corresp>
+<corresp id="cor-2-nb-article"></corresp>
+</author-notes>
+<abstract>
+<p>This is an abstract …</p>
+</abstract>
+</front-stub>
+
+<body>
+<sec id="nb-code-cell-1-nb-article" specific-use="notebook-code">
+<code language="r script"># Always load same package versions
+groundhog.day &lt;- &quot;2024-01-01&quot;
+groundhog::meta.groundhog(groundhog.day) </code>
+<code language="r script">pkgs &lt;-  c(&quot;data.table&quot;)
+groundhog.library(pkgs, groundhog.day)</code>
+<sec id="nb-code-cell-1-output-0-nb-article" specific-use="notebook-output">
+<preformat>[1;36mNow using 'groundhog_3.1.2'.[0m</preformat>
+</sec>
+<sec id="nb-code-cell-1-output-1-nb-article" specific-use="notebook-output">
+<preformat>[36mSuccessfully attached 'data.table_1.14.10'[0m</preformat>
+</sec>
+</sec>
+<sec id="introduction-nb-article">
+  <title>Introduction</title>
+  <p>Inflammation is a complex biological response that is pivotal in
+  various pathological conditions. These range from systemic
+  inflammatory diseases, such as rheumatoid arthritis and sepsis, to
+  lower-grade chronic inflammatory states such as type 2 diabetes
+  mellitus. Given the prevalence of systemic inflammation, understanding
+  its interaction with drug metabolism is of substantial clinical
+  relevance.</p>
+  <p>Drug-metabolizing enzymes and transporters (DMETs), predominantly
+  found in hepatocytes within the liver, are central to the
+  biotransformation of a wide variety of compounds. Inflammation has
+  been shown to modulate the activity of these DMETs, a phenomenon that
+  could potentially affect the pharmacokinetics of numerous medications.
+  For individuals with altered inflammatory status—whether due to a
+  chronic condition like diabetes or an acute event like sepsis—this
+  modulation can have significant implications. It may necessitate
+  adjustments in drug dosages to avoid adverse effects or therapeutic
+  failure.</p>
+  <p>Previous research has provided valuable insights into the effects
+  of inflammation on DMETs, but a clear correlation between in vitro
+  studies and clinical observations remains elusive. For instance
+  Dunvald et al.
+  (<xref alt="1" rid="ref-dunvald-nb-article" ref-type="bibr">1</xref>) conducted a
+  comprehensive review of the clinical and in vitro evidence on
+  inflammation-mediated modulation of DMETs and the impact on drug
+  metabolism in humans. They found that in vitro studies in primary
+  human hepatocytes revealed strong evidence of downregulation of key
+  cytochrome P450 (CYP) enzymes by inflammatory cytokines such as IL-6
+  and IL-1β. However, these studies often employed supraphysiological
+  cytokine doses, which may not accurately represent the inflammatory
+  conditions observed in patients.</p>
+  <p>Levels of IL-6 and IL-1B in healthy individuals are generally low,
+  with reports in range of ~10pg/ml in adults for IL-6, and ~2.5 pg/ml
+  IL-1B in adults
+  (<xref alt="2" rid="ref-kim2011-nb-article" ref-type="bibr">2</xref>–<xref alt="5" rid="ref-strand2020-nb-article" ref-type="bibr">5</xref>).
+  In contrast, cytokine levels may be considerably elevated with IL-6
+  levels of ~140 pg/mL, and I<underline>L-1B levels of ~100
+  pg/mL</underline>, among patients with rheumatoid arthritis or SLE
+  (<xref alt="6" rid="ref-umare2014-nb-article" ref-type="bibr">6</xref>) to more
+  than 1 ng/mL of IL-6 for patients with acute inflammation caused by
+  sepsis (<xref alt="7" rid="ref-franco2019-nb-article" ref-type="bibr">7</xref>).
+  These variations in cytokine levels, which span a wide range in
+  different pathological states, highlight the complex and dynamic
+  nature of inflammation and underscore the need for research that
+  considers this variability when investigating the effects of
+  inflammation on drug-metabolizing enzymes.</p>
+  <p>Recently, 3D primary human hepatocytes (PHH) have challenged 2D PHH
+  as a more physiologically relevant culture method of PHH. 3D culture
+  leads to more stable cell cultures that retain their hepatic phenotype
+  for extended periods of time
+  (<xref alt="8" rid="ref-bell2016-nb-article" ref-type="bibr">8</xref>).
+  Consequently, this 3D PHH have been shown to predict CYP induction and
+  hepatotoxicity more accurately than 2D PHH
+  (<xref alt="9" rid="ref-bell2018-nb-article" ref-type="bibr">9</xref>,<xref alt="10" rid="ref-järvinen2023-nb-article" ref-type="bibr">10</xref>).
+  Historically, 2D PHH have been utilized to study the effect of drugs
+  and inflammation on hepatocyte/liver function. However, the inherent
+  limitations of 2D cultures, primarily their inability to maintain the
+  physiological phenotype and liver-specific functions of hepatocytes,
+  have prompted a shift towards the 3D liver spheroid models. This model
+  is increasingly recognized for their physiological relevance and
+  stability, offering a more accurate representation of hepatic
+  responses. The 3D liver spheroids preserve liver cell phenotypes and
+  functions over extended periods, thereby enhancing the reliability of
+  drug-induced liver injury predictions and disease mechanism
+  investigations. This advancement positions 3D liver spheroids as
+  potentially the new standard for in vitro hepatocyte studies, while
+  still being suitable for a high throughput setting, and financially
+  accessible as opposed to even more advanced liver models (ref for last
+  part)
+  (<xref alt="1" rid="ref-dunvald-nb-article" ref-type="bibr">1</xref>,<xref alt="11" rid="ref-ingelman-sundberg-nb-article" ref-type="bibr">11</xref>)
+  . Another claim for the lack of correlation discussed in the review by
+  AC et al. is that there might be methodological limitations to the
+  widespread use of 2D models of PHHs
+  (<xref alt="1" rid="ref-dunvald-nb-article" ref-type="bibr">1</xref>).</p>
+  <p>We aimed to utilize 3D primary human hepatocytes
+  (<xref alt="8" rid="ref-bell2016-nb-article" ref-type="bibr">8</xref>) to study
+  the impact of physiologically relevant concentrations of cytokines on
+  CYP expression and activity. This may help further our understanding
+  of the impact of inflammation on clinical drug metabolism among
+  patients with inflammation. This, in turn, may inform more precise and
+  adaptive prescribing strategies for patients in various inflammatory
+  states.</p>
+</sec>
+<sec id="methods-nb-article">
+  <title>Methods</title>
+  <sec id="d-spheroid-culture-of-phhs-nb-article">
+    <title>3D spheroid culture of PHHs</title>
+    <sec id="materials-nb-article">
+      <title>Materials</title>
+      <p>All necessary components for cell culture, including the
+      medium, supplements, and compounds, were acquired from Thermo
+      Fisher Scientific, unless stated otherwise.</p>
+    </sec>
+    <sec id="cell-source-and-preparation-nb-article">
+      <title>Cell source and preparation</title>
+      <p>Three lots of cryopreserved primary human hepatocytes,
+      specifically Hu8345-A, Hu8373-A and Hu8381, were procured from
+      Thermo Fisher Scientific (Waltham, MA). All necessary cell culture
+      reagents were sourced from the same supplier. All PHHs were
+      qualified for spheroid formation per the manufacturer.</p>
+    </sec>
+    <sec id="spheroid-formation-and-maintenance-nb-article">
+      <title>Spheroid formation and maintenance</title>
+      <p>The spheroid culture followed an adapted protocol from a
+      previous study
+      (<xref alt="8" rid="ref-bell2016-nb-article" ref-type="bibr">8</xref>). In
+      short 1500 hepatocytes per well in ultra-low attachment 96-well
+      plates. Following seeding, the plates were centrifuged for 2
+      minutes at 200g. Subsequently, the plates were incubated at 37°C
+      with 5% CO2.</p>
+      <p>On day 0 cells were seeded in culture medium, totaling 100 μL
+      per well, consisting of 5% fetal bovine serum, 1 μM dexamethasone,
+      5 μg/mL human recombinant insulin, 100 U/mL penicillin, 100 μg/mL
+      streptomycin, 2 mM L-glutamine, and 15 mM HEPES in Williams’ E
+      medium.</p>
+      <p>After spheroid formation the seeding medium was replaced with
+      FBS free maintenance medium. This medium comprised 0.1 μM
+      dexamethasone, 10 μg/mL human recombinant insulin, 5.5 μg/mL
+      transferrin, 6.7 ng/mL selenium, 100 U/mL penicillin, 100 μg/mL
+      streptomycin, and 2 mM L-glutamine in Williams’ E medium. This FBS
+      washout with maintenance medium was done with a 70% medium change
+      on days 5-7.
+      <monospace>For donor 1 (Hu8345-A) the maintenance also contained 5.35 μg/mL linoleic acid, 1.25 mg/mL bovine serum albumin and 15 mM HEPES. These supplements are, however, no longer recommended by the manufacturer</monospace><xref ref-type="fn" rid="fn1-nb-article">1</xref><monospace>.</monospace></p>
+      <p>Detailed descriptions of the spheroid culture process, as well
+      as donor information, are available in the supplementary materials
+      (Table SX).</p>
+    </sec>
+  </sec>
+  <sec id="treatments-nb-article">
+    <title>Treatments</title>
+    <p>Treatment with proinflammatory cytokines commenced on day 8 post
+    seeding. The spheroids were exposed to IL-6 and IL-1β at
+    concentrations of 0.01, 0.1, 1, and 10 ng/ml, alongside a vehicle
+    control (0.1% bovine serum albumin in PBS). The cytokine treatments
+    and vehicle control were diluted 1:1000 in the culture medium before
+    administration.Re-dosing was done every other day for long-term
+    cultures.</p>
+  </sec>
+  <sec id="spheroid-viability-and-morphology-nb-article">
+    <title>Spheroid viability and morphology</title>
+    <p>The viability of the spheroids was monitored by measuring their
+    ATP content, using the luminiscence CellTiter-Glo 3D assay from
+    Promega (Madison, WI). Quantification of ATP was done using an ATP
+    (from Thermo Fisher Scientific) standard curve. Viability was
+    assessed every 2-3 days throughout the experiments.</p>
+    <p>In addition to viability testing, the morphology of the spheroids
+    was monitored. Imaging was done every second or third day, aligning
+    with the viability assays. The spheroids were imaged using a light
+    microscope equipped with a 10X magnification lens and a digital
+    camera from Motic (Hong Kong, China).</p>
+  </sec>
+  <sec id="rna-extraction-cdna-synthesis-and-qpcr-nb-article">
+    <title>RNA extraction, cDNA synthesis and qPCR</title>
+    <p>RNA was extracted using the phenol-chloroform method, following
+    the manufacturer’s protocol from Qiagen with minor modifications
+    (<xref alt="12" rid="ref-toni2018-nb-article" ref-type="bibr">12</xref>). Each
+    spheroid pool was treated with 1 mL of Qiazol (Qiagen) reagent for
+    lysis, followed by co-precipitation with 15 μg of RNA grade glycogen
+    (Thermo Fisher Scientific). The RNA pellet underwent three washes
+    with 75% ethanol. Post-wash, a combination of heating and
+    evaporation techniques was applied to remove residual ethanol and to
+    facilitate the solubilization of the RNA pellet in water.</p>
+    <p>RNA integrity was assessed for a subset of
+    samples<xref ref-type="fn" rid="fn2-nb-article">2</xref> using the Agilent
+    BioAnalyzer, yielding RNA Integrity Number (RIN) values from 7 to
+    9.8. These values indicate high-quality RNA. Concentration of RNA
+    were estimated utilizing the NanoDrop spectrophotometer.</p>
+    <p>Approximately 500 ng of extracted RNA was used for cDNA
+    synthesis. This process was performed using the High-Capacity cDNA
+    Reverse Transcription Kit with RNase Inhibitor (Thermo Fisher
+    Scientific).</p>
+    <p>For qPCR, 10 ng of cDNA, based on the initial RNA concentration,
+    was utilized for each reaction. The reactions were set up in a 10 μL
+    volume containing TaqMan Universal Master Mix II and target-specific
+    TaqMan assays (detailed in Supplementary Methods). The qPCR was run
+    for 40 cycles, following the manufacturer’s guidelines (Thermo
+    Fisher Scientific). The PCR plate sample maximization method was
+    applied(<xref alt="13" rid="ref-derveaux2010-nb-article" ref-type="bibr">13</xref>),
+    and a stable reference gene as well as no template controls and no
+    reverse transcriptase controls was included in each plate.</p>
+    <p>In the analysis of mRNA expression, the relative quantity was
+    calculated by first determining the delta Cq ((C_q)) for each
+    sample. This was achieved by subtracting the mean Cq of the control
+    group from the mean Cq of the replicates of each sample. The
+    relative quantity was then computed using the formula (2^{C_q}). For
+    normalization, the relative quantity of the target gene in each
+    sample was divided by the relative quantity of the reference gene
+    (GAPDH or TBP). The average normalized expression for each
+    biological group was subsequently calculated.</p>
+  </sec>
+  <sec id="activity-nb-article">
+    <title>Activity</title>
+    <p>To assess the activity of CYP3A4 (maybe otheres also), an
+    experiment was conducted using midazolam as a substrate in spheroids
+    derived from donors 2 and 3, evaluated on day 12. Midazolam (Toronto
+    Research Chemicals, Toronto, ON, Canada), was prepared as a 6,000×
+    stock solution in DMSO. The final DMSO concentration in the enzyme
+    activity assays was maintained at 0.15%. Prior to the introduction
+    of midazolam to the spheroids, the cells underwent three washes with
+    100 μL of maintenance medium. Between washes, the residual volume
+    was kept at 20 μL, and before the final wash, the spheroids were
+    incubated for 2 hours in a cell culture incubator.</p>
+    <p>The concentration of midazolam in the assay was set at 10 μM,
+    with a total volume of 100 μL per well. For the analysis, triplicate
+    samples, each comprising a <strike>spheroid</strike> and medium from
+    a single well, were collected at 0.5 (8 hours for other enzymes)
+    hours post midazolam treatment. These samples were then stored at
+    -80°C until further analysis. The specific methods used for the
+    metabolite analysis of these samples are detailed in the
+    supplementary material.</p>
+  </sec>
+  <sec id="quantitative-analysis-of-proteins-via-lc-ms-with-selective-immunoprecipitation-nb-article">
+    <title>Quantitative analysis of proteins via LC-MS with selective
+    immunoprecipitation</title>
+    <p>The quantification of human CYP <strike>and transporter</strike>
+    proteins was performed using a targeted liquid chromatography-mass
+    spectrometry approach, incorporating selective immunoprecipitation
+    of peptides, as previously
+    described(<xref alt="14" rid="ref-weiß2018-nb-article" ref-type="bibr">14</xref>).
+    Uniform numbers of spheroids were employed in each analysis for
+    consistency. In summary, spheroids were lysed in a buffer of 42 mM
+    ammonium bicarbonate, containing 1.14 mM dithiothreitol and 9 mM
+    iodoacetamide, and incubated for 15 minutes at 90°C, a method
+    adapted from Savaryn et al.
+    (<xref alt="15" rid="ref-savaryn2020-nb-article" ref-type="bibr">15</xref>).
+    The lysates were then digested with MS-grade Pierce Trypsin Protease
+    (Thermo Fisher Scientific) for 16 hours at 37°C. To halt the
+    digestion, phenylmethanesulfonyl fluoride was added to each sample,
+    achieving a final concentration of 1 mM and a total volume of 70 μL.
+    A portion of the digested sample (25 μL) was then used for the
+    immunoprecipitation of surrogate and internal standard peptides
+    using triple X proteomics
+    antibodies(<xref alt="14" rid="ref-weiß2018-nb-article" ref-type="bibr">14</xref>).
+    These peptides were subsequently analyzed and quantified through
+    LC-MS. The specific surrogate peptides employed for protein
+    quantification and the LC-gradients are detailed in the
+    supplementary material. For data processing, Skyline software
+    (MACOSS Lab, University of Washington, Seattle, WA) and TraceFinder
+    4.1 (Thermo Fisher Scientific) were utilized.</p>
+  </sec>
+</sec>
+<sec id="results-nb-article">
+  <title>Results</title>
+  <sec id="viability-and-morphology-nb-article">
+    <title>Viability and morphology</title>
+    <p>Mean relative viability is seen in
+    <xref alt="Figure 1" rid="fig-viability-relative-overall-nb-article">Figure 1</xref>.</p>
+    <sec id="cell-fig-viability-relative-overall-nb-article" specific-use="notebook-code">
+    <code language="python">plot_relative_viability</code>
+    <sec id="cell-fig-viability-relative-overall-output-0-nb-article" specific-use="notebook-output">
+    <fig id="fig-viability-relative-overall-nb-article">
+      <caption><p>Figure 1: Note that the concentration of ATP of donor
+      one on day 5 was to high. Data for this donor/day not
+      trustworthy/viability to high. This yields a steep fall from day 5
+      to 7</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-viability-Viability-fig-viability-relative-overall-output-1.png" />
+    </fig>
+    </sec>
+    </sec>
+    <p>The individual viability for each donor is seen in</p>
+    <p>Absolute overall viability is seen in</p>
+    <p>Morphology of the spheroids over time is seen in
+    <xref alt="Figure 2" rid="fig-morph-nb-article">Figure 2</xref></p>
+    <fig id="fig-morph-nb-article">
+      <caption><p>Figure 2</p></caption>
+      <graphic id="fig-morph-nb-article" mimetype="image" mime-subtype="png" xlink:href="images/morphology_AS0006.png" />
+    </fig>
+  </sec>
+  <sec id="mrna-nb-article">
+    <title>mRNA</title>
+  </sec>
+  <sec id="activity-1-nb-article">
+    <title>Activity</title>
+    <sec id="nb-code-cell-2-nb-article" specific-use="notebook-code">
+    <code language="r script">data_act &lt;- readRDS(&quot;notebooks/LCMS/data_processed/final_data.rds&quot;)
+
+mean_act_120h_IL6_0.001 &lt;- 
+  data_act[treatment == &quot;0.01 ng/ml IL-6&quot; 
+           &amp; time_incubation == 0.5
+           &amp; time_treatment == 120, mean(mean_relative_amount)]
+
+mean_act_120h_IL6_0.001 &lt;- round(mean_act_120h_IL6_0.001, digits = 2) *100</code>
+    </sec>
+    <p>We see a marked decrease in 3A4 activity with high concentrations
+    of IL-6, which corresponds well with the litterature. At lower
+    concentrations we see a much more modest decrease in activity with
+    an activity of 86% relative to vehicle control</p>
+    <p>Consider looking into outliers in 120 hour 0.01 ng-IL1B, and 120
+    hour 0.1 ng-IL6.</p>
+  </sec>
+</sec>
+<sec id="references-nb-article">
+  <title>References</title>
+</sec>
+<sec id="supplementary-material-nb-article">
+  <title>Supplementary material</title>
+</sec>
+</body>
+
+
+
+<back>
+<ref-list>
+  <title>Thesis abstract</title>
+  <ref id="ref-dunvald-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Dunvald</surname><given-names>Ann-Cathrine Dalgård</given-names></name>
+        <name><surname>Järvinen</surname><given-names>Erkka</given-names></name>
+        <name><surname>Mortensen</surname><given-names>Christina</given-names></name>
+        <name><surname>Stage</surname><given-names>Tore B.</given-names></name>
+      </person-group>
+      <article-title>Clinical and Molecular Perspectives on Inflammation-Mediated Regulation of Drug Metabolism and Transport</article-title>
+      <source>Clinical Pharmacology &amp; Therapeutics</source>
+      <volume>n/a</volume>
+      <issue>n/a</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/cpt.2432</uri>
+      <pub-id pub-id-type="doi">10.1002/cpt.2432</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-kim2011-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Kim</surname><given-names>Hyun Ok</given-names></name>
+        <name><surname>Kim</surname><given-names>Han-Soo</given-names></name>
+        <name><surname>Youn</surname><given-names>Jong-Chan</given-names></name>
+        <name><surname>Shin</surname><given-names>Eui-Cheol</given-names></name>
+        <name><surname>Park</surname><given-names>Sungha</given-names></name>
+      </person-group>
+      <article-title>Serum cytokine profiles in healthy young and elderly population assessed using multiplexed bead-based immunoassays</article-title>
+      <source>Journal of Translational Medicine</source>
+      <year iso-8601-date="2011-07-20">2011</year><month>07</month><day>20</day>
+      <volume>9</volume>
+      <issue>1</issue>
+      <uri>https://doi.org/10.1186/1479-5876-9-113</uri>
+      <pub-id pub-id-type="doi">10.1186/1479-5876-9-113</pub-id>
+      <fpage>113</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-kleiner2013-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Kleiner</surname><given-names>Giulio</given-names></name>
+        <name><surname>Marcuzzi</surname><given-names>Annalisa</given-names></name>
+        <name><surname>Zanin</surname><given-names>Valentina</given-names></name>
+        <name><surname>Monasta</surname><given-names>Lorenzo</given-names></name>
+        <name><surname>Zauli</surname><given-names>Giorgio</given-names></name>
+      </person-group>
+      <article-title>Cytokine Levels in the Serum of Healthy Subjects</article-title>
+      <source>Mediators of Inflammation</source>
+      <year iso-8601-date="2013">2013</year>
+      <volume>2013</volume>
+      <uri>http://www.hindawi.com/journals/mi/2013/434010/</uri>
+      <pub-id pub-id-type="doi">10.1155/2013/434010</pub-id>
+      <fpage>1</fpage>
+      <lpage>6</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-said2021-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Said</surname><given-names>Elias A.</given-names></name>
+        <name><surname>Al-Reesi</surname><given-names>Iman</given-names></name>
+        <name><surname>Al-Shizawi</surname><given-names>Nawal</given-names></name>
+        <name><surname>Jaju</surname><given-names>Sanjay</given-names></name>
+        <name><surname>Al-Balushi</surname><given-names>Mohammed S.</given-names></name>
+        <name><surname>Koh</surname><given-names>Crystal Y.</given-names></name>
+        <name><surname>Al-Jabri</surname><given-names>Ali A.</given-names></name>
+        <name><surname>Jeyaseelan</surname><given-names>Lakshmanan</given-names></name>
+      </person-group>
+      <article-title>Defining IL-6 levels in healthy individuals: A meta-analysis</article-title>
+      <source>Journal of Medical Virology</source>
+      <year iso-8601-date="2021">2021</year>
+      <volume>93</volume>
+      <issue>6</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/jmv.26654</uri>
+      <pub-id pub-id-type="doi">10.1002/jmv.26654</pub-id>
+      <fpage>3915</fpage>
+      <lpage>3924</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-strand2020-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Strand</surname><given-names>Vibeke</given-names></name>
+        <name><surname>Boklage</surname><given-names>Susan H.</given-names></name>
+        <name><surname>Kimura</surname><given-names>Toshio</given-names></name>
+        <name><surname>Joly</surname><given-names>Florence</given-names></name>
+        <name><surname>Boyapati</surname><given-names>Anita</given-names></name>
+        <name><surname>Msihid</surname><given-names>Jérôme</given-names></name>
+      </person-group>
+      <article-title>High levels of interleukin-6 in patients with rheumatoid arthritis are associated with greater improvements in health-related quality of life for sarilumab compared with adalimumab</article-title>
+      <source>Arthritis Research &amp; Therapy</source>
+      <year iso-8601-date="2020-10-20">2020</year><month>10</month><day>20</day>
+      <volume>22</volume>
+      <issue>1</issue>
+      <uri>https://doi.org/10.1186/s13075-020-02344-3</uri>
+      <pub-id pub-id-type="doi">10.1186/s13075-020-02344-3</pub-id>
+      <fpage>250</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-umare2014-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Umare</surname><given-names>Vinod</given-names></name>
+        <name><surname>Pradhan</surname><given-names>Vandana</given-names></name>
+        <name><surname>Nadkar</surname><given-names>Milind</given-names></name>
+        <name><surname>Rajadhyaksha</surname><given-names>Anjali</given-names></name>
+        <name><surname>Patwardhan</surname><given-names>Manisha</given-names></name>
+        <name><surname>Ghosh</surname><given-names>Kanjaksha K.</given-names></name>
+        <name><surname>Nadkarni</surname><given-names>Anita H.</given-names></name>
+      </person-group>
+      <article-title>Effect of Proinflammatory Cytokines (IL-6, TNF-α, and IL-1β) on Clinical Manifestations in Indian SLE Patients</article-title>
+      <source>Mediators of Inflammation</source>
+      <year iso-8601-date="2014-12-07">2014</year><month>12</month><day>07</day>
+      <volume>2014</volume>
+      <uri>https://www.hindawi.com/journals/mi/2014/385297/</uri>
+      <pub-id pub-id-type="doi">10.1155/2014/385297</pub-id>
+      <fpage>e385297</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-franco2019-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Franco</surname><given-names>Daniel Molano</given-names></name>
+        <name><surname>Arevalo-Rodriguez</surname><given-names>Ingrid</given-names></name>
+        <name><surname>Figuls</surname><given-names>Marta Roqué i</given-names></name>
+        <name><surname>Oleas</surname><given-names>Nadia G. Montero</given-names></name>
+        <name><surname>Nuvials</surname><given-names>Xavier</given-names></name>
+        <name><surname>Zamora</surname><given-names>Javier</given-names></name>
+      </person-group>
+      <article-title>Plasma interleukin-6 concentration for the diagnosis of sepsis in critically ill adults</article-title>
+      <source>Cochrane Database of Systematic Reviews</source>
+      <year iso-8601-date="2019">2019</year>
+      <issue>4</issue>
+      <uri>https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD011811.pub2/full</uri>
+      <pub-id pub-id-type="doi">10.1002/14651858.CD011811.pub2</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-bell2016-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Bell</surname><given-names>Catherine C.</given-names></name>
+        <name><surname>Hendriks</surname><given-names>Delilah F. G.</given-names></name>
+        <name><surname>Moro</surname><given-names>Sabrina M. L.</given-names></name>
+        <name><surname>Ellis</surname><given-names>Ewa</given-names></name>
+        <name><surname>Walsh</surname><given-names>Joanne</given-names></name>
+        <name><surname>Renblom</surname><given-names>Anna</given-names></name>
+        <name><surname>Fredriksson Puigvert</surname><given-names>Lisa</given-names></name>
+        <name><surname>Dankers</surname><given-names>Anita C. A.</given-names></name>
+        <name><surname>Jacobs</surname><given-names>Frank</given-names></name>
+        <name><surname>Snoeys</surname><given-names>Jan</given-names></name>
+        <name><surname>Sison-Young</surname><given-names>Rowena L.</given-names></name>
+        <name><surname>Jenkins</surname><given-names>Rosalind E.</given-names></name>
+        <name><surname>Nordling</surname><given-names>Åsa</given-names></name>
+        <name><surname>Mkrtchian</surname><given-names>Souren</given-names></name>
+        <name><surname>Park</surname><given-names>B. Kevin</given-names></name>
+        <name><surname>Kitteringham</surname><given-names>Neil R.</given-names></name>
+        <name><surname>Goldring</surname><given-names>Christopher E. P.</given-names></name>
+        <name><surname>Lauschke</surname><given-names>Volker M.</given-names></name>
+        <name><surname>Ingelman-Sundberg</surname><given-names>Magnus</given-names></name>
+      </person-group>
+      <article-title>Characterization of primary human hepatocyte spheroids as a model system for drug-induced liver injury, liver function and disease</article-title>
+      <source>Scientific Reports</source>
+      <year iso-8601-date="2016-05">2016</year><month>05</month>
+      <volume>6</volume>
+      <pub-id pub-id-type="doi">10.1038/srep25187</pub-id>
+      <fpage>25187</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-bell2018-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Bell</surname><given-names>Catherine C.</given-names></name>
+        <name><surname>Dankers</surname><given-names>Anita C. A.</given-names></name>
+        <name><surname>Lauschke</surname><given-names>Volker M.</given-names></name>
+        <name><surname>Sison-Young</surname><given-names>Rowena</given-names></name>
+        <name><surname>Jenkins</surname><given-names>Roz</given-names></name>
+        <name><surname>Rowe</surname><given-names>Cliff</given-names></name>
+        <name><surname>Goldring</surname><given-names>Chris E.</given-names></name>
+        <name><surname>Park</surname><given-names>Kevin</given-names></name>
+        <name><surname>Regan</surname><given-names>Sophie L.</given-names></name>
+        <name><surname>Walker</surname><given-names>Tracy</given-names></name>
+        <name><surname>Schofield</surname><given-names>Chris</given-names></name>
+        <name><surname>Baze</surname><given-names>Audrey</given-names></name>
+        <name><surname>Foster</surname><given-names>Alison J.</given-names></name>
+        <name><surname>Williams</surname><given-names>Dominic P.</given-names></name>
+        <name><surname>Ven</surname><given-names>Amy W. M. van de</given-names></name>
+        <name><surname>Jacobs</surname><given-names>Frank</given-names></name>
+        <name><surname>Houdt</surname><given-names>Jos van</given-names></name>
+        <name><surname>Lähteenmäki</surname><given-names>Tuula</given-names></name>
+        <name><surname>Snoeys</surname><given-names>Jan</given-names></name>
+        <name><surname>Juhila</surname><given-names>Satu</given-names></name>
+        <name><surname>Richert</surname><given-names>Lysiane</given-names></name>
+        <name><surname>Ingelman-Sundberg</surname><given-names>Magnus</given-names></name>
+      </person-group>
+      <article-title>Comparison of Hepatic 2D Sandwich Cultures and 3D Spheroids for Long-term Toxicity Applications: A Multicenter Study</article-title>
+      <source>Toxicological Sciences: An Official Journal of the Society of Toxicology</source>
+      <year iso-8601-date="2018-04-01">2018</year><month>04</month><day>01</day>
+      <volume>162</volume>
+      <issue>2</issue>
+      <pub-id pub-id-type="doi">10.1093/toxsci/kfx289</pub-id>
+      <fpage>655</fpage>
+      <lpage>666</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-järvinen2023-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Järvinen</surname><given-names>Erkka</given-names></name>
+        <name><surname>Hammer</surname><given-names>Helen S.</given-names></name>
+        <name><surname>Pötz</surname><given-names>Oliver</given-names></name>
+        <name><surname>Ingelman-Sundberg</surname><given-names>Magnus</given-names></name>
+        <name><surname>Stage</surname><given-names>Tore Bjerregaard</given-names></name>
+      </person-group>
+      <article-title>3D Spheroid Primary Human Hepatocytes for Prediction of Cytochrome P450 and Drug Transporter Induction</article-title>
+      <source>Clinical Pharmacology &amp; Therapeutics</source>
+      <year iso-8601-date="2023">2023</year>
+      <volume>113</volume>
+      <issue>6</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/cpt.2887</uri>
+      <pub-id pub-id-type="doi">10.1002/cpt.2887</pub-id>
+      <fpage>1284</fpage>
+      <lpage>1294</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-ingelman-sundberg-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Ingelman-Sundberg</surname><given-names>Magnus</given-names></name>
+        <name><surname>Lauschke</surname><given-names>Volker M.</given-names></name>
+      </person-group>
+      <article-title>3D human liver spheroids for translational pharmacology and toxicology</article-title>
+      <source>Basic &amp; Clinical Pharmacology &amp; Toxicology</source>
+      <volume>n/a</volume>
+      <issue>n/a</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/bcpt.13587</uri>
+      <pub-id pub-id-type="doi">10.1111/bcpt.13587</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-toni2018-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Toni</surname><given-names>Lee S.</given-names></name>
+        <name><surname>Garcia</surname><given-names>Anastacia M.</given-names></name>
+        <name><surname>Jeffrey</surname><given-names>Danielle A.</given-names></name>
+        <name><surname>Jiang</surname><given-names>Xuan</given-names></name>
+        <name><surname>Stauffer</surname><given-names>Brian L.</given-names></name>
+        <name><surname>Miyamoto</surname><given-names>Shelley D.</given-names></name>
+        <name><surname>Sucharov</surname><given-names>Carmen C.</given-names></name>
+      </person-group>
+      <article-title>Optimization of phenol-chloroform RNA extraction</article-title>
+      <source>MethodsX</source>
+      <year iso-8601-date="2018-01-01">2018</year><month>01</month><day>01</day>
+      <volume>5</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S2215016118300773</uri>
+      <pub-id pub-id-type="doi">10.1016/j.mex.2018.05.011</pub-id>
+      <fpage>599</fpage>
+      <lpage>608</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-derveaux2010-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Derveaux</surname><given-names>Stefaan</given-names></name>
+        <name><surname>Vandesompele</surname><given-names>Jo</given-names></name>
+        <name><surname>Hellemans</surname><given-names>Jan</given-names></name>
+      </person-group>
+      <article-title>How to do successful gene expression analysis using real-time PCR</article-title>
+      <source>Methods</source>
+      <year iso-8601-date="2010-04-01">2010</year><month>04</month><day>01</day>
+      <volume>50</volume>
+      <issue>4</issue>
+      <uri>https://www.sciencedirect.com/science/article/pii/S1046202309002461</uri>
+      <pub-id pub-id-type="doi">10.1016/j.ymeth.2009.11.001</pub-id>
+      <fpage>227</fpage>
+      <lpage>230</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-weiß2018-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Weiß</surname><given-names>Frederik</given-names></name>
+        <name><surname>Hammer</surname><given-names>Helen S.</given-names></name>
+        <name><surname>Klein</surname><given-names>Kathrin</given-names></name>
+        <name><surname>Planatscher</surname><given-names>Hannes</given-names></name>
+        <name><surname>Zanger</surname><given-names>Ulrich M.</given-names></name>
+        <name><surname>Norén</surname><given-names>Agneta</given-names></name>
+        <name><surname>Wegler</surname><given-names>Christine</given-names></name>
+        <name><surname>Artursson</surname><given-names>Per</given-names></name>
+        <name><surname>Joos</surname><given-names>Thomas O.</given-names></name>
+        <name><surname>Poetz</surname><given-names>Oliver</given-names></name>
+      </person-group>
+      <article-title>Direct Quantification of Cytochromes P450 and Drug Transporters-A Rapid, Targeted Mass Spectrometry-Based Immunoassay Panel for Tissues and Cell Culture Lysates</article-title>
+      <source>Drug Metabolism and Disposition: The Biological Fate of Chemicals</source>
+      <year iso-8601-date="2018-04">2018</year><month>04</month>
+      <volume>46</volume>
+      <issue>4</issue>
+      <pub-id pub-id-type="doi">10.1124/dmd.117.078626</pub-id>
+      <fpage>387</fpage>
+      <lpage>396</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-savaryn2020-nb-article">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Savaryn</surname><given-names>John P.</given-names></name>
+        <name><surname>Liu</surname><given-names>Ning</given-names></name>
+        <name><surname>Sun</surname><given-names>Jun</given-names></name>
+        <name><surname>Ma</surname><given-names>Junli</given-names></name>
+        <name><surname>Stresser</surname><given-names>David M.</given-names></name>
+        <name><surname>Jenkins</surname><given-names>Gary</given-names></name>
+      </person-group>
+      <article-title>Enrichment-free High-throughput Liquid ChromatographyMultiple-Reaction Monitoring Quantification of Cytochrome P450 Proteins in Plated Human Hepatocytes Direct from 96-Well Plates Enables Routine Protein Induction Measurements</article-title>
+      <source>Drug Metabolism and Disposition</source>
+      <year iso-8601-date="2020-07-01">2020</year><month>07</month><day>01</day>
+      <volume>48</volume>
+      <issue>7</issue>
+      <uri>https://dmd.aspetjournals.org/content/48/7/594</uri>
+      <pub-id pub-id-type="doi">10.1124/dmd.120.090480</pub-id>
+      <fpage>594</fpage>
+      <lpage>602</lpage>
+    </element-citation>
+  </ref>
+</ref-list>
+<fn-group>
+  <fn id="fn1-nb-article">
+    <label>1</label><p>Skip this?</p>
+  </fn>
+  <fn id="fn2-nb-article">
+    <label>2</label><p>Dog ikke fra nogle af disse 3 donorer, så måske
+    bedre med: To assess the integrity of the RNA, we evaluated the RNA
+    Integrity Number (RIN) for a subset of samples, which yielded values
+    ranging from 7 to 9.8.
+    To validate the RNA extraction method, we assessed the RNA Integrity
+    Number (RIN) using the Agilent BioAnalyzer for a subset of samples
+    not derived from the donors discussed in this article. These
+    assessments yielded RIN values between 7 and 9.8, indicative of
+    high-quality RNA.</p>
+  </fn>
+</fn-group>
+</back>
+
+
+</sub-article>
 <sub-article article-type="notebook" id="nb-4-nb-1">
 <front-stub>
 <title-group>
@@ -981,6 +1683,961 @@ rm(list = rmv, rmv)
 
 
 </sub-article>
-<!-- (F2ED4C6E)[nb-2]:/home/runner/work/manuscript_one/manuscript_one/notebooks/LCMS/LCMS.qmd -->
+<sub-article article-type="notebook" id="nb-8-nb-2">
+<front-stub>
+</front-stub>
+
+<body>
+<sec id="lcms-nb-2">
+  <title>LCMS</title>
+  <sec id="setup-nb-2">
+    <title>Setup</title>
+    <sec id="nb-code-cell-1-nb-2" specific-use="notebook-code">
+    <code language="r script">library(readxl)
+library(data.table)
+library(ggplot2)
+library(patchwork)
+library(here)
+    </code>
+    <sec id="nb-code-cell-1-output-0-nb-2" specific-use="notebook-output">
+    <preformat>here() starts at C:/Users/alosvendsen/Documents/R/manuscript_one</preformat>
+    </sec>
+    </sec>
+  </sec>
+  <sec id="donor-3-as0013b-midazolam-nb-2">
+    <title>Donor 3, AS0013B, Midazolam</title>
+    <p><bold>Load data</bold></p>
+    <sec id="nb-code-cell-2-nb-2" specific-use="notebook-code">
+    <code language="r script">
+# Ignore warnings. Just NA's as expected
+data &lt;-
+  read_excel(
+    path = here(&quot;notebooks/LCMS/data_raw/230628RAVERSION_Short.xlsx&quot;),
+    sheet = &quot;Hydroxymidazolam&quot;,
+    skip = 4,
+    col_types = c(
+      &quot;text&quot;, &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;,
+      &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;,
+      &quot;numeric&quot;, &quot;skip&quot;, &quot;skip&quot;, &quot;text&quot;,
+      &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;
+    ),
+    col_names = c(&quot;sample_name&quot;, &quot;amount&quot;, &quot;peak_status&quot;)
+  )
+    </code>
+    <code language="r script">
+metabolite &lt;- &quot;Hydroxymidazolam&quot;
+data$metabolite &lt;- metabolite
+
+# Set as DT, and get only samples
+setDT(data)
+data &lt;- data[grepl(&quot;AS&quot;, data$sample_name)] # get samples of interest
+    </code>
+    <sec id="nb-code-cell-2-output-0-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I5 / R5C9: got 'Amount'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-1-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I6 / R6C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-2-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I18 / R18C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-3-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I19 / R19C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-4-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I22 / R22C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-5-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I211 / R211C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-6-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I213 / R213C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-7-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I214 / R214C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-8-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I215 / R215C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-9-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I216 / R216C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-10-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I217 / R217C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-11-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I219 / R219C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-12-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I220 / R220C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-13-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I223 / R223C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-14-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I227 / R227C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-15-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I230 / R230C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-2-output-16-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I232 / R232C9: got 'NF'</preformat>
+    </sec>
+    </sec>
+    <sec id="nb-code-cell-3-nb-2" specific-use="notebook-code">
+    <code language="r script">sample_info &lt;- read_excel(here(&quot;notebooks/LCMS/data_raw/AS0013B_sample_info.xlsx&quot;))
+
+tidy_data &lt;- merge.data.table(data, sample_info, by = &quot;sample_name&quot;)
+
+# Check dt structure
+str(tidy_data)
+    </code>
+    <code language="r script"># Make treatment a factor
+tidy_data &lt;- 
+  tidy_data[, 
+            treatment := factor(treatment,
+                                levels = c(&quot;control&quot;,
+                                           &quot;medium&quot;,
+                                           &quot;0.01 ng/ml IL-6&quot;,
+                                           &quot;0.1 ng/ml IL-6&quot;,
+                                           &quot;1 ng/ml IL-6&quot;,
+                                           &quot;10 ng/ml IL-6&quot;,
+                                           &quot;0.01 ng/ml IL-1B&quot;,
+                                           &quot;0.1 ng/ml IL-1B&quot;,
+                                           &quot;1 ng/ml IL-1B&quot;,
+                                           &quot;10 ng/ml IL-1B&quot;
+                                           ),
+                                ordered = TRUE
+                                )
+            ]
+    </code>
+    <sec id="nb-code-cell-3-output-0-nb-2" specific-use="notebook-output">
+    <preformat>Classes 'data.table' and 'data.frame':  180 obs. of  9 variables:
+ $ sample_name    : chr  &quot;AS0013B_1&quot; &quot;AS0013B_10&quot; &quot;AS0013B_100&quot; &quot;AS0013B_101&quot; ...
+ $ amount         : num  7.3 17.58 18.04 6.55 7.57 ...
+ $ peak_status    : chr  NA NA NA NA ...
+ $ metabolite     : chr  &quot;Hydroxymidazolam&quot; &quot;Hydroxymidazolam&quot; &quot;Hydroxymidazolam&quot; &quot;Hydroxymidazolam&quot; ...
+ $ donor          : num  3 3 3 3 3 3 3 3 3 3 ...
+ $ treatment      : chr  &quot;medium&quot; &quot;1 ng/ml IL-1B&quot; &quot;10 ng/ml IL-1B&quot; &quot;control&quot; ...
+ $ time_treatment : num  24 24 24 72 72 72 72 72 72 72 ...
+ $ time_incubation: num  0.5 8 8 0.5 0.5 0.5 0.5 0.5 8 8 ...
+ $ rep            : num  1 1 1 1 1 1 1 1 1 1 ...
+ - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt; 
+ - attr(*, &quot;sorted&quot;)= chr &quot;sample_name&quot;</preformat>
+    </sec>
+    </sec>
+    <p>Check peak status’ for any amounts below what below/above the
+    limit of our standard curve.</p>
+    <sec id="nb-code-cell-4-nb-2" specific-use="notebook-code">
+    <code language="r script"># Check peak status'
+unique(tidy_data$peak_status)
+    </code>
+    <code language="r script"># Find any that is not NA
+tidy_data[!is.na(peak_status)] |&gt; knitr::kable()
+    </code>
+    <table-wrap>
+      <table>
+        <colgroup>
+          <col width="11%" />
+          <col width="9%" />
+          <col width="12%" />
+          <col width="16%" />
+          <col width="6%" />
+          <col width="13%" />
+          <col width="14%" />
+          <col width="15%" />
+          <col width="4%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th align="left">sample_name</th>
+            <th align="right">amount</th>
+            <th align="left">peak_status</th>
+            <th align="left">metabolite</th>
+            <th align="right">donor</th>
+            <th align="left">treatment</th>
+            <th align="right">time_treatment</th>
+            <th align="right">time_incubation</th>
+            <th align="right">rep</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left">AS0013B_113</td>
+            <td align="right">0.0880969</td>
+            <td align="left">Response Low</td>
+            <td align="left">Hydroxymidazolam</td>
+            <td align="right">3</td>
+            <td align="left">10 ng/ml IL-6</td>
+            <td align="right">120</td>
+            <td align="right">0.5</td>
+            <td align="right">1</td>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+    <sec id="nb-code-cell-4-output-0-nb-2" specific-use="notebook-output">
+    <preformat>[1] NA             &quot;Response Low&quot;</preformat>
+    </sec>
+    </sec>
+    <sec id="should-this-be-omitted-it-is-below-the-lowest-point-on-our-standard-curve-but-omitting-it-would-make-the-mean-higher-than-it-really-is-nb-2">
+      <title>Should this be omitted? It is below the lowest point on our
+      standard curve, but omitting it would make the mean higher, than
+      it really is?</title>
+      <p><bold>Mean of replicates and activity relative to vehicle
+      control</bold></p>
+      <sec id="nb-code-cell-5-nb-2" specific-use="notebook-code">
+      <code language="r script"># Calculate the mean amount of replicates
+tidy_data[, 
+          mean_amount := mean(amount, na.rm = TRUE), 
+          by = .(treatment, time_treatment, time_incubation)
+          ]
+
+
+# Add column with control mean amounts grouped by time_treatment and time_incubation
+tidy_data[,
+          control_mean_amount := mean(mean_amount[treatment == &quot;control&quot;]),
+          by = .(time_treatment, time_incubation)
+          ]
+
+# Calculate both amounts and mean_amounts relative to control
+tidy_data[,
+          `:=`(
+            relative_amount = amount / control_mean_amount,
+            mean_relative_amount = mean_amount / control_mean_amount
+            )
+          ]
+      </code>
+      </sec>
+      <p><bold>Save the data</bold></p>
+      <sec id="nb-code-cell-6-nb-2" specific-use="notebook-code">
+      <code language="r script">saveRDS(tidy_data, file = here(&quot;notebooks/LCMS/data_processed/AS0013.rds&quot;))
+      </code>
+      </sec>
+    </sec>
+    <sec id="plots-nb-2">
+      <title><bold>Plots</bold></title>
+      <sec id="nb-code-cell-7-nb-2" specific-use="notebook-code">
+      <code language="r script">tidy_data &lt;- readRDS(here(&quot;notebooks/LCMS/data_processed/AS0013.rds&quot;))
+      </code>
+      </sec>
+      <sec id="nb-code-cell-8-nb-2" specific-use="notebook-code">
+      <code language="r script"># Create groups/look up tables for subsetting data
+group_IL6 &lt;- c(&quot;control&quot;, 
+               #&quot;medium&quot;, 
+               &quot;0.01 ng/ml IL-6&quot;, 
+               &quot;0.1 ng/ml IL-6&quot;,
+               &quot;1 ng/ml IL-6&quot;, 
+               &quot;10 ng/ml IL-6&quot;
+               )
+
+group_IL1B &lt;- c(&quot;control&quot;, 
+                #&quot;medium&quot;, 
+                &quot;0.01 ng/ml IL-1B&quot;, 
+                &quot;0.1 ng/ml IL-1B&quot;,
+                &quot;1 ng/ml IL-1B&quot;,
+                &quot;10 ng/ml IL-1B&quot;
+                )
+      </code>
+      </sec>
+      <p>IL-6 effect on CYP3A4</p>
+      <sec id="nb-code-cell-9-nb-2" specific-use="notebook-code">
+      <code language="r script">plot_data &lt;- tidy_data[time_incubation == 0.5 &amp;
+  treatment %in% group_IL6]
+
+act_3A4_IL_6_AS0013 &lt;- 
+ggplot(data = plot_data) +
+  geom_point(
+    aes(
+      x = treatment,
+      y = mean_relative_amount,
+      color = factor(time_treatment)
+    ),
+    size = 5,
+    alpha = 0.7
+  ) +
+  geom_point(
+    aes(
+      x = treatment,
+      y = relative_amount
+    ),
+    size = 2,
+    alpha = 0.3
+  ) +
+  geom_hline(yintercept = 1) +
+  scale_y_continuous(
+    name = &quot;OH-midazolam formation relative to vehicle control&quot;, 
+    breaks = seq(from = 0, to = 1.5, by= 0.25), limits = c(0, 1.4)
+    ) +
+  facet_wrap(
+    facets = vars(factor(time_treatment))
+  ) +
+  theme_bw() +
+  xlab(&quot;Treatment&quot;) + 
+  ggtitle(&quot;CYP3A4 activity after treatment with IL-6&quot;,
+          subtitle = &quot;Facetted on treatment duration in hours&quot;) +
+  ylab(&quot;Metabolite formation relative to vehicle control&quot;) +
+  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+        axis.title.x = element_text(hjust = 0.5, vjust = 0, face = &quot;bold&quot;),
+        axis.title.y = element_text(face = &quot;bold&quot;),
+        legend.position = &quot;none&quot;
+  )
+
+act_3A4_IL_6_AS0013
+      </code>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/unnamed-chunk-9-1.png" />
+      <code language="r script">ggsave(
+  plot = last_plot(),
+  filename = &quot;3A4_IL_6_AS0013.svg&quot;,
+  device = &quot;svg&quot;,
+  path = here(&quot;notebooks/LCMS/output&quot;)
+  )
+      </code>
+      <sec id="nb-code-cell-9-output-0-nb-2" specific-use="notebook-output">
+      <preformat>Saving 7 x 5 in image</preformat>
+      </sec>
+      </sec>
+      <sec id="nb-code-cell-10-nb-2" specific-use="notebook-code">
+      <code language="r script">plot_data &lt;- tidy_data[time_incubation == 0.5 &amp;
+  treatment %in% group_IL1B]
+
+act_3A4_IL_1B_AS0013 &lt;- 
+ggplot(data = plot_data) +
+  geom_point(
+    aes(
+      x = treatment,
+      y = mean_relative_amount,
+      color = factor(time_treatment)
+    ),
+    size = 5,
+    alpha = 0.7
+  ) +
+  geom_point(
+    aes(
+      x = treatment,
+      y = relative_amount
+    ),
+    size = 2,
+    alpha = 0.3
+  ) +
+  geom_hline(yintercept = 1) +
+  scale_y_continuous(
+    name = &quot;OH-midazolam formation relative to vehicle control&quot;, 
+    breaks = seq(from = 0, to = 1.5, by= 0.25), limits = c(0, 1.4)
+    ) +
+  facet_wrap(
+    facets = vars(factor(time_treatment))
+  ) +
+  theme_bw() +
+  xlab(&quot;Treatment&quot;) + 
+  ggtitle(&quot;CYP3A4 activity after treatment with IL-1B&quot;,
+          subtitle = &quot;Facetted on treatment duration in hours&quot;) +
+  ylab(&quot;Metabolite formation relative to vehicle control&quot;) +
+  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+        axis.title.x = element_text(hjust = 0.5, vjust = 0, face = &quot;bold&quot;),
+        axis.title.y = element_text(face = &quot;bold&quot;),
+        legend.position = &quot;none&quot;
+  )
+
+act_3A4_IL_1B_AS0013
+      </code>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/unnamed-chunk-10-1.png" />
+      <code language="r script">ggsave(
+  plot = last_plot(),
+  filename = &quot;3A4_IL_1B_AS0013.svg&quot;,
+  device = &quot;svg&quot;,
+  path = here(&quot;notebooks/LCMS/output&quot;)
+  )
+      </code>
+      <sec id="nb-code-cell-10-output-0-nb-2" specific-use="notebook-output">
+      <preformat>Saving 7 x 5 in image</preformat>
+      </sec>
+      </sec>
+    </sec>
+  </sec>
+  <sec id="donor-2-as0008-midazolam-nb-2">
+    <title>Donor 2, AS0008, midazolam</title>
+    <p><bold>Load data</bold></p>
+    <sec id="nb-code-cell-11-nb-2" specific-use="notebook-code">
+    <code language="r script">
+# Ignore warnings. Just NA's as expected
+data &lt;-
+  read_excel(
+    path = here(&quot;notebooks/LCMS/data_raw/220506_AS008_v1_Short.xlsx&quot;),
+    sheet = &quot;Hydroxymidazolam&quot;,
+    skip = 4,
+    col_types = c(
+      &quot;text&quot;, &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;,
+      &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;,
+      &quot;numeric&quot;, &quot;skip&quot;, &quot;skip&quot;, &quot;text&quot;,
+      &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;, &quot;skip&quot;
+    ),
+    col_names = c(&quot;sample_name&quot;, &quot;amount&quot;, &quot;peak_status&quot;)
+  )
+    </code>
+    <code language="r script">
+metabolite &lt;- &quot;Hydroxymidazolam&quot;
+data$metabolite &lt;- metabolite
+
+# Set as DT, and get only samples
+setDT(data)
+data &lt;- data[grepl(&quot;AS&quot;, data$sample_name)] # get samples of interest
+    </code>
+    <sec id="nb-code-cell-11-output-0-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I5 / R5C9: got 'Amount'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-1-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I24 / R24C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-2-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I25 / R25C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-3-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I26 / R26C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-4-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I27 / R27C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-5-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I28 / R28C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-6-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I29 / R29C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-7-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I30 / R30C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-8-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I31 / R31C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-9-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I32 / R32C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-10-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I33 / R33C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-11-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I34 / R34C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-12-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I35 / R35C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-13-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I36 / R36C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-14-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I37 / R37C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-15-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I38 / R38C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-16-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I79 / R79C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-17-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I80 / R80C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-18-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I89 / R89C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-19-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I90 / R90C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-20-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I99 / R99C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-21-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I100 / R100C9: got 'NF'</preformat>
+    </sec>
+    <sec id="nb-code-cell-11-output-22-nb-2" specific-use="notebook-output">
+    <preformat>Warning: Expecting numeric in I161 / R161C9: got 'NF'</preformat>
+    </sec>
+    </sec>
+    <sec id="nb-code-cell-12-nb-2" specific-use="notebook-code">
+    <code language="r script">sample_info &lt;- read_excel(here(&quot;notebooks/LCMS/data_raw/AS0008_sample_info.xlsx&quot;))
+
+tidy_data &lt;- merge.data.table(data, sample_info, by = &quot;sample_name&quot;)
+
+# Check dt structure
+str(tidy_data)
+    </code>
+    <code language="r script"># Make treatment a factor
+tidy_data &lt;- 
+  tidy_data[, 
+            treatment := factor(treatment,
+                                levels = c(&quot;control&quot;,
+                                           &quot;medium&quot;,
+                                           &quot;0.01 ng/ml IL-6&quot;,
+                                           &quot;0.1 ng/ml IL-6&quot;,
+                                           &quot;1 ng/ml IL-6&quot;,
+                                           &quot;10 ng/ml IL-6&quot;,
+                                           &quot;0.01 ng/ml IL-1B&quot;,
+                                           &quot;0.1 ng/ml IL-1B&quot;,
+                                           &quot;1 ng/ml IL-1B&quot;,
+                                           &quot;10 ng/ml IL-1B&quot;
+                                           ),
+                                ordered = TRUE
+                                )
+            ]
+    </code>
+    <sec id="nb-code-cell-12-output-0-nb-2" specific-use="notebook-output">
+    <preformat>Classes 'data.table' and 'data.frame':  120 obs. of  9 variables:
+ $ sample_name    : chr  &quot;AS0008_109&quot; &quot;AS0008_110&quot; &quot;AS0008_111&quot; &quot;AS0008_112&quot; ...
+ $ amount         : num  7.71 7.6 7.3 6.63 4.6 ...
+ $ peak_status    : chr  NA NA NA NA ...
+ $ metabolite     : chr  &quot;Hydroxymidazolam&quot; &quot;Hydroxymidazolam&quot; &quot;Hydroxymidazolam&quot; &quot;Hydroxymidazolam&quot; ...
+ $ donor          : num  2 2 2 2 2 2 2 2 2 2 ...
+ $ treatment      : chr  &quot;medium&quot; &quot;control&quot; &quot;0.01 ng/ml IL-6&quot; &quot;0.1 ng/ml IL-6&quot; ...
+ $ time_treatment : num  72 72 72 72 72 72 72 72 72 72 ...
+ $ time_incubation: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+ $ rep            : num  1 1 1 1 1 1 1 1 1 1 ...
+ - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt; 
+ - attr(*, &quot;sorted&quot;)= chr &quot;sample_name&quot;</preformat>
+    </sec>
+    </sec>
+    <p>Check peak status’ for any amounts below what below/above the
+    limit of our standard curve.</p>
+    <sec id="nb-code-cell-13-nb-2" specific-use="notebook-code">
+    <code language="r script"># Check peak status'
+unique(tidy_data$peak_status)
+    </code>
+    <code language="r script"># Find any that is not NA
+tidy_data[!is.na(peak_status)]
+    </code>
+    <code language="r script"># Remove samples 152, 153, 162, 163, 172, and 173 as no baselcocktail was added to there wells, and that is why there is no peaks
+# Remove sample 171, as there was no spheroid in this. 
+# Note that to are left with &quot;response low&quot;. 
+remove_samples &lt;- tidy_data[!is.na(peak_status)][-c(1, 9)]
+remove_samples |&gt; knitr::kable()
+    </code>
+    <table-wrap>
+      <table>
+        <colgroup>
+          <col width="11%" />
+          <col width="10%" />
+          <col width="12%" />
+          <col width="15%" />
+          <col width="5%" />
+          <col width="15%" />
+          <col width="14%" />
+          <col width="15%" />
+          <col width="4%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th align="left">sample_name</th>
+            <th align="right">amount</th>
+            <th align="left">peak_status</th>
+            <th align="left">metabolite</th>
+            <th align="right">donor</th>
+            <th align="left">treatment</th>
+            <th align="right">time_treatment</th>
+            <th align="right">time_incubation</th>
+            <th align="right">rep</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left">AS0008_152</td>
+            <td align="right">NA</td>
+            <td align="left">Not Found</td>
+            <td align="left">Hydroxymidazolam</td>
+            <td align="right">2</td>
+            <td align="left">1 ng/ml IL-1B</td>
+            <td align="right">72</td>
+            <td align="right">8</td>
+            <td align="right">1</td>
+          </tr>
+          <tr>
+            <td align="left">AS0008_153</td>
+            <td align="right">NA</td>
+            <td align="left">Not Found</td>
+            <td align="left">Hydroxymidazolam</td>
+            <td align="right">2</td>
+            <td align="left">10 ng/ml IL-1B</td>
+            <td align="right">72</td>
+            <td align="right">8</td>
+            <td align="right">1</td>
+          </tr>
+          <tr>
+            <td align="left">AS0008_162</td>
+            <td align="right">NA</td>
+            <td align="left">Not Found</td>
+            <td align="left">Hydroxymidazolam</td>
+            <td align="right">2</td>
+            <td align="left">1 ng/ml IL-1B</td>
+            <td align="right">72</td>
+            <td align="right">8</td>
+            <td align="right">2</td>
+          </tr>
+          <tr>
+            <td align="left">AS0008_163</td>
+            <td align="right">NA</td>
+            <td align="left">Not Found</td>
+            <td align="left">Hydroxymidazolam</td>
+            <td align="right">2</td>
+            <td align="left">10 ng/ml IL-1B</td>
+            <td align="right">72</td>
+            <td align="right">8</td>
+            <td align="right">2</td>
+          </tr>
+          <tr>
+            <td align="left">AS0008_171</td>
+            <td align="right">-0.2901863</td>
+            <td align="left">Response Low</td>
+            <td align="left">Hydroxymidazolam</td>
+            <td align="right">2</td>
+            <td align="left">0.1 ng/ml IL-1B</td>
+            <td align="right">72</td>
+            <td align="right">8</td>
+            <td align="right">3</td>
+          </tr>
+          <tr>
+            <td align="left">AS0008_172</td>
+            <td align="right">NA</td>
+            <td align="left">Not Found</td>
+            <td align="left">Hydroxymidazolam</td>
+            <td align="right">2</td>
+            <td align="left">1 ng/ml IL-1B</td>
+            <td align="right">72</td>
+            <td align="right">8</td>
+            <td align="right">3</td>
+          </tr>
+          <tr>
+            <td align="left">AS0008_173</td>
+            <td align="right">NA</td>
+            <td align="left">Not Found</td>
+            <td align="left">Hydroxymidazolam</td>
+            <td align="right">2</td>
+            <td align="left">10 ng/ml IL-1B</td>
+            <td align="right">72</td>
+            <td align="right">8</td>
+            <td align="right">3</td>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+    <code language="r script">tidy_data &lt;- tidy_data[!remove_samples, ]
+    </code>
+    <sec id="nb-code-cell-13-output-0-nb-2" specific-use="notebook-output">
+    <preformat>[1] NA             &quot;Response Low&quot; &quot;Not Found&quot;   </preformat>
+    </sec>
+    <sec id="nb-code-cell-13-output-1-nb-2" specific-use="notebook-output">
+    <preformat>   sample_name     amount  peak_status       metabolite donor       treatment
+1:  AS0008_135  0.9118640 Response Low Hydroxymidazolam     2   10 ng/ml IL-6
+2:  AS0008_152         NA    Not Found Hydroxymidazolam     2   1 ng/ml IL-1B
+3:  AS0008_153         NA    Not Found Hydroxymidazolam     2  10 ng/ml IL-1B
+4:  AS0008_162         NA    Not Found Hydroxymidazolam     2   1 ng/ml IL-1B
+5:  AS0008_163         NA    Not Found Hydroxymidazolam     2  10 ng/ml IL-1B
+6:  AS0008_171 -0.2901863 Response Low Hydroxymidazolam     2 0.1 ng/ml IL-1B
+7:  AS0008_172         NA    Not Found Hydroxymidazolam     2   1 ng/ml IL-1B
+8:  AS0008_173         NA    Not Found Hydroxymidazolam     2  10 ng/ml IL-1B
+9:  AS0008_197  0.8381536 Response Low Hydroxymidazolam     2   10 ng/ml IL-6
+   time_treatment time_incubation rep
+1:             72             0.5   3
+2:             72             8.0   1
+3:             72             8.0   1
+4:             72             8.0   2
+5:             72             8.0   2
+6:             72             8.0   3
+7:             72             8.0   3
+8:             72             8.0   3
+9:            120             0.5   1</preformat>
+    </sec>
+    </sec>
+    <sec id="same-as-for-other-donor-should-the-response-low-samples-be-removed-it-is-below-the-lowest-point-on-our-standard-curve-but-omitting-it-would-make-the-mean-higher-than-it-really-is-nb-2">
+      <title>Same as for other donor, should the response low samples be
+      removed? It is below the lowest point on our standard curve, but
+      omitting it would make the mean higher, than it really is?</title>
+      <p><bold>Mean of replicates and activity relative to vehicle
+      control</bold></p>
+      <sec id="nb-code-cell-14-nb-2" specific-use="notebook-code">
+      <code language="r script"># Calculate the mean amount of replicates
+tidy_data[, 
+          mean_amount := mean(amount, na.rm = TRUE), 
+          by = .(treatment, time_treatment, time_incubation)
+          ]
+
+
+# Add column with control mean amounts grouped by time_treatment and time_incubation
+tidy_data[,
+          control_mean_amount := mean(mean_amount[treatment == &quot;control&quot;]),
+          by = .(time_treatment, time_incubation)
+          ]
+
+# Calculate both amounts and mean_amounts relative to control
+tidy_data[,
+          `:=`(
+            relative_amount = amount / control_mean_amount,
+            mean_relative_amount = mean_amount / control_mean_amount
+            )
+          ]
+      </code>
+      </sec>
+      <p><bold>Save the data</bold></p>
+      <sec id="nb-code-cell-15-nb-2" specific-use="notebook-code">
+      <code language="r script">saveRDS(tidy_data, file = here(&quot;notebooks/LCMS/data_processed/AS0008.rds&quot;))
+      </code>
+      </sec>
+    </sec>
+    <sec id="plots-1-nb-2">
+      <title><bold>Plots</bold></title>
+      <sec id="nb-code-cell-16-nb-2" specific-use="notebook-code">
+      <code language="r script">tidy_data &lt;- readRDS(here(&quot;notebooks/LCMS/data_processed/AS0008.rds&quot;))
+      </code>
+      </sec>
+      <sec id="nb-code-cell-17-nb-2" specific-use="notebook-code">
+      <code language="r script"># Create groups/look up tables for subsetting data
+group_IL6 &lt;- c(&quot;control&quot;, 
+               #&quot;medium&quot;, 
+               &quot;0.01 ng/ml IL-6&quot;, 
+               &quot;0.1 ng/ml IL-6&quot;,
+               &quot;1 ng/ml IL-6&quot;, 
+               &quot;10 ng/ml IL-6&quot;
+               )
+
+group_IL1B &lt;- c(&quot;control&quot;, 
+                #&quot;medium&quot;, 
+                &quot;0.01 ng/ml IL-1B&quot;, 
+                &quot;0.1 ng/ml IL-1B&quot;,
+                &quot;1 ng/ml IL-1B&quot;,
+                &quot;10 ng/ml IL-1B&quot;
+                )
+      </code>
+      </sec>
+      <sec id="nb-code-cell-18-nb-2" specific-use="notebook-code">
+      <code language="r script">plot_data &lt;- tidy_data[time_incubation == 0.5 &amp;
+  treatment %in% group_IL6]
+
+act_3A4_IL_6_AS008 &lt;- 
+ggplot(data = plot_data) +
+  geom_point(
+    aes(
+      x = treatment,
+      y = mean_relative_amount,
+      color = factor(time_treatment)
+    ),
+    size = 5,
+    alpha = 0.7
+  ) +
+  geom_point(
+    aes(
+      x = treatment,
+      y = relative_amount
+    ),
+    size = 2,
+    alpha = 0.3
+  ) +
+  geom_hline(yintercept = 1) +
+  scale_y_continuous(
+    name = &quot;OH-midazolam formation relative to vehicle control&quot;, 
+    breaks = seq(from = 0, to = 1.5, by= 0.25), limits = c(0, NA)
+    ) +
+  facet_wrap(
+    facets = vars(factor(time_treatment))
+  ) +
+  theme_bw() +
+  xlab(&quot;Treatment&quot;) + 
+  ggtitle(&quot;CYP3A4 activity after treatment with IL-6&quot;,
+          subtitle = &quot;Facetted on treatment duration in hours&quot;) +
+  ylab(&quot;Metabolite formation relative to vehicle control&quot;) +
+  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+        axis.title.x = element_text(hjust = 0.5, vjust = 0, face = &quot;bold&quot;),
+        axis.title.y = element_text(face = &quot;bold&quot;),
+        legend.position = &quot;none&quot;
+  )
+
+act_3A4_IL_6_AS008
+      </code>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/unnamed-chunk-18-1.png" />
+      <code language="r script">ggsave(
+  plot = last_plot(),
+  filename = &quot;3A4_IL_6_AS0008.svg&quot;,
+  device = &quot;svg&quot;,
+  path = here(&quot;notebooks/LCMS/output&quot;)
+  )
+      </code>
+      <sec id="nb-code-cell-18-output-0-nb-2" specific-use="notebook-output">
+      <preformat>Saving 7 x 5 in image</preformat>
+      </sec>
+      </sec>
+      <sec id="nb-code-cell-19-nb-2" specific-use="notebook-code">
+      <code language="r script">plot_data &lt;- tidy_data[time_incubation == 0.5 &amp;
+  treatment %in% group_IL1B]
+
+act_3A4_IL_1B_AS008 &lt;- 
+ggplot(data = plot_data) +
+  geom_point(
+    aes(
+      x = treatment,
+      y = mean_relative_amount,
+      color = factor(time_treatment)
+    ),
+    size = 5,
+    alpha = 0.7
+  ) +
+  geom_point(
+    aes(
+      x = treatment,
+      y = relative_amount
+    ),
+    size = 2,
+    alpha = 0.3
+  ) +
+  geom_hline(yintercept = 1) +
+  scale_y_continuous(
+    name = &quot;OH-midazolam formation relative to vehicle control&quot;, 
+    breaks = seq(from = 0, to = 1.5, by= 0.25), limits = c(0, NA)
+    ) +
+  facet_wrap(
+    facets = vars(factor(time_treatment))
+  ) +
+  theme_bw() +
+  xlab(&quot;Treatment&quot;) + 
+  ggtitle(&quot;CYP3A4 activity after treatment with IL-1B&quot;,
+          subtitle = &quot;Facetted on treatment duration in hours&quot;) +
+  ylab(&quot;Metabolite formation relative to vehicle control&quot;) +
+  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+        axis.title.x = element_text(hjust = 0.5, vjust = 0, face = &quot;bold&quot;),
+        axis.title.y = element_text(face = &quot;bold&quot;),
+        legend.position = &quot;none&quot;
+  )
+
+act_3A4_IL_1B_AS008
+      </code>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/unnamed-chunk-19-1.png" />
+      <code language="r script">ggsave(
+  plot = last_plot(),
+  filename = &quot;3A4_IL_1B_AS0008.svg&quot;,
+  device = &quot;svg&quot;,
+  path = here(&quot;notebooks/LCMS/output&quot;)
+  )
+      </code>
+      <sec id="nb-code-cell-19-output-0-nb-2" specific-use="notebook-output">
+      <preformat>Saving 7 x 5 in image</preformat>
+      </sec>
+      </sec>
+    </sec>
+  </sec>
+  <sec id="combine-and-save-final-dataframe-nb-2">
+    <title>Combine and save final dataframe</title>
+    <sec id="nb-code-cell-20-nb-2" specific-use="notebook-code">
+    <code language="r script">files &lt;- fs::dir_ls(here(&quot;notebooks/LCMS/data_processed&quot;), regexp = &quot;AS&quot;)
+
+data &lt;- lapply(files, readRDS)
+
+final_data &lt;- rbindlist(data, idcol = &quot;file&quot;)
+final_data[, file := gsub(pattern = &quot;notebooks/LCMS/data_processed/&quot;, replacement = &quot;&quot;, file)]
+
+saveRDS(final_data, file = here(&quot;notebooks/LCMS/data_processed/final_data.rds&quot;))
+    </code>
+    </sec>
+  </sec>
+  <sec id="main-plots-nb-2">
+    <title>Main plots</title>
+    <p>load data</p>
+    <sec id="nb-code-cell-21-nb-2" specific-use="notebook-code">
+    <code language="r script">data &lt;- readRDS(here(&quot;notebooks/LCMS/data_processed/final_data.rds&quot;))
+    </code>
+    </sec>
+    <sec id="nb-code-cell-22-nb-2" specific-use="notebook-code">
+    <code language="r script"># Create groups/look up tables for subsetting data
+group_IL6 &lt;- c(&quot;control&quot;, 
+               #&quot;medium&quot;, 
+               &quot;0.01 ng/ml IL-6&quot;, 
+               &quot;0.1 ng/ml IL-6&quot;,
+               &quot;1 ng/ml IL-6&quot;, 
+               &quot;10 ng/ml IL-6&quot;
+               )
+
+group_IL1B &lt;- c(&quot;control&quot;, 
+                #&quot;medium&quot;, 
+                &quot;0.01 ng/ml IL-1B&quot;, 
+                &quot;0.1 ng/ml IL-1B&quot;,
+                &quot;1 ng/ml IL-1B&quot;,
+                &quot;10 ng/ml IL-1B&quot;
+                )
+    </code>
+    </sec>
+    <p>IL-6</p>
+    <sec id="nb-code-cell-23-nb-2" specific-use="notebook-code">
+    <code language="r script">plot_data_IL6 &lt;- data[time_incubation == 0.5 
+                      &amp; treatment %in% group_IL6
+                      &amp; time_treatment != 24]
+
+
+act_3A4_IL6 &lt;- ggplot(data = plot_data_IL6) +
+  geom_point(
+    mapping = aes(x = treatment, y = mean_relative_amount, color = factor(time_treatment)),
+    size = 3.5
+  ) +
+  stat_summary(
+    fun = &quot;mean&quot;,
+    geom = &quot;point&quot;,
+    mapping = aes(x = treatment, y = mean_relative_amount),
+    size = 5
+  ) +
+  facet_wrap(~ time_treatment, labeller = labeller(time_treatment = paste(&quot;time&quot;, as.character()))) +
+  labs(title = &quot;CYP3A4 activity relative to vehicle control after IL-6 treatment&quot;) + 
+  xlab(&quot;Treatment&quot;) + 
+  ylab(&quot;Relative activity&quot;) +
+  scale_y_continuous(limits = c(0, NA))
+    </code>
+    </sec>
+    <sec id="cell-fig-act-cyp3A4-IL6-nb-2" specific-use="notebook-code">
+    <code language="r script">
+act_3A4_IL6
+    </code>
+    <fig id="fig-act-cyp3A4-IL6-nb-2">
+      <caption><p></p></caption>
+      <graphic id="fig-act-cyp3A4-IL6-nb-2" mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/fig-act-cyp3A4-IL6-1.png" />
+    </fig>
+    </sec>
+    <p>CONSIDER REMOVING THE OUTLIER IN 120 hour IL-6 and IL1B. See the
+    individual plots above.</p>
+    <p>IL-1B</p>
+    <sec id="cell-fig-act-cyp3A4-IL1B-nb-2" specific-use="notebook-code">
+    <code language="r script">
+plot_data_I1B &lt;- data[time_incubation == 0.5 
+                      &amp; treatment %in% group_IL1B
+                      &amp; time_treatment != 24]
+
+
+ggplot(data = plot_data_I1B) +
+  geom_point(
+    mapping = aes(x = treatment, y = mean_relative_amount, color = factor(time_treatment)),
+    size = 3.5
+  ) +
+  stat_summary(
+    fun = &quot;mean&quot;,
+    geom = &quot;point&quot;,
+    mapping = aes(x = treatment, y = mean_relative_amount),
+    size = 5
+  ) +
+  facet_wrap(facets = vars(time_treatment)) +
+  labs(title = &quot;CYP3A4 activity relative to vehicle control after IL-1B treatment&quot;) + 
+  xlab(&quot;Treatment&quot;) + 
+  ylab(&quot;Relative activity&quot;)  +
+  scale_y_continuous(limits = c(0, NA))
+    </code>
+    <fig id="fig-act-cyp3A4-IL1B-nb-2">
+      <caption><p></p></caption>
+      <graphic id="fig-act-cyp3A4-IL1B-nb-2" mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/fig-act-cyp3A4-IL1B-1.png" />
+    </fig>
+    </sec>
+  </sec>
+  <sec id="ec50-nb-2">
+    <title>EC50</title>
+  </sec>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
 
 </article>

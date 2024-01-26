@@ -681,67 +681,238 @@ administration</role>
 <sub-article article-type="notebook" id="nb-4-nb-1">
 <front-stub>
 <title-group>
-<article-title>Explore Earthquakes</article-title>
+<article-title>Viability</article-title>
 </title-group>
 <contrib-group>
 <contrib contrib-type="author">
 <name>
-<surname>Wickham</surname>
-<given-names>Charlotte</given-names>
+<surname>Svendsen</surname>
+<given-names>Andreas</given-names>
 </name>
-<string-name>Charlotte Wickham</string-name>
+<string-name>Andreas Svendsen</string-name>
 
 </contrib>
 </contrib-group>
 </front-stub>
 
 <body>
-<sec id="nb-code-cell-1-nb-1" specific-use="notebook-code">
-<code language="r script">library(tidyverse)
-</code>
-<sec id="nb-code-cell-1-output-0-nb-1" specific-use="notebook-output">
-<preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.3     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
-</sec>
-</sec>
-<p>Read a clean version of data:</p>
-<sec id="nb-code-cell-2-nb-1" specific-use="notebook-code">
-<code language="r script">la_palma &lt;- read_csv(&quot;la-palma.csv&quot;)
-</code>
-<sec id="nb-code-cell-2-output-0-nb-1" specific-use="notebook-output">
-<preformat>Rows: 11347 Columns: 5
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: &quot;,&quot;
-dbl  (4): Longitude, Latitude, Depth(km), Magnitude
-dttm (1): DateTime
+<sec id="viability-nb-1">
+  <title>Viability</title>
+  <sec id="setup-nb-1">
+    <title>Setup</title>
+    <sec id="nb-code-cell-1-nb-1" specific-use="notebook-code">
+    <code language="r script">
+library(data.table)
+library(ggplot2)
+library(patchwork)
+library(here)
+    </code>
+    <sec id="nb-code-cell-1-output-0-nb-1" specific-use="notebook-output">
+    <preformat>here() starts at C:/Users/alosvendsen/Documents/R/manuscript_one</preformat>
+    </sec>
+    </sec>
+  </sec>
+  <sec id="load-and-wrangle-data-nb-1">
+    <title>Load and wrangle data</title>
+    <sec id="nb-code-cell-2-nb-1" specific-use="notebook-code">
+    <code language="r script">data &lt;- readRDS(here(&quot;notebooks/viability/data_processed/final_viability.rds&quot;))
 
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
-</sec>
-</sec>
-<p>Create spatial plot:</p>
-<sec id="cell-fig-spatial-plot-nb-1" specific-use="notebook-code">
-<code language="r script">#|   against longitude.&quot;
-la_palma |&gt; 
-  ggplot(aes(Longitude, Latitude)) +
-  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
-  scale_color_viridis_c(direction = -1) + 
-  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
-  theme_bw()
-</code>
-<fig id="fig-spatial-plot-nb-1">
-  <caption><p>Locations of earthquakes on La Palma since
-  2017</p></caption>
-  <graphic mimetype="image" mime-subtype="png" xlink:href="explore-earthquakes_files/figure-jats/fig-spatial-plot-1.png" />
-</fig>
+# Convert 'day' to a factor
+data[, day := as.factor(day)]
+
+# Calculate the mean ATP for each donor on day 5
+mean_day5 &lt;- data[day == 5, .(mean_ATP_day5 = mean(ATP)), by = .(donor)]
+
+# Merge this back with the main data
+data &lt;- merge(data, mean_day5, by = &quot;donor&quot;)
+
+# Calculate the relative ATP
+data[, relative_ATP := ATP / mean_ATP_day5]
+
+# Calculate the mean relative ATP for each donor and day
+mean_data &lt;- data[, .(mean_relative_ATP = mean(relative_ATP)), by = .(day, donor)]
+
+# Calculate the overall mean across all donors for each day
+overall_mean &lt;- mean_data[, .(overall_mean_ATP = mean(mean_relative_ATP)), by = day]
+    </code>
+    </sec>
+  </sec>
+  <sec id="plotting-nb-1">
+    <title>Plotting</title>
+    <sec id="overall-relative-viability-nb-1">
+      <title>Overall relative viability</title>
+      <sec id="nb-code-cell-3-nb-1" specific-use="notebook-code">
+      <code language="r script"># Plotting
+plot_relative_viability &lt;- 
+ggplot() +
+  geom_point(data = mean_data,
+             mapping = aes(x = day, y = mean_relative_ATP, color = as.factor(donor))) +
+  geom_point(data = overall_mean,
+             mapping = aes(x = day, y = overall_mean_ATP),
+             size = 5,
+             alpha = 0.5) +
+  labs(title = &quot;Mean ATP Relative to Day 5 Across Donors&quot;,
+       x = &quot;Day&quot;,
+       y = &quot;Mean Relative ATP&quot;) +
+  scale_y_continuous(
+    name = &quot;Relative viability&quot;,
+    limits = c(0, NA)
+  )
+      </code>
+      </sec>
+      <sec id="cell-fig-viability-relative-overall-nb-1" specific-use="notebook-code">
+      <code language="r script">plot_relative_viability
+      </code>
+      <fig id="fig-viability-relative-overall-nb-1">
+        <caption><p>Note that the concentration of ATP of donor one on
+        day 5 was to high. Data for this donor/day not
+        trustworthy/viability to high. This yields a steep fall from day
+        5 to 7</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="Viability_files/figure-jats/fig-viability-relative-overall-1.png" />
+      </fig>
+      </sec>
+    </sec>
+    <sec id="overall-absolute-viability-nb-1">
+      <title>Overall absolute viability</title>
+      <sec id="nb-code-cell-4-nb-1" specific-use="notebook-code">
+      <code language="r script">data &lt;- readRDS(here(&quot;notebooks/viability/data_processed/final_viability.rds&quot;))
+
+mean_ATP &lt;- data[, mean(ATP, na.rm = TRUE), by = .(day, donor)]
+
+plot_absolute_viability &lt;- 
+ggplot() +
+  geom_point(
+    data = mean_ATP,
+    mapping = aes(
+      x = day,
+      y = V1,
+      color = as.factor(donor)
+    )
+  ) +
+  labs(title = &quot;Absolute ATP content&quot;,
+       x = &quot;Day&quot;,
+       y = &quot;ATP content (pmol/spheroid&quot;) +
+  scale_y_continuous(limits = c(0, NA))
+      </code>
+      </sec>
+      <sec id="cell-fig-viability-absolute-overall-nb-1" specific-use="notebook-code">
+      <code language="r script">#|
+plot_absolute_viability
+      </code>
+      <fig id="fig-viability-absolute-overall-nb-1">
+        <caption><p>Note that the concentration of ATP of donor one on
+        day 5 was to high. Data for this donor/day not
+        trustworthy/viability to high</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="Viability_files/figure-jats/fig-viability-absolute-overall-1.png" />
+      </fig>
+      </sec>
+    </sec>
+    <sec id="plot-individual-donors-nb-1">
+      <title>Plot individual donors</title>
+      <sec id="nb-code-cell-5-nb-1" specific-use="notebook-code">
+      <code language="r script"># Load data ---------------------------------------------------------------
+data &lt;- readRDS(here(&quot;notebooks/viability/data_processed/final_viability.rds&quot;))
+
+
+#### Donor 1 ####
+donor_1 &lt;- data[donor == 1]
+
+donor_1[, mean_ATP := mean(ATP), by = .(day)]
+
+calibrator &lt;- donor_1[day == 5, mean_ATP][1]
+
+donor_1[, relative_ATP := ATP / calibrator]
+
+plot_donor_1 &lt;- 
+ggplot(
+  data = donor_1,
+  aes(
+    x=as.factor(day),
+    y = relative_ATP
+    )
+  ) +
+  geom_point() +
+  stat_summary(fun = mean, color = &quot;red&quot;) +
+  scale_y_continuous(name = &quot;ATP content relative to day 5&quot;, limits = c(0, 1.5))
+
+
+#### Donor 2 ####
+donor_2 &lt;- data[donor == 2]
+
+donor_2[, mean_ATP := mean(ATP), by = .(day)]
+
+calibrator &lt;- donor_2[day == 5, mean_ATP][1]
+
+donor_2[, relative_ATP := ATP / calibrator]
+
+plot_donor_2 &lt;- 
+ggplot(
+  data = donor_2,
+  aes(
+    x=as.factor(day),
+    y = relative_ATP
+  )
+) +
+  geom_point() +
+  stat_summary(fun = mean, color = &quot;red&quot;) +
+  scale_y_continuous(limits = c(0, 1.5))
+
+
+#### Donor 3 ####
+donor_3 &lt;- data[donor == 3]
+
+donor_3[, mean_ATP := mean(ATP), by = .(day)]
+
+calibrator &lt;- donor_3[day == 5, mean_ATP][1]
+
+donor_3[, relative_ATP := ATP / calibrator]
+
+plot_donor_3 &lt;- 
+ggplot(
+  data = donor_3,
+  aes(
+    x=as.factor(day),
+    y = relative_ATP
+  )
+) +
+  geom_point() +
+  stat_summary(fun = mean, color = &quot;red&quot;)+
+  scale_y_continuous(limits = c(0, 1.5))
+
+
+plot_donor_relative_viability &lt;- 
+  wrap_plots(list(plot_donor_1, plot_donor_2, plot_donor_3)) +
+  plot_annotation(title = &quot;Individual donor viability relative to day 5&quot;)
+
+# ggsave(plot = donor_relative_viability,
+#        filename = here(&quot;notebooks/viability/output/donor_relative_viability.png&quot;))
+      </code>
+      </sec>
+      <sec id="cell-fig-donor-viabilities-nb-1" specific-use="notebook-code">
+      <code language="r script">
+plot_donor_relative_viability
+      </code>
+      <fig id="fig-donor-viabilities-nb-1">
+        <caption><p></p></caption>
+        <graphic id="fig-donor-viabilities-nb-1" mimetype="image" mime-subtype="png" xlink:href="Viability_files/figure-jats/fig-donor-viabilities-1.png" />
+      </fig>
+      <sec id="cell-fig-donor-viabilities-output-0-nb-1" specific-use="notebook-output">
+      <preformat>Warning: Removed 5 rows containing missing values (`geom_segment()`).</preformat>
+      </sec>
+      <sec id="cell-fig-donor-viabilities-output-1-nb-1" specific-use="notebook-output">
+      <preformat>Warning: Removed 6 rows containing missing values (`geom_segment()`).</preformat>
+      </sec>
+      <sec id="cell-fig-donor-viabilities-output-2-nb-1" specific-use="notebook-output">
+      <preformat>Warning: Removed 9 rows containing missing values (`geom_segment()`).</preformat>
+      </sec>
+      </sec>
+      <sec id="nb-code-cell-6-nb-1" specific-use="notebook-code">
+      <code language="r script">rmv &lt;- ls()[-grep(&quot;plot&quot;, ls())]
+rm(list = rmv, rmv)
+      </code>
+      </sec>
+    </sec>
+  </sec>
 </sec>
 </body>
 

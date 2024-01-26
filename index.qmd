@@ -131,6 +131,12 @@ Morphology of the spheroids over time is seen in @fig-morph
 
 ### Activity
 
+{{< embed notebooks/LCMS/LCMS.qmd#fig-act-3A4-IL6 >}}
+
+{{< embed notebooks/LCMS/LCMS.qmd#fig-act-3A4-IL1B >}}
+
+Consider looking into outliers in 120 hour 0.01 ng-IL1B, and 120 hour 0.1 ng-IL6.
+
 ## References {.unnumbered}
 
 ::: {#refs}

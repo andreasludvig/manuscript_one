@@ -5,37 +5,25 @@ and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
 <article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
 
 <front>
-<journal-meta>
-<journal-id></journal-id>
-
-<journal-title-group>
-<journal-title>Earth and Space Science</journal-title>
-</journal-title-group>
-<issn></issn>
-
-<publisher>
-<publisher-name></publisher-name>
-</publisher>
-</journal-meta>
 
 
 <article-meta>
 
 
 <title-group>
-<article-title>La Palma Earthquakes</article-title>
+<article-title>Manuscript 1</article-title>
 </title-group>
 
 <contrib-group>
 <contrib contrib-type="author" corresp="yes">
-<contrib-id contrib-id-type="orcid">0000-0002-0760-5497</contrib-id>
+<contrib-id contrib-id-type="orcid">0000-0001-8050-6447</contrib-id>
 <name>
-<surname>Purves</surname>
-<given-names>Steve</given-names>
+<surname>Svendsen</surname>
+<given-names>Andreas Ludvig Ohm</given-names>
 </name>
-<string-name>Steve Purves</string-name>
+<string-name>Andreas Ludvig Ohm Svendsen</string-name>
 
-<email>steve@curvenote.com</email>
+<email>alosvendsen@health.sdu.dk</email>
 <role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
 <role vocab="https://credit.niso.org" vocab-term="project
 administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
@@ -45,20 +33,19 @@ administration</role>
 <xref ref-type="aff" rid="aff-1">a</xref>
 <xref ref-type="corresp" rid="cor-1">&#x002A;</xref>
 </contrib>
-<contrib contrib-type="author">
-<contrib-id contrib-id-type="orcid">0000-0002-7859-8394</contrib-id>
+<contrib contrib-type="author" corresp="yes">
 <name>
-<surname>Cockett</surname>
-<given-names>Rowan</given-names>
+<surname>Stage</surname>
+<given-names>Tore B.</given-names>
 </name>
-<string-name>Rowan Cockett</string-name>
+<string-name>Tore B. Stage</string-name>
 
-<xref ref-type="aff" rid="aff-1">a</xref>
+<xref ref-type="corresp" rid="cor-2">&#x002A;</xref>
 </contrib>
 </contrib-group>
 <aff id="aff-1">
 <institution-wrap>
-<institution>Curvenote</institution>
+<institution>SDU</institution>
 </institution-wrap>
 
 
@@ -69,14 +56,11 @@ administration</role>
 
 </aff>
 <author-notes>
-<corresp id="cor-1">steve@curvenote.com</corresp>
+<corresp id="cor-1">alosvendsen@health.sdu.dk</corresp>
+<corresp id="cor-2"></corresp>
 </author-notes>
 
-<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2024-01-26">
-<year>2024</year>
-<month>1</month>
-<day>26</day>
-</pub-date>
+
 
 
 
@@ -88,15 +72,12 @@ administration</role>
 
 
 <abstract>
-<p>In September 2021, a significant jump in seismic activity on the
-island of La Palma (Canary Islands, Spain) signaled the start of a
-volcanic crisis that still continues at the time of writing. Earthquake
-data is continually collected and published by the Instituto Geográphico
-Nacional (IGN). …</p>
+<p>This is an abstract …</p>
 </abstract>
 <kwd-group kwd-group-type="author">
-<kwd>La Palma</kwd>
-<kwd>Earthquakes</kwd>
+<kwd>3D primary human hepatocytes</kwd>
+<kwd>Inflammation</kwd>
+<kwd>Drug metabolism</kwd>
 </kwd-group>
 
 
@@ -108,377 +89,595 @@ Nacional (IGN). …</p>
 
 <body>
 <sec id="introduction">
-  <title>1 Introduction</title>
-  <fig id="fig-timeline">
-    <caption><p>Figure 1: Timeline of recent earthquakes on La
-    Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/fig-timeline-1.png" />
-  </fig>
-  <p>Based on data up to and including 1971, eruptions on La Palma
-  happen every 79.8 years on average.</p>
-  <p>Studies of the magma systems feeding the volcano, such as Marrero
-  et al.
-  (<xref alt="2019" rid="ref-marrero2019" ref-type="bibr">2019</xref>),
-  have proposed that there are two main magma reservoirs feeding the
-  Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges
-  and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
-  <p>Eight eruptions have been recorded since the late 1400s
-  (<xref alt="Figure 1" rid="fig-timeline">Figure 1</xref>).</p>
-  <p>Data and methods are discussed in
-  <xref alt="Section 2" rid="sec-data-methods">Section 2</xref>.</p>
-  <p>Let <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  denote the number of eruptions in a year. Then,
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  can be modeled by a Poisson distribution</p>
-  <p><styled-content id="eq-poisson"><disp-formula><alternatives>
-  <tex-math><![CDATA[
-  p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-   \qquad(1)]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:mi>λ</mml:mi></mml:mrow></mml:msup><mml:msup><mml:mi>λ</mml:mi><mml:mi>x</mml:mi></mml:msup></mml:mrow><mml:mrow><mml:mi>x</mml:mi><mml:mi>!</mml:mi></mml:mrow></mml:mfrac><mml:mspace width="2.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></styled-content></p>
-  <p>where <inline-formula><alternatives>
-  <tex-math><![CDATA[\lambda]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>λ</mml:mi></mml:math></alternatives></inline-formula>
-  is the rate of eruptions per year. Using
-  <xref alt="Equation 1" rid="eq-poisson">Equation 1</xref>, the
-  probability of an eruption in the next <inline-formula><alternatives>
-  <tex-math><![CDATA[t]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>t</mml:mi></mml:math></alternatives></inline-formula>
-  years can be calculated.</p>
-  <fig id="tbl-history">
-    <caption><p>Table 1: Recent historic eruptions on La
-    Palma</p></caption>
-    <table-wrap>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Current</td>
-            <td>2021</td>
-          </tr>
-          <tr>
-            <td>Teneguía</td>
-            <td>1971</td>
-          </tr>
-          <tr>
-            <td>Nambroque</td>
-            <td>1949</td>
-          </tr>
-          <tr>
-            <td>El Charco</td>
-            <td>1712</td>
-          </tr>
-          <tr>
-            <td>Volcán San Antonio</td>
-            <td>1677</td>
-          </tr>
-          <tr>
-            <td>Volcán San Martin</td>
-            <td>1646</td>
-          </tr>
-          <tr>
-            <td>Tajuya near El Paso</td>
-            <td>1585</td>
-          </tr>
-          <tr>
-            <td>Montaña Quemada</td>
-            <td>1492</td>
-          </tr>
-        </tbody>
-      </table>
-    </table-wrap>
-  </fig>
-  <p><xref alt="Table 1" rid="tbl-history">Table 1</xref> summarises the
-  eruptions recorded since the colonization of the islands by Europeans
-  in the late 1400s.</p>
-  <fig id="fig-map">
-    <caption><p>Figure 2: Map of La Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="images/la-palma-map.png" />
-  </fig>
-  <p>La Palma is one of the west most islands in the Volcanic
-  Archipelago of the Canary Islands
-  (<xref alt="Figure 2" rid="fig-map">Figure 2</xref>).</p>
-  <fig id="fig-spatial-plot">
-    <caption><p>Figure 3: Locations of earthquakes on La Palma since
-    2017</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" />
-  </fig>
-  <p><xref alt="Figure 3" rid="fig-spatial-plot">Figure 3</xref> shows
-  the location of recent Earthquakes on La Palma.</p>
+  <title>Introduction</title>
+  <p>Inflammation is a complex biological response that is pivotal in
+  various pathological conditions. These range from systemic
+  inflammatory diseases, such as rheumatoid arthritis and sepsis, to
+  lower-grade chronic inflammatory states such as type 2 diabetes
+  mellitus. Given the prevalence of systemic inflammation, understanding
+  its interaction with drug metabolism is of substantial clinical
+  relevance.</p>
+  <p>Drug-metabolizing enzymes and transporters (DMETs), predominantly
+  found in hepatocytes within the liver, are central to the
+  biotransformation of a wide variety of compounds. Inflammation has
+  been shown to modulate the activity of these DMETs, a phenomenon that
+  could potentially affect the pharmacokinetics of numerous medications.
+  For individuals with altered inflammatory status—whether due to a
+  chronic condition like diabetes or an acute event like sepsis—this
+  modulation can have significant implications. It may necessitate
+  adjustments in drug dosages to avoid adverse effects or therapeutic
+  failure.</p>
+  <p>Previous research has provided valuable insights into the effects
+  of inflammation on DMETs, but a clear correlation between in vitro
+  studies and clinical observations remains elusive. For instance
+  Dunvald et al.
+  (<xref alt="1" rid="ref-dunvald" ref-type="bibr">1</xref>) conducted a
+  comprehensive review of the clinical and in vitro evidence on
+  inflammation-mediated modulation of DMETs and the impact on drug
+  metabolism in humans. They found that in vitro studies in primary
+  human hepatocytes revealed strong evidence of downregulation of key
+  cytochrome P450 (CYP) enzymes by inflammatory cytokines such as IL-6
+  and IL-1β. However, these studies often employed supraphysiological
+  cytokine doses, which may not accurately represent the inflammatory
+  conditions observed in patients.</p>
+  <p>Levels of IL-6 and IL-1B in healthy individuals are generally low,
+  with reports in range of ~10pg/ml in adults for IL-6, and ~2.5 pg/ml
+  IL-1B in adults
+  (<xref alt="2" rid="ref-kim2011" ref-type="bibr">2</xref>–<xref alt="5" rid="ref-strand2020" ref-type="bibr">5</xref>).
+  In contrast, cytokine levels may be considerably elevated with IL-6
+  levels of ~140 pg/mL, and I<underline>L-1B levels of ~100
+  pg/mL</underline>, among patients with rheumatoid arthritis or SLE
+  (<xref alt="6" rid="ref-umare2014" ref-type="bibr">6</xref>) to more
+  than 1 ng/mL of IL-6 for patients with acute inflammation caused by
+  sepsis (<xref alt="7" rid="ref-franco2019" ref-type="bibr">7</xref>).
+  These variations in cytokine levels, which span a wide range in
+  different pathological states, highlight the complex and dynamic
+  nature of inflammation and underscore the need for research that
+  considers this variability when investigating the effects of
+  inflammation on drug-metabolizing enzymes.</p>
+  <p>Recently, 3D primary human hepatocytes (PHH) have challenged 2D PHH
+  as a more physiologically relevant culture method of PHH. 3D culture
+  leads to more stable cell cultures that retain their hepatic phenotype
+  for extended periods of time
+  (<xref alt="8" rid="ref-bell2016" ref-type="bibr">8</xref>).
+  Consequently, this 3D PHH have been shown to predict CYP induction and
+  hepatotoxicity more accurately than 2D PHH
+  (<xref alt="9" rid="ref-bell2018" ref-type="bibr">9</xref>,<xref alt="10" rid="ref-järvinen2023" ref-type="bibr">10</xref>).
+  Historically, 2D PHH have been utilized to study the effect of drugs
+  and inflammation on hepatocyte/liver function. However, the inherent
+  limitations of 2D cultures, primarily their inability to maintain the
+  physiological phenotype and liver-specific functions of hepatocytes,
+  have prompted a shift towards the 3D liver spheroid models. This model
+  is increasingly recognized for their physiological relevance and
+  stability, offering a more accurate representation of hepatic
+  responses. The 3D liver spheroids preserve liver cell phenotypes and
+  functions over extended periods, thereby enhancing the reliability of
+  drug-induced liver injury predictions and disease mechanism
+  investigations. This advancement positions 3D liver spheroids as
+  potentially the new standard for in vitro hepatocyte studies, while
+  still being suitable for a high throughput setting, and financially
+  accessible as opposed to even more advanced liver models (ref for last
+  part)
+  (<xref alt="1" rid="ref-dunvald" ref-type="bibr">1</xref>,<xref alt="11" rid="ref-ingelman-sundberg" ref-type="bibr">11</xref>)
+  . Another claim for the lack of correlation discussed in the review by
+  AC et al. is that there might be methodological limitations to the
+  widespread use of 2D models of PHHs
+  (<xref alt="1" rid="ref-dunvald" ref-type="bibr">1</xref>).</p>
+  <p>We aimed to utilize 3D primary human hepatocytes
+  (<xref alt="8" rid="ref-bell2016" ref-type="bibr">8</xref>) to study
+  the impact of physiologically relevant concentrations of cytokines on
+  CYP expression and activity. This may help further our understanding
+  of the impact of inflammation on clinical drug metabolism among
+  patients with inflammation. This, in turn, may inform more precise and
+  adaptive prescribing strategies for patients in various inflammatory
+  states.</p>
 </sec>
-<sec id="sec-data-methods">
-  <title>2 Data &amp; Methods</title>
-</sec>
-<sec id="conclusion">
-  <title>3 Conclusion</title>
+<sec id="methods">
+  <title>Methods</title>
+  <sec id="d-spheroid-culture-of-phhs">
+    <title>3D spheroid culture of PHHs</title>
+    <sec id="materials">
+      <title>Materials</title>
+      <p>All necessary components for cell culture, including the
+      medium, supplements, and compounds, were acquired from Thermo
+      Fisher Scientific, unless stated otherwise.</p>
+    </sec>
+    <sec id="cell-source-and-preparation">
+      <title>Cell source and preparation</title>
+      <p>Three lots of cryopreserved primary human hepatocytes,
+      specifically Hu8345-A, Hu8373-A and Hu8381, were procured from
+      Thermo Fisher Scientific (Waltham, MA). All necessary cell culture
+      reagents were sourced from the same supplier. All PHHs were
+      qualified for spheroid formation per the manufacturer.</p>
+    </sec>
+    <sec id="spheroid-formation-and-maintenance">
+      <title>Spheroid formation and maintenance</title>
+      <p>The spheroid culture followed an adapted protocol from a
+      previous study
+      (<xref alt="8" rid="ref-bell2016" ref-type="bibr">8</xref>). In
+      short 1500 hepatocytes per well in ultra-low attachment 96-well
+      plates. Following seeding, the plates were centrifuged for 2
+      minutes at 200g. Subsequently, the plates were incubated at 37°C
+      with 5% CO2.</p>
+      <p>On day 0 cells were seeded in culture medium, totaling 100 μL
+      per well, consisting of 5% fetal bovine serum, 1 μM dexamethasone,
+      5 μg/mL human recombinant insulin, 100 U/mL penicillin, 100 μg/mL
+      streptomycin, 2 mM L-glutamine, and 15 mM HEPES in Williams’ E
+      medium.</p>
+      <p>After spheroid formation the seeding medium was replaced with
+      FBS free maintenance medium. This medium comprised 0.1 μM
+      dexamethasone, 10 μg/mL human recombinant insulin, 5.5 μg/mL
+      transferrin, 6.7 ng/mL selenium, 100 U/mL penicillin, 100 μg/mL
+      streptomycin, and 2 mM L-glutamine in Williams’ E medium. This FBS
+      washout with maintenance medium was done with a 70% medium change
+      on days 5-7.
+      <monospace>For donor 1 (Hu8345-A) the maintenance also contained 5.35 μg/mL linoleic acid, 1.25 mg/mL bovine serum albumin and 15 mM HEPES. These supplements are, however, no longer recommended by the manufacturer</monospace><xref ref-type="fn" rid="fn1">1</xref><monospace>.</monospace></p>
+      <p>Detailed descriptions of the spheroid culture process, as well
+      as donor information, are available in the supplementary materials
+      (Table SX).</p>
+    </sec>
+  </sec>
+  <sec id="treatments">
+    <title>Treatments</title>
+    <p>Treatment with proinflammatory cytokines commenced on day 8 post
+    seeding. The spheroids were exposed to IL-6 and IL-1β at
+    concentrations of 0.01, 0.1, 1, and 10 ng/ml, alongside a vehicle
+    control (0.1% bovine serum albumin in PBS). The cytokine treatments
+    and vehicle control were diluted 1:1000 in the culture medium before
+    administration.Re-dosing was done every other day for long-term
+    cultures.</p>
+  </sec>
+  <sec id="spheroid-viability-and-morphology">
+    <title>Spheroid viability and morphology</title>
+    <p>The viability of the spheroids was monitored by measuring their
+    ATP content, using the luminiscence CellTiter-Glo 3D assay from
+    Promega (Madison, WI). Quantification of ATP was done using an ATP
+    (from Thermo Fisher Scientific) standard curve. Viability was
+    assessed every 2-3 days throughout the experiments.</p>
+    <p>In addition to viability testing, the morphology of the spheroids
+    was monitored. Imaging was done every second or third day, aligning
+    with the viability assays. The spheroids were imaged using a light
+    microscope equipped with a 10X magnification lens and a digital
+    camera from Motic (Hong Kong, China).</p>
+  </sec>
+  <sec id="rna-extraction-cdna-synthesis-and-qpcr">
+    <title>RNA extraction, cDNA synthesis and qPCR</title>
+    <p>RNA was extracted using the phenol-chloroform method, following
+    the manufacturer’s protocol from Qiagen with minor modifications
+    (<xref alt="12" rid="ref-toni2018" ref-type="bibr">12</xref>). Each
+    spheroid pool was treated with 1 mL of Qiazol (Qiagen) reagent for
+    lysis, followed by co-precipitation with 15 μg of RNA grade glycogen
+    (Thermo Fisher Scientific). The RNA pellet underwent three washes
+    with 75% ethanol. Post-wash, a combination of heating and
+    evaporation techniques was applied to remove residual ethanol and to
+    facilitate the solubilization of the RNA pellet in water.</p>
+    <p>RNA integrity was assessed for a subset of
+    samples<xref ref-type="fn" rid="fn2">2</xref> using the Agilent
+    BioAnalyzer, yielding RNA Integrity Number (RIN) values from 7 to
+    9.8. These values indicate high-quality RNA. Concentration of RNA
+    were estimated utilizing the NanoDrop spectrophotometer.</p>
+    <p>Approximately 500 ng of extracted RNA was used for cDNA
+    synthesis. This process was performed using the High-Capacity cDNA
+    Reverse Transcription Kit with RNase Inhibitor (Thermo Fisher
+    Scientific).</p>
+    <p>For qPCR, 10 ng of cDNA, based on the initial RNA concentration,
+    was utilized for each reaction. The reactions were set up in a 10 μL
+    volume containing TaqMan Universal Master Mix II and target-specific
+    TaqMan assays (detailed in Supplementary Methods). The qPCR was run
+    for 40 cycles, following the manufacturer’s guidelines (Thermo
+    Fisher Scientific). The PCR plate sample maximization method was
+    applied(<xref alt="13" rid="ref-derveaux2010" ref-type="bibr">13</xref>),
+    and a stable reference gene as well as no template controls and no
+    reverse transcriptase controls was included in each plate.</p>
+    <p>In the analysis of mRNA expression, the relative quantity was
+    calculated by first determining the delta Cq ((C_q)) for each
+    sample. This was achieved by subtracting the mean Cq of the control
+    group from the mean Cq of the replicates of each sample. The
+    relative quantity was then computed using the formula (2^{C_q}). For
+    normalization, the relative quantity of the target gene in each
+    sample was divided by the relative quantity of the reference gene
+    (GAPDH or TBP). The average normalized expression for each
+    biological group was subsequently calculated.</p>
+  </sec>
+  <sec id="activity">
+    <title>Activity</title>
+    <p>To assess the activity of CYP3A4 (maybe otheres also), an
+    experiment was conducted using midazolam as a substrate in spheroids
+    derived from donors 2 and 3, evaluated on day 12. Midazolam (Toronto
+    Research Chemicals, Toronto, ON, Canada), was prepared as a 6,000×
+    stock solution in DMSO. The final DMSO concentration in the enzyme
+    activity assays was maintained at 0.15%. Prior to the introduction
+    of midazolam to the spheroids, the cells underwent three washes with
+    100 μL of maintenance medium. Between washes, the residual volume
+    was kept at 20 μL, and before the final wash, the spheroids were
+    incubated for 2 hours in a cell culture incubator.</p>
+    <p>The concentration of midazolam in the assay was set at 10 μM,
+    with a total volume of 100 μL per well. For the analysis, triplicate
+    samples, each comprising a <strike>spheroid</strike> and medium from
+    a single well, were collected at 0.5 (8 hours for other enzymes)
+    hours post midazolam treatment. These samples were then stored at
+    -80°C until further analysis. The specific methods used for the
+    metabolite analysis of these samples are detailed in the
+    supplementary material.</p>
+  </sec>
+  <sec id="quantitative-analysis-of-proteins-via-lc-ms-with-selective-immunoprecipitation">
+    <title>Quantitative analysis of proteins via LC-MS with selective
+    immunoprecipitation</title>
+    <p>The quantification of human CYP <strike>and transporter</strike>
+    proteins was performed using a targeted liquid chromatography-mass
+    spectrometry approach, incorporating selective immunoprecipitation
+    of peptides, as previously
+    described(<xref alt="14" rid="ref-weiß2018" ref-type="bibr">14</xref>).
+    Uniform numbers of spheroids were employed in each analysis for
+    consistency. In summary, spheroids were lysed in a buffer of 42 mM
+    ammonium bicarbonate, containing 1.14 mM dithiothreitol and 9 mM
+    iodoacetamide, and incubated for 15 minutes at 90°C, a method
+    adapted from Savaryn et al.
+    (<xref alt="15" rid="ref-savaryn2020" ref-type="bibr">15</xref>).
+    The lysates were then digested with MS-grade Pierce Trypsin Protease
+    (Thermo Fisher Scientific) for 16 hours at 37°C. To halt the
+    digestion, phenylmethanesulfonyl fluoride was added to each sample,
+    achieving a final concentration of 1 mM and a total volume of 70 μL.
+    A portion of the digested sample (25 μL) was then used for the
+    immunoprecipitation of surrogate and internal standard peptides
+    using triple X proteomics
+    antibodies(<xref alt="14" rid="ref-weiß2018" ref-type="bibr">14</xref>).
+    These peptides were subsequently analyzed and quantified through
+    LC-MS. The specific surrogate peptides employed for protein
+    quantification and the LC-gradients are detailed in the
+    supplementary material. For data processing, Skyline software
+    (MACOSS Lab, University of Washington, Seattle, WA) and TraceFinder
+    4.1 (Thermo Fisher Scientific) were utilized.</p>
+  </sec>
 </sec>
 </body>
 
 <back>
 <ref-list>
-  <title>References</title>
-  <ref id="ref-marrero2019">
+  <title></title>
+  <ref id="ref-dunvald">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
-        <name><surname>Marrero</surname><given-names>José</given-names></name>
-        <name><surname>García</surname><given-names>Alicia</given-names></name>
-        <name><surname>Berrocoso</surname><given-names>Manuel</given-names></name>
-        <name><surname>Llinares</surname><given-names>Ángeles</given-names></name>
-        <name><surname>Rodríguez-Losada</surname><given-names>Antonio</given-names></name>
-        <name><surname>Ortiz</surname><given-names>R.</given-names></name>
+        <name><surname>Dunvald</surname><given-names>Ann-Cathrine Dalgård</given-names></name>
+        <name><surname>Järvinen</surname><given-names>Erkka</given-names></name>
+        <name><surname>Mortensen</surname><given-names>Christina</given-names></name>
+        <name><surname>Stage</surname><given-names>Tore B.</given-names></name>
       </person-group>
-      <article-title>Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands)</article-title>
-      <source>Journal of Applied Volcanology</source>
-      <year iso-8601-date="2019-07">2019</year><month>07</month>
-      <volume>8</volume>
-      <pub-id pub-id-type="doi">10.1186/s13617-019-0085-5</pub-id>
-      <fpage></fpage>
+      <article-title>Clinical and Molecular Perspectives on Inflammation-Mediated Regulation of Drug Metabolism and Transport</article-title>
+      <source>Clinical Pharmacology &amp; Therapeutics</source>
+      <volume>n/a</volume>
+      <issue>n/a</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/cpt.2432</uri>
+      <pub-id pub-id-type="doi">10.1002/cpt.2432</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-kim2011">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Kim</surname><given-names>Hyun Ok</given-names></name>
+        <name><surname>Kim</surname><given-names>Han-Soo</given-names></name>
+        <name><surname>Youn</surname><given-names>Jong-Chan</given-names></name>
+        <name><surname>Shin</surname><given-names>Eui-Cheol</given-names></name>
+        <name><surname>Park</surname><given-names>Sungha</given-names></name>
+      </person-group>
+      <article-title>Serum cytokine profiles in healthy young and elderly population assessed using multiplexed bead-based immunoassays</article-title>
+      <source>Journal of Translational Medicine</source>
+      <year iso-8601-date="2011-07-20">2011</year><month>07</month><day>20</day>
+      <volume>9</volume>
+      <issue>1</issue>
+      <uri>https://doi.org/10.1186/1479-5876-9-113</uri>
+      <pub-id pub-id-type="doi">10.1186/1479-5876-9-113</pub-id>
+      <fpage>113</fpage>
       <lpage></lpage>
     </element-citation>
   </ref>
-</ref-list>
-</back>
-
-<sub-article article-type="notebook" id="nb-8-nb-article">
-<front-stub>
-<title-group>
-<article-title>La Palma Earthquakes</article-title>
-</title-group>
-<contrib-group>
-<contrib contrib-type="author" corresp="yes">
-<contrib-id contrib-id-type="orcid">0000-0002-0760-5497</contrib-id>
-<name>
-<surname>Purves</surname>
-<given-names>Steve</given-names>
-</name>
-<string-name>Steve Purves</string-name>
-
-<email>steve@curvenote.com</email>
-<role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
-<role vocab="https://credit.niso.org" vocab-term="project
-administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
-administration</role>
-<role vocab="https://credit.niso.org" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role>
-<role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
-<xref ref-type="aff" rid="aff-1-nb-article">a</xref>
-<xref ref-type="corresp" rid="cor-1-nb-article">&#x002A;</xref>
-</contrib>
-<contrib contrib-type="author">
-<contrib-id contrib-id-type="orcid">0000-0002-7859-8394</contrib-id>
-<name>
-<surname>Cockett</surname>
-<given-names>Rowan</given-names>
-</name>
-<string-name>Rowan Cockett</string-name>
-
-<xref ref-type="aff" rid="aff-1-nb-article">a</xref>
-</contrib>
-</contrib-group>
-<aff id="aff-1-nb-article">
-<institution-wrap>
-<institution>Curvenote</institution>
-</institution-wrap>
-
-
-
-
-
-
-
-</aff>
-<author-notes>
-<corresp id="cor-1-nb-article">steve@curvenote.com</corresp>
-</author-notes>
-<abstract>
-<p>In September 2021, a significant jump in seismic activity on the
-island of La Palma (Canary Islands, Spain) signaled the start of a
-volcanic crisis that still continues at the time of writing. Earthquake
-data is continually collected and published by the Instituto Geográphico
-Nacional (IGN). …</p>
-</abstract>
-</front-stub>
-
-<body>
-<sec id="introduction-nb-article">
-  <title>1 Introduction</title>
-  <sec id="nb-code-cell-1-nb-article" specific-use="notebook-code">
-  <code language="r script">eruptions &lt;- c(1492, 1585, 1646, 1677, 1712, 1949, 1971, 2021)
-n_eruptions &lt;- length(eruptions)</code>
-  </sec>
-  <sec id="cell-fig-timeline-nb-article" specific-use="notebook-code">
-  <code language="r script">par(mar = c(3, 1, 1, 1) + 0.1)
-plot(eruptions, rep(0, n_eruptions), 
-  pch = &quot;|&quot;, axes = FALSE)
-axis(1)
-box()</code>
-  <fig id="fig-timeline-nb-article">
-    <caption><p>Figure 1: Timeline of recent earthquakes on La
-    Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/fig-timeline-1.png" />
-  </fig>
-  </sec>
-  <sec id="nb-code-cell-2-nb-article" specific-use="notebook-code">
-  <code language="r script">avg_years_between_eruptions &lt;- mean(diff(eruptions[-n_eruptions]))
-avg_years_between_eruptions</code>
-  <sec id="nb-code-cell-2-output-0-nb-article" specific-use="notebook-output">
-  <preformat>[1] 79.83333</preformat>
-  </sec>
-  </sec>
-  <p>Based on data up to and including 1971, eruptions on La Palma
-  happen every 79.8 years on average.</p>
-  <p>Studies of the magma systems feeding the volcano, such as Marrero
-  et al.
-  (<xref alt="2019" rid="ref-marrero2019-nb-article" ref-type="bibr">2019</xref>),
-  have proposed that there are two main magma reservoirs feeding the
-  Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges
-  and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
-  <p>Eight eruptions have been recorded since the late 1400s
-  (<xref alt="Figure 1" rid="fig-timeline-nb-article">Figure 1</xref>).</p>
-  <p>Data and methods are discussed in
-  <xref alt="Section 2" rid="sec-data-methods-nb-article">Section 2</xref>.</p>
-  <p>Let <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  denote the number of eruptions in a year. Then,
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  can be modeled by a Poisson distribution</p>
-  <p><styled-content id="eq-poisson-nb-article"><disp-formula><alternatives>
-  <tex-math><![CDATA[
-  p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-   \qquad(1)]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:mi>λ</mml:mi></mml:mrow></mml:msup><mml:msup><mml:mi>λ</mml:mi><mml:mi>x</mml:mi></mml:msup></mml:mrow><mml:mrow><mml:mi>x</mml:mi><mml:mi>!</mml:mi></mml:mrow></mml:mfrac><mml:mspace width="2.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></styled-content></p>
-  <p>where <inline-formula><alternatives>
-  <tex-math><![CDATA[\lambda]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>λ</mml:mi></mml:math></alternatives></inline-formula>
-  is the rate of eruptions per year. Using
-  <xref alt="Equation 1" rid="eq-poisson-nb-article">Equation 1</xref>, the
-  probability of an eruption in the next <inline-formula><alternatives>
-  <tex-math><![CDATA[t]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>t</mml:mi></mml:math></alternatives></inline-formula>
-  years can be calculated.</p>
-  <fig id="tbl-history-nb-article">
-    <caption><p>Table 1: Recent historic eruptions on La
-    Palma</p></caption>
-    <table-wrap>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Current</td>
-            <td>2021</td>
-          </tr>
-          <tr>
-            <td>Teneguía</td>
-            <td>1971</td>
-          </tr>
-          <tr>
-            <td>Nambroque</td>
-            <td>1949</td>
-          </tr>
-          <tr>
-            <td>El Charco</td>
-            <td>1712</td>
-          </tr>
-          <tr>
-            <td>Volcán San Antonio</td>
-            <td>1677</td>
-          </tr>
-          <tr>
-            <td>Volcán San Martin</td>
-            <td>1646</td>
-          </tr>
-          <tr>
-            <td>Tajuya near El Paso</td>
-            <td>1585</td>
-          </tr>
-          <tr>
-            <td>Montaña Quemada</td>
-            <td>1492</td>
-          </tr>
-        </tbody>
-      </table>
-    </table-wrap>
-  </fig>
-  <p><xref alt="Table 1" rid="tbl-history-nb-article">Table 1</xref> summarises the
-  eruptions recorded since the colonization of the islands by Europeans
-  in the late 1400s.</p>
-  <fig id="fig-map-nb-article">
-    <caption><p>Figure 2: Map of La Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="images/la-palma-map.png" />
-  </fig>
-  <p>La Palma is one of the west most islands in the Volcanic
-  Archipelago of the Canary Islands
-  (<xref alt="Figure 2" rid="fig-map-nb-article">Figure 2</xref>).</p>
-  <sec id="cell-fig-spatial-plot-nb-article" specific-use="notebook-code">
-  <code language="python">la_palma |&gt; 
-  ggplot(aes(Longitude, Latitude)) +
-  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
-  scale_color_viridis_c(direction = -1) + 
-  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
-  theme_bw()</code>
-  <sec id="cell-fig-spatial-plot-output-0-nb-article" specific-use="notebook-output">
-  <fig id="fig-spatial-plot-nb-article">
-    <caption><p>Figure 3: Locations of earthquakes on La Palma since
-    2017</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" />
-  </fig>
-  </sec>
-  </sec>
-  <p><xref alt="Figure 3" rid="fig-spatial-plot-nb-article">Figure 3</xref> shows
-  the location of recent Earthquakes on La Palma.</p>
-</sec>
-<sec id="sec-data-methods-nb-article">
-  <title>2 Data &amp; Methods</title>
-</sec>
-<sec id="conclusion-nb-article">
-  <title>3 Conclusion</title>
-</sec>
-</body>
-
-
-
-<back>
-<ref-list>
-  <title>References</title>
-  <ref id="ref-marrero2019-nb-article">
+  <ref id="ref-kleiner2013">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
-        <name><surname>Marrero</surname><given-names>José</given-names></name>
-        <name><surname>García</surname><given-names>Alicia</given-names></name>
-        <name><surname>Berrocoso</surname><given-names>Manuel</given-names></name>
-        <name><surname>Llinares</surname><given-names>Ángeles</given-names></name>
-        <name><surname>Rodríguez-Losada</surname><given-names>Antonio</given-names></name>
-        <name><surname>Ortiz</surname><given-names>R.</given-names></name>
+        <name><surname>Kleiner</surname><given-names>Giulio</given-names></name>
+        <name><surname>Marcuzzi</surname><given-names>Annalisa</given-names></name>
+        <name><surname>Zanin</surname><given-names>Valentina</given-names></name>
+        <name><surname>Monasta</surname><given-names>Lorenzo</given-names></name>
+        <name><surname>Zauli</surname><given-names>Giorgio</given-names></name>
       </person-group>
-      <article-title>Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands)</article-title>
-      <source>Journal of Applied Volcanology</source>
-      <year iso-8601-date="2019-07">2019</year><month>07</month>
-      <volume>8</volume>
-      <pub-id pub-id-type="doi">10.1186/s13617-019-0085-5</pub-id>
-      <fpage></fpage>
+      <article-title>Cytokine Levels in the Serum of Healthy Subjects</article-title>
+      <source>Mediators of Inflammation</source>
+      <year iso-8601-date="2013">2013</year>
+      <volume>2013</volume>
+      <uri>http://www.hindawi.com/journals/mi/2013/434010/</uri>
+      <pub-id pub-id-type="doi">10.1155/2013/434010</pub-id>
+      <fpage>1</fpage>
+      <lpage>6</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-said2021">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Said</surname><given-names>Elias A.</given-names></name>
+        <name><surname>Al-Reesi</surname><given-names>Iman</given-names></name>
+        <name><surname>Al-Shizawi</surname><given-names>Nawal</given-names></name>
+        <name><surname>Jaju</surname><given-names>Sanjay</given-names></name>
+        <name><surname>Al-Balushi</surname><given-names>Mohammed S.</given-names></name>
+        <name><surname>Koh</surname><given-names>Crystal Y.</given-names></name>
+        <name><surname>Al-Jabri</surname><given-names>Ali A.</given-names></name>
+        <name><surname>Jeyaseelan</surname><given-names>Lakshmanan</given-names></name>
+      </person-group>
+      <article-title>Defining IL-6 levels in healthy individuals: A meta-analysis</article-title>
+      <source>Journal of Medical Virology</source>
+      <year iso-8601-date="2021">2021</year>
+      <volume>93</volume>
+      <issue>6</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/jmv.26654</uri>
+      <pub-id pub-id-type="doi">10.1002/jmv.26654</pub-id>
+      <fpage>3915</fpage>
+      <lpage>3924</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-strand2020">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Strand</surname><given-names>Vibeke</given-names></name>
+        <name><surname>Boklage</surname><given-names>Susan H.</given-names></name>
+        <name><surname>Kimura</surname><given-names>Toshio</given-names></name>
+        <name><surname>Joly</surname><given-names>Florence</given-names></name>
+        <name><surname>Boyapati</surname><given-names>Anita</given-names></name>
+        <name><surname>Msihid</surname><given-names>Jérôme</given-names></name>
+      </person-group>
+      <article-title>High levels of interleukin-6 in patients with rheumatoid arthritis are associated with greater improvements in health-related quality of life for sarilumab compared with adalimumab</article-title>
+      <source>Arthritis Research &amp; Therapy</source>
+      <year iso-8601-date="2020-10-20">2020</year><month>10</month><day>20</day>
+      <volume>22</volume>
+      <issue>1</issue>
+      <uri>https://doi.org/10.1186/s13075-020-02344-3</uri>
+      <pub-id pub-id-type="doi">10.1186/s13075-020-02344-3</pub-id>
+      <fpage>250</fpage>
       <lpage></lpage>
     </element-citation>
   </ref>
+  <ref id="ref-umare2014">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Umare</surname><given-names>Vinod</given-names></name>
+        <name><surname>Pradhan</surname><given-names>Vandana</given-names></name>
+        <name><surname>Nadkar</surname><given-names>Milind</given-names></name>
+        <name><surname>Rajadhyaksha</surname><given-names>Anjali</given-names></name>
+        <name><surname>Patwardhan</surname><given-names>Manisha</given-names></name>
+        <name><surname>Ghosh</surname><given-names>Kanjaksha K.</given-names></name>
+        <name><surname>Nadkarni</surname><given-names>Anita H.</given-names></name>
+      </person-group>
+      <article-title>Effect of Proinflammatory Cytokines (IL-6, TNF-α, and IL-1β) on Clinical Manifestations in Indian SLE Patients</article-title>
+      <source>Mediators of Inflammation</source>
+      <year iso-8601-date="2014-12-07">2014</year><month>12</month><day>07</day>
+      <volume>2014</volume>
+      <uri>https://www.hindawi.com/journals/mi/2014/385297/</uri>
+      <pub-id pub-id-type="doi">10.1155/2014/385297</pub-id>
+      <fpage>e385297</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-franco2019">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Franco</surname><given-names>Daniel Molano</given-names></name>
+        <name><surname>Arevalo-Rodriguez</surname><given-names>Ingrid</given-names></name>
+        <name><surname>Figuls</surname><given-names>Marta Roqué i</given-names></name>
+        <name><surname>Oleas</surname><given-names>Nadia G. Montero</given-names></name>
+        <name><surname>Nuvials</surname><given-names>Xavier</given-names></name>
+        <name><surname>Zamora</surname><given-names>Javier</given-names></name>
+      </person-group>
+      <article-title>Plasma interleukin-6 concentration for the diagnosis of sepsis in critically ill adults</article-title>
+      <source>Cochrane Database of Systematic Reviews</source>
+      <year iso-8601-date="2019">2019</year>
+      <issue>4</issue>
+      <uri>https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD011811.pub2/full</uri>
+      <pub-id pub-id-type="doi">10.1002/14651858.CD011811.pub2</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-bell2016">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Bell</surname><given-names>Catherine C.</given-names></name>
+        <name><surname>Hendriks</surname><given-names>Delilah F. G.</given-names></name>
+        <name><surname>Moro</surname><given-names>Sabrina M. L.</given-names></name>
+        <name><surname>Ellis</surname><given-names>Ewa</given-names></name>
+        <name><surname>Walsh</surname><given-names>Joanne</given-names></name>
+        <name><surname>Renblom</surname><given-names>Anna</given-names></name>
+        <name><surname>Fredriksson Puigvert</surname><given-names>Lisa</given-names></name>
+        <name><surname>Dankers</surname><given-names>Anita C. A.</given-names></name>
+        <name><surname>Jacobs</surname><given-names>Frank</given-names></name>
+        <name><surname>Snoeys</surname><given-names>Jan</given-names></name>
+        <name><surname>Sison-Young</surname><given-names>Rowena L.</given-names></name>
+        <name><surname>Jenkins</surname><given-names>Rosalind E.</given-names></name>
+        <name><surname>Nordling</surname><given-names>Åsa</given-names></name>
+        <name><surname>Mkrtchian</surname><given-names>Souren</given-names></name>
+        <name><surname>Park</surname><given-names>B. Kevin</given-names></name>
+        <name><surname>Kitteringham</surname><given-names>Neil R.</given-names></name>
+        <name><surname>Goldring</surname><given-names>Christopher E. P.</given-names></name>
+        <name><surname>Lauschke</surname><given-names>Volker M.</given-names></name>
+        <name><surname>Ingelman-Sundberg</surname><given-names>Magnus</given-names></name>
+      </person-group>
+      <article-title>Characterization of primary human hepatocyte spheroids as a model system for drug-induced liver injury, liver function and disease</article-title>
+      <source>Scientific Reports</source>
+      <year iso-8601-date="2016-05">2016</year><month>05</month>
+      <volume>6</volume>
+      <pub-id pub-id-type="doi">10.1038/srep25187</pub-id>
+      <fpage>25187</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-bell2018">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Bell</surname><given-names>Catherine C.</given-names></name>
+        <name><surname>Dankers</surname><given-names>Anita C. A.</given-names></name>
+        <name><surname>Lauschke</surname><given-names>Volker M.</given-names></name>
+        <name><surname>Sison-Young</surname><given-names>Rowena</given-names></name>
+        <name><surname>Jenkins</surname><given-names>Roz</given-names></name>
+        <name><surname>Rowe</surname><given-names>Cliff</given-names></name>
+        <name><surname>Goldring</surname><given-names>Chris E.</given-names></name>
+        <name><surname>Park</surname><given-names>Kevin</given-names></name>
+        <name><surname>Regan</surname><given-names>Sophie L.</given-names></name>
+        <name><surname>Walker</surname><given-names>Tracy</given-names></name>
+        <name><surname>Schofield</surname><given-names>Chris</given-names></name>
+        <name><surname>Baze</surname><given-names>Audrey</given-names></name>
+        <name><surname>Foster</surname><given-names>Alison J.</given-names></name>
+        <name><surname>Williams</surname><given-names>Dominic P.</given-names></name>
+        <name><surname>Ven</surname><given-names>Amy W. M. van de</given-names></name>
+        <name><surname>Jacobs</surname><given-names>Frank</given-names></name>
+        <name><surname>Houdt</surname><given-names>Jos van</given-names></name>
+        <name><surname>Lähteenmäki</surname><given-names>Tuula</given-names></name>
+        <name><surname>Snoeys</surname><given-names>Jan</given-names></name>
+        <name><surname>Juhila</surname><given-names>Satu</given-names></name>
+        <name><surname>Richert</surname><given-names>Lysiane</given-names></name>
+        <name><surname>Ingelman-Sundberg</surname><given-names>Magnus</given-names></name>
+      </person-group>
+      <article-title>Comparison of Hepatic 2D Sandwich Cultures and 3D Spheroids for Long-term Toxicity Applications: A Multicenter Study</article-title>
+      <source>Toxicological Sciences: An Official Journal of the Society of Toxicology</source>
+      <year iso-8601-date="2018-04-01">2018</year><month>04</month><day>01</day>
+      <volume>162</volume>
+      <issue>2</issue>
+      <pub-id pub-id-type="doi">10.1093/toxsci/kfx289</pub-id>
+      <fpage>655</fpage>
+      <lpage>666</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-järvinen2023">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Järvinen</surname><given-names>Erkka</given-names></name>
+        <name><surname>Hammer</surname><given-names>Helen S.</given-names></name>
+        <name><surname>Pötz</surname><given-names>Oliver</given-names></name>
+        <name><surname>Ingelman-Sundberg</surname><given-names>Magnus</given-names></name>
+        <name><surname>Stage</surname><given-names>Tore Bjerregaard</given-names></name>
+      </person-group>
+      <article-title>3D Spheroid Primary Human Hepatocytes for Prediction of Cytochrome P450 and Drug Transporter Induction</article-title>
+      <source>Clinical Pharmacology &amp; Therapeutics</source>
+      <year iso-8601-date="2023">2023</year>
+      <volume>113</volume>
+      <issue>6</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/cpt.2887</uri>
+      <pub-id pub-id-type="doi">10.1002/cpt.2887</pub-id>
+      <fpage>1284</fpage>
+      <lpage>1294</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-ingelman-sundberg">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Ingelman-Sundberg</surname><given-names>Magnus</given-names></name>
+        <name><surname>Lauschke</surname><given-names>Volker M.</given-names></name>
+      </person-group>
+      <article-title>3D human liver spheroids for translational pharmacology and toxicology</article-title>
+      <source>Basic &amp; Clinical Pharmacology &amp; Toxicology</source>
+      <volume>n/a</volume>
+      <issue>n/a</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/bcpt.13587</uri>
+      <pub-id pub-id-type="doi">10.1111/bcpt.13587</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-toni2018">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Toni</surname><given-names>Lee S.</given-names></name>
+        <name><surname>Garcia</surname><given-names>Anastacia M.</given-names></name>
+        <name><surname>Jeffrey</surname><given-names>Danielle A.</given-names></name>
+        <name><surname>Jiang</surname><given-names>Xuan</given-names></name>
+        <name><surname>Stauffer</surname><given-names>Brian L.</given-names></name>
+        <name><surname>Miyamoto</surname><given-names>Shelley D.</given-names></name>
+        <name><surname>Sucharov</surname><given-names>Carmen C.</given-names></name>
+      </person-group>
+      <article-title>Optimization of phenol-chloroform RNA extraction</article-title>
+      <source>MethodsX</source>
+      <year iso-8601-date="2018-01-01">2018</year><month>01</month><day>01</day>
+      <volume>5</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S2215016118300773</uri>
+      <pub-id pub-id-type="doi">10.1016/j.mex.2018.05.011</pub-id>
+      <fpage>599</fpage>
+      <lpage>608</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-derveaux2010">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Derveaux</surname><given-names>Stefaan</given-names></name>
+        <name><surname>Vandesompele</surname><given-names>Jo</given-names></name>
+        <name><surname>Hellemans</surname><given-names>Jan</given-names></name>
+      </person-group>
+      <article-title>How to do successful gene expression analysis using real-time PCR</article-title>
+      <source>Methods</source>
+      <year iso-8601-date="2010-04-01">2010</year><month>04</month><day>01</day>
+      <volume>50</volume>
+      <issue>4</issue>
+      <uri>https://www.sciencedirect.com/science/article/pii/S1046202309002461</uri>
+      <pub-id pub-id-type="doi">10.1016/j.ymeth.2009.11.001</pub-id>
+      <fpage>227</fpage>
+      <lpage>230</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-weiß2018">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Weiß</surname><given-names>Frederik</given-names></name>
+        <name><surname>Hammer</surname><given-names>Helen S.</given-names></name>
+        <name><surname>Klein</surname><given-names>Kathrin</given-names></name>
+        <name><surname>Planatscher</surname><given-names>Hannes</given-names></name>
+        <name><surname>Zanger</surname><given-names>Ulrich M.</given-names></name>
+        <name><surname>Norén</surname><given-names>Agneta</given-names></name>
+        <name><surname>Wegler</surname><given-names>Christine</given-names></name>
+        <name><surname>Artursson</surname><given-names>Per</given-names></name>
+        <name><surname>Joos</surname><given-names>Thomas O.</given-names></name>
+        <name><surname>Poetz</surname><given-names>Oliver</given-names></name>
+      </person-group>
+      <article-title>Direct Quantification of Cytochromes P450 and Drug Transporters-A Rapid, Targeted Mass Spectrometry-Based Immunoassay Panel for Tissues and Cell Culture Lysates</article-title>
+      <source>Drug Metabolism and Disposition: The Biological Fate of Chemicals</source>
+      <year iso-8601-date="2018-04">2018</year><month>04</month>
+      <volume>46</volume>
+      <issue>4</issue>
+      <pub-id pub-id-type="doi">10.1124/dmd.117.078626</pub-id>
+      <fpage>387</fpage>
+      <lpage>396</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-savaryn2020">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Savaryn</surname><given-names>John P.</given-names></name>
+        <name><surname>Liu</surname><given-names>Ning</given-names></name>
+        <name><surname>Sun</surname><given-names>Jun</given-names></name>
+        <name><surname>Ma</surname><given-names>Junli</given-names></name>
+        <name><surname>Stresser</surname><given-names>David M.</given-names></name>
+        <name><surname>Jenkins</surname><given-names>Gary</given-names></name>
+      </person-group>
+      <article-title>Enrichment-free High-throughput Liquid ChromatographyMultiple-Reaction Monitoring Quantification of Cytochrome P450 Proteins in Plated Human Hepatocytes Direct from 96-Well Plates Enables Routine Protein Induction Measurements</article-title>
+      <source>Drug Metabolism and Disposition</source>
+      <year iso-8601-date="2020-07-01">2020</year><month>07</month><day>01</day>
+      <volume>48</volume>
+      <issue>7</issue>
+      <uri>https://dmd.aspetjournals.org/content/48/7/594</uri>
+      <pub-id pub-id-type="doi">10.1124/dmd.120.090480</pub-id>
+      <fpage>594</fpage>
+      <lpage>602</lpage>
+    </element-citation>
+  </ref>
 </ref-list>
+<fn-group>
+  <fn id="fn1">
+    <label>1</label><p>Skip this?</p>
+  </fn>
+  <fn id="fn2">
+    <label>2</label><p>Dog ikke fra nogle af disse 3 donorer, så måske
+    bedre med: To assess the integrity of the RNA, we evaluated the RNA
+    Integrity Number (RIN) for a subset of samples, which yielded values
+    ranging from 7 to 9.8.
+    To validate the RNA extraction method, we assessed the RNA Integrity
+    Number (RIN) using the Agilent BioAnalyzer for a subset of samples
+    not derived from the donors discussed in this article. These
+    assessments yielded RIN values between 7 and 9.8, indicative of
+    high-quality RNA.</p>
+  </fn>
+</fn-group>
 </back>
 
-
-</sub-article>
 <sub-article article-type="notebook" id="nb-4-nb-1">
 <front-stub>
 <title-group>

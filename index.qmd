@@ -33,6 +33,14 @@ number-sections: false
 reference-location: margin
 ---
 
+```{r}
+# Always load same package versions
+groundhog.day <- "2024-01-01"
+groundhog::meta.groundhog(groundhog.day) 
+pkgs <-  c("data.table")
+groundhog.library(pkgs, groundhog.day)
+```
+
 ## Introduction
 
 Inflammation is a complex biological response that is pivotal in various pathological conditions. These range from systemic inflammatory diseases, such as rheumatoid arthritis and sepsis, to lower-grade chronic inflammatory states such as type 2 diabetes mellitus. Given the prevalence of systemic inflammation, understanding its interaction with drug metabolism is of substantial clinical relevance.
@@ -115,13 +123,9 @@ Mean relative viability is seen in @fig-viability-relative-overall.
 
 {{< embed notebooks/viability/Viability.qmd#fig-viability-relative-overall >}}
 
-The individual viability for each donor is seen in @fig-donor-viabilities. This fig is inserted as an image.
+The individual viability for each donor is seen in
 
-{{< embed notebooks/viability/Viability.qmd#fig-donor-viabilities >}}
-
-Absolute overall viability is seen in @fig-viability-absolute-overall
-
-{{< embed notebooks/viability/Viability.qmd#fig-viability-absolute-overall >}}
+Absolute overall viability is seen in
 
 Morphology of the spheroids over time is seen in @fig-morph
 
@@ -131,9 +135,20 @@ Morphology of the spheroids over time is seen in @fig-morph
 
 ### Activity
 
-{{< embed notebooks/LCMS/LCMS.qmd#fig-act-3A4-IL6 >}}
+```{r}
+#| label: mean of the two donors
 
-{{< embed notebooks/LCMS/LCMS.qmd#fig-act-3A4-IL1B >}}
+data_act <- readRDS("notebooks/LCMS/data_processed/final_data.rds")
+
+mean_act_120h_IL6_0.001 <- 
+  data_act[treatment == "0.01 ng/ml IL-6" 
+           & time_incubation == 0.5
+           & time_treatment == 120, mean(mean_relative_amount)]
+
+mean_act_120h_IL6_0.001 <- round(mean_act_120h_IL6_0.001, digits = 2) *100
+```
+
+We see a marked decrease in 3A4 activity with high concentrations of IL-6, which corresponds well with the litterature. At lower concentrations we see a much more modest decrease in activity with an activity of `r mean_act_120h_IL6_0.001`% relative to vehicle control
 
 Consider looking into outliers in 120 hour 0.01 ng-IL1B, and 120 hour 0.1 ng-IL6.
 

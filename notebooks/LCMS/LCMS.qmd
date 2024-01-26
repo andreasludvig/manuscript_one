@@ -1,11 +1,6 @@
 ---
 Title: LCMS 
 Author: Andreas Svendsen
-format:
-  html: 
-    embed-resources: true
-    code-fold: true
-    code-tools: true
 editor_options: 
   chunk_output_type: console
 ---
@@ -127,8 +122,6 @@ saveRDS(tidy_data, file = here("notebooks/LCMS/data_processed/AS0013.rds"))
 #### **Plots**
 
 ```{r}
-rm(list = ls())
-
 tidy_data <- readRDS(here("notebooks/LCMS/data_processed/AS0013.rds"))
 ```
 
@@ -149,7 +142,6 @@ group_IL1B <- c("control",
                 "1 ng/ml IL-1B",
                 "10 ng/ml IL-1B"
                 )
-
 ```
 
 IL-6 effect on CYP3A4
@@ -158,6 +150,7 @@ IL-6 effect on CYP3A4
 plot_data <- tidy_data[time_incubation == 0.5 &
   treatment %in% group_IL6]
 
+act_3A4_IL_6_AS0013 <- 
 ggplot(data = plot_data) +
   geom_point(
     aes(
@@ -194,7 +187,9 @@ ggplot(data = plot_data) +
         axis.title.y = element_text(face = "bold"),
         legend.position = "none"
   )
-  
+
+act_3A4_IL_6_AS0013
+
 ggsave(
   plot = last_plot(),
   filename = "3A4_IL_6_AS0013.svg",
@@ -208,6 +203,7 @@ ggsave(
 plot_data <- tidy_data[time_incubation == 0.5 &
   treatment %in% group_IL1B]
 
+act_3A4_IL_1B_AS0013 <- 
 ggplot(data = plot_data) +
   geom_point(
     aes(
@@ -244,7 +240,9 @@ ggplot(data = plot_data) +
         axis.title.y = element_text(face = "bold"),
         legend.position = "none"
   )
-  
+
+act_3A4_IL_1B_AS0013
+
 ggsave(
   plot = last_plot(),
   filename = "3A4_IL_1B_AS0013.svg",
@@ -258,9 +256,6 @@ ggsave(
 
 **Load data**
 
-```{r}
-rm(list = ls())
-```
 
 ```{r}
 #| output: false
@@ -290,7 +285,6 @@ data <- data[grepl("AS", data$sample_name)] # get samples of interest
 ```
 
 ```{r}
-
 sample_info <- read_excel(here("notebooks/LCMS/data_raw/AS0008_sample_info.xlsx"))
 
 tidy_data <- merge.data.table(data, sample_info, by = "sample_name")
@@ -372,8 +366,6 @@ saveRDS(tidy_data, file = here("notebooks/LCMS/data_processed/AS0008.rds"))
 #### **Plots**
 
 ```{r}
-rm(list = ls())
-
 tidy_data <- readRDS(here("notebooks/LCMS/data_processed/AS0008.rds"))
 ```
 
@@ -401,6 +393,7 @@ group_IL1B <- c("control",
 plot_data <- tidy_data[time_incubation == 0.5 &
   treatment %in% group_IL6]
 
+act_3A4_IL_6_AS008 <- 
 ggplot(data = plot_data) +
   geom_point(
     aes(
@@ -437,7 +430,9 @@ ggplot(data = plot_data) +
         axis.title.y = element_text(face = "bold"),
         legend.position = "none"
   )
-  
+
+act_3A4_IL_6_AS008
+
 ggsave(
   plot = last_plot(),
   filename = "3A4_IL_6_AS0008.svg",
@@ -450,6 +445,7 @@ ggsave(
 plot_data <- tidy_data[time_incubation == 0.5 &
   treatment %in% group_IL1B]
 
+act_3A4_IL_1B_AS008 <- 
 ggplot(data = plot_data) +
   geom_point(
     aes(
@@ -486,7 +482,9 @@ ggplot(data = plot_data) +
         axis.title.y = element_text(face = "bold"),
         legend.position = "none"
   )
-  
+
+act_3A4_IL_1B_AS008
+
 ggsave(
   plot = last_plot(),
   filename = "3A4_IL_1B_AS0008.svg",
@@ -498,9 +496,6 @@ ggsave(
 
 ## Combine and save final dataframe
 
-```{r}
-rm(list = ls())
-```
 
 ```{r}
 files <- fs::dir_ls(here("notebooks/LCMS/data_processed"), regexp = "AS")
@@ -513,18 +508,7 @@ final_data[, file := gsub(pattern = "notebooks/LCMS/data_processed/", replacemen
 saveRDS(final_data, file = here("notebooks/LCMS/data_processed/final_data.rds"))
 ```
 
-## Main plot
-
-```{r}
-rm(list = ls())
-```
-
-```{r}
-library(here)
-library(data.table)
-library(ggplot2)
-```
-
+## Main plots
 load data
 
 ```{r}
@@ -553,17 +537,12 @@ group_IL1B <- c("control",
 IL-6
 
 ```{r}
-#| label: fig-act-3A4-IL6
-#| fig-width: 10
-#| fig-height: 5
-
-
 plot_data_IL6 <- data[time_incubation == 0.5 
                       & treatment %in% group_IL6
                       & time_treatment != 24]
 
 
-ggplot(data = plot_data_IL6) +
+act_3A4_IL6 <- ggplot(data = plot_data_IL6) +
   geom_point(
     mapping = aes(x = treatment, y = mean_relative_amount, color = factor(time_treatment)),
     size = 3.5
@@ -582,12 +561,20 @@ ggplot(data = plot_data_IL6) +
 
 ```
 
+```{r}
+#| label: fig-act-cyp3A4-IL6
+#| fig-width: 10
+#| fig-height: 5
+
+act_3A4_IL6
+```
+
 CONSIDER REMOVING THE OUTLIER IN 120 hour IL-6 and IL1B. See the individual plots above.
 
 IL-1B
 
 ```{r}
-#| label: fig-act-3A4-IL1B
+#| label: fig-act-cyp3A4-IL1B
 #| fig-width: 10
 #| fig-height: 5
 

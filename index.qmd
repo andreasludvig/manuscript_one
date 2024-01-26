@@ -106,3 +106,36 @@ The concentration of midazolam in the assay was set at 10 μM, with a total volu
 ### Quantitative analysis of proteins via LC-MS with selective immunoprecipitation
 
 The quantification of human CYP ~~and transporter~~ proteins was performed using a targeted liquid chromatography-mass spectrometry approach, incorporating selective immunoprecipitation of peptides, as previously described[@weiß2018]. Uniform numbers of spheroids were employed in each analysis for consistency. In summary, spheroids were lysed in a buffer of 42 mM ammonium bicarbonate, containing 1.14 mM dithiothreitol and 9 mM iodoacetamide, and incubated for 15 minutes at 90°C, a method adapted from Savaryn et al. [@savaryn2020]. The lysates were then digested with MS-grade Pierce Trypsin Protease (Thermo Fisher Scientific) for 16 hours at 37°C. To halt the digestion, phenylmethanesulfonyl fluoride was added to each sample, achieving a final concentration of 1 mM and a total volume of 70 μL. A portion of the digested sample (25 μL) was then used for the immunoprecipitation of surrogate and internal standard peptides using triple X proteomics antibodies[@weiß2018]. These peptides were subsequently analyzed and quantified through LC-MS. The specific surrogate peptides employed for protein quantification and the LC-gradients are detailed in the supplementary material. For data processing, Skyline software (MACOSS Lab, University of Washington, Seattle, WA) and TraceFinder 4.1 (Thermo Fisher Scientific) were utilized.
+
+## Results
+
+### Viability and morphology
+
+Mean relative viability is seen in @fig-viability-relative-overall.
+
+{{< embed notebooks/viability/Viability.qmd#fig-viability-relative-overall >}}
+
+The individual viability for each donor is seen in @fig-donor-viabilities. This fig is inserted as an image.
+
+{{< embed notebooks/viability/Viability.qmd#fig-donor-viabilities >}}
+
+Absolute overall viability is seen in @fig-viability-absolute-overall
+
+{{< embed notebooks/viability/Viability.qmd#fig-viability-absolute-overall >}}
+
+Morphology of the spheroids over time is seen in @fig-morph
+
+![](images/morphology_AS0006.png){#fig-morph}
+
+### mRNA
+
+### Activity
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+## Supplementary material
+
+## Thesis abstract

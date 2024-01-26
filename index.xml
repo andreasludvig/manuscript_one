@@ -370,6 +370,16 @@ administration</role>
   </sec>
   <sec id="activity-1">
     <title>Activity</title>
+    <fig id="fig-act-3a4-il6">
+      <caption><p>Figure 5</p></caption>
+      <graphic id="fig-act-3a4-il6" mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-LCMS-LCMS-fig-act-3a4-il6-output-1.png" />
+    </fig>
+    <fig id="fig-act-3a4-il1b">
+      <caption><p>Figure 6</p></caption>
+      <graphic id="fig-act-3a4-il1b" mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-LCMS-LCMS-fig-act-3a4-il1b-output-1.png" />
+    </fig>
+    <p>Consider looking into outliers in 120 hour 0.01 ng-IL1B, and 120
+    hour 0.1 ng-IL6.</p>
   </sec>
 </sec>
 <sec id="references">
@@ -971,5 +981,6 @@ rm(list = rmv, rmv)
 
 
 </sub-article>
+<!-- (F2ED4C6E)[nb-2]:/home/runner/work/manuscript_one/manuscript_one/notebooks/LCMS/LCMS.qmd -->
 
 </article>

@@ -343,12 +343,24 @@ administration</role>
       to 7</p></caption>
       <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-viability-Viability-fig-viability-relative-overall-output-1.png" />
     </fig>
-    <p>The individual viability for each donor is seen in</p>
-    <p>Absolute overall viability is seen in</p>
-    <p>Morphology of the spheroids over time is seen in
-    <xref alt="Figure 2" rid="fig-morph">Figure 2</xref></p>
-    <fig id="fig-morph">
+    <p>The individual viability for each donor is seen in
+    <xref alt="Figure 2" rid="fig-donor-viabilities">Figure 2</xref></p>
+    <fig id="fig-donor-viabilities">
       <caption><p>Figure 2</p></caption>
+      <graphic id="fig-donor-viabilities" mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-viability-Viability-fig-donor-viabilities-output-2.png" />
+    </fig>
+    <p>Absolute overall viability is seen in
+    <xref alt="Figure 3" rid="fig-viability-absolute-overall">Figure 3</xref></p>
+    <fig id="fig-viability-absolute-overall">
+      <caption><p>Figure 3: Note that the concentration of ATP of donor
+      one on day 5 was to high. Data for this donor/day not
+      trustworthy/viability to high</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-viability-Viability-fig-viability-absolute-overall-output-1.png" />
+    </fig>
+    <p>Morphology of the spheroids over time is seen in
+    <xref alt="Figure 4" rid="fig-morph">Figure 4</xref></p>
+    <fig id="fig-morph">
+      <caption><p>Figure 4</p></caption>
       <graphic id="fig-morph" mimetype="image" mime-subtype="png" xlink:href="images/morphology_AS0006.png" />
     </fig>
   </sec>
@@ -1048,12 +1060,37 @@ groundhog.library(pkgs, groundhog.day)</code>
     </fig>
     </sec>
     </sec>
-    <p>The individual viability for each donor is seen in</p>
-    <p>Absolute overall viability is seen in</p>
-    <p>Morphology of the spheroids over time is seen in
-    <xref alt="Figure 2" rid="fig-morph-nb-article">Figure 2</xref></p>
-    <fig id="fig-morph-nb-article">
+    <p>The individual viability for each donor is seen in
+    <xref alt="Figure 2" rid="fig-donor-viabilities-nb-article">Figure 2</xref></p>
+    <sec id="cell-fig-donor-viabilities-nb-article" specific-use="notebook-code">
+    <code language="python">plot_donor_relative_viability</code>
+    <sec id="cell-fig-donor-viabilities-output-0-nb-article" specific-use="notebook-output">
+    <preformat>Warning: Removed 5 rows containing missing values (`geom_segment()`).Warning: Removed 6 rows containing missing values (`geom_segment()`).Warning: Removed 9 rows containing missing values (`geom_segment()`).</preformat>
+    </sec>
+    <sec id="cell-fig-donor-viabilities-output-1-nb-article" specific-use="notebook-output">
+    <fig id="fig-donor-viabilities-nb-article">
       <caption><p>Figure 2</p></caption>
+      <graphic id="fig-donor-viabilities-nb-article" mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-viability-Viability-fig-donor-viabilities-output-2.png" />
+    </fig>
+    </sec>
+    </sec>
+    <p>Absolute overall viability is seen in
+    <xref alt="Figure 3" rid="fig-viability-absolute-overall-nb-article">Figure 3</xref></p>
+    <sec id="cell-fig-viability-absolute-overall-nb-article" specific-use="notebook-code">
+    <code language="python">plot_absolute_viability</code>
+    <sec id="cell-fig-viability-absolute-overall-output-0-nb-article" specific-use="notebook-output">
+    <fig id="fig-viability-absolute-overall-nb-article">
+      <caption><p>Figure 3: Note that the concentration of ATP of donor
+      one on day 5 was to high. Data for this donor/day not
+      trustworthy/viability to high</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-viability-Viability-fig-viability-absolute-overall-output-1.png" />
+    </fig>
+    </sec>
+    </sec>
+    <p>Morphology of the spheroids over time is seen in
+    <xref alt="Figure 4" rid="fig-morph-nb-article">Figure 4</xref></p>
+    <fig id="fig-morph-nb-article">
+      <caption><p>Figure 4</p></caption>
       <graphic id="fig-morph-nb-article" mimetype="image" mime-subtype="png" xlink:href="images/morphology_AS0006.png" />
     </fig>
   </sec>

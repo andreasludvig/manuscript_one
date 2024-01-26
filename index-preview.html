@@ -406,7 +406,7 @@ To validate the RNA extraction method, we assessed the RNA Integrity Number (RIN
 <div id="fig-viability-relative-overall" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-viability-relative-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="index_files/figure-html/notebooks-viability-Viability-fig-viability-relative-overall-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="index_files/figure-html/notebooks-viability-Viability-fig-viability-relative-overall-output-1.png" width="672" height="480" class="figure-img"></a>
+<a href="index_files/figure-html/notebooks-viability-Viability-fig-viability-relative-overall-output-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/notebooks-viability-Viability-fig-viability-relative-overall-output-1.png" width="672" height="480" class="figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-viability-relative-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Note that the concentration of ATP of donor one on day 5 was to high. Data for this donor/day not trustworthy/viability to high. This yields a steep fall from day 5 to 7
@@ -416,16 +416,53 @@ Figure&nbsp;1: Note that the concentration of ATP of donor one on day 5 was to h
 </div>
 </div></div>
 </div>
-<p>The individual viability for each donor is seen in</p>
-<p>Absolute overall viability is seen in</p>
-<p>Morphology of the spheroids over time is seen in <a href="#fig-morph" class="quarto-xref">Figure&nbsp;2</a></p>
+<p>The individual viability for each donor is seen in <a href="#fig-donor-viabilities" class="quarto-xref">Figure&nbsp;2</a></p>
+<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/manuscript_one/manuscript_one/notebooks/viability/Viability.qmd" data-notebook-title="Viability" data-notebook-cellid="cell-fig-donor-viabilities">
+<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="cell-fig-donor-viabilities" class="cell" data-fig-width="10" data-fig-height="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plot_donor_relative_viability</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 5 rows containing missing values (`geom_segment()`).Warning: Removed 6 rows containing missing values (`geom_segment()`).Warning: Removed 9 rows containing missing values (`geom_segment()`).</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig-donor-viabilities" class="quarto-figure quarto-figure-center quarto-float anchored" width="960" height="480">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-donor-viabilities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="index_files/figure-html/notebooks-viability-Viability-fig-donor-viabilities-output-2.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/notebooks-viability-Viability-fig-donor-viabilities-output-2.png" id="fig-donor-viabilities" width="960" height="480" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-donor-viabilities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
+<p>Absolute overall viability is seen in <a href="#fig-viability-absolute-overall" class="quarto-xref">Figure&nbsp;3</a></p>
+<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/manuscript_one/manuscript_one/notebooks/viability/Viability.qmd" data-notebook-title="Viability" data-notebook-cellid="cell-fig-viability-absolute-overall">
+<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="cell-fig-viability-absolute-overall" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot_absolute_viability</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-viability-absolute-overall" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-viability-absolute-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="index_files/figure-html/notebooks-viability-Viability-fig-viability-absolute-overall-output-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/notebooks-viability-Viability-fig-viability-absolute-overall-output-1.png" width="672" height="480" class="figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-viability-absolute-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Note that the concentration of ATP of donor one on day 5 was to high. Data for this donor/day not trustworthy/viability to high
+</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
+<p>Morphology of the spheroids over time is seen in <a href="#fig-morph" class="quarto-xref">Figure&nbsp;4</a></p>
 <div id="fig-morph" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-morph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/morphology_AS0006.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="images/morphology_AS0006.png" id="fig-morph" class="img-fluid figure-img"></a>
+<a href="images/morphology_AS0006.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4"><img src="images/morphology_AS0006.png" id="fig-morph" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-morph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2
+Figure&nbsp;4
 </figcaption>
 </figure>
 </div>
@@ -435,15 +472,15 @@ Figure&nbsp;2
 </section>
 <section id="activity-1" class="level3">
 <h3 class="anchored" data-anchor-id="activity-1">Activity</h3>
-<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data_act <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"notebooks/LCMS/data_processed/final_data.rds"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mean_act_120h_IL6_0<span class="fl">.001</span> <span class="ot">&lt;-</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  data_act[treatment <span class="sc">==</span> <span class="st">"0.01 ng/ml IL-6"</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>           <span class="sc">&amp;</span> time_incubation <span class="sc">==</span> <span class="fl">0.5</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>           <span class="sc">&amp;</span> time_treatment <span class="sc">==</span> <span class="dv">120</span>, <span class="fu">mean</span>(mean_relative_amount)]</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>mean_act_120h_IL6_0<span class="fl">.001</span> <span class="ot">&lt;-</span> <span class="fu">round</span>(mean_act_120h_IL6_0<span class="fl">.001</span>, <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data_act <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"notebooks/LCMS/data_processed/final_data.rds"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>mean_act_120h_IL6_0<span class="fl">.001</span> <span class="ot">&lt;-</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  data_act[treatment <span class="sc">==</span> <span class="st">"0.01 ng/ml IL-6"</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>           <span class="sc">&amp;</span> time_incubation <span class="sc">==</span> <span class="fl">0.5</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>           <span class="sc">&amp;</span> time_treatment <span class="sc">==</span> <span class="dv">120</span>, <span class="fu">mean</span>(mean_relative_amount)]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>mean_act_120h_IL6_0<span class="fl">.001</span> <span class="ot">&lt;-</span> <span class="fu">round</span>(mean_act_120h_IL6_0<span class="fl">.001</span>, <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <p>We see a marked decrease in 3A4 activity with high concentrations of IL-6, which corresponds well with the litterature. At lower concentrations we see a much more modest decrease in activity with an activity of 86% relative to vehicle control</p>
 <p>Consider looking into outliers in 120 hour 0.01 ng-IL1B, and 120 hour 0.1 ng-IL6.</p>
@@ -507,6 +544,8 @@ Figure&nbsp;2
 <div class="hidden" aria-hidden="true">
 <span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1: Note that the concentration of ATP of donor one on day 5 was to high. Data for this donor/day not trustworthy/viability to high. This yields a steep fall from day 5 to 7</span>
 <span class="glightbox-desc lightbox-desc-2">Figure&nbsp;2: </span>
+<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;3: Note that the concentration of ATP of donor one on day 5 was to high. Data for this donor/day not trustworthy/viability to high</span>
+<span class="glightbox-desc lightbox-desc-4">Figure&nbsp;4: </span>
 </div>
 </section>
 
@@ -897,7 +936,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","loop":false,"selector":".lightbox","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

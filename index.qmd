@@ -123,9 +123,13 @@ Mean relative viability is seen in @fig-viability-relative-overall.
 
 {{< embed notebooks/viability/Viability.qmd#fig-viability-relative-overall >}}
 
-The individual viability for each donor is seen in
+The individual viability for each donor is seen in @fig-donor-viabilities
 
-Absolute overall viability is seen in
+{{< embed notebooks/viability/Viability.qmd#fig-donor-viabilities >}}
+
+Absolute overall viability is seen in @fig-viability-absolute-overall
+
+{{< embed notebooks/viability/Viability.qmd#fig-viability-absolute-overall >}}
 
 Morphology of the spheroids over time is seen in @fig-morph
 

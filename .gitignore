@@ -22,5 +22,5 @@
 /notebooks/qPCR/data_raw/
 /notebooks/qPCR/data_cleaned/
 /notebooks/qPCR/data_processed/
-
+/notebooks/qPCR/old_qPCR_import/
 /notebooks/proteomics/

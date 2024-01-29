@@ -137,6 +137,10 @@ Morphology of the spheroids over time is seen in @fig-morph
 
 ### mRNA
 
+{{< embed notebooks/qPCR/mRNA.qmd#fig-mrna-3a4-il6 >}}
+
+{{< embed notebooks/qPCR/mRNA.qmd#fig-mrna-120hours >}}
+
 ### Activity
 
 ```{r}

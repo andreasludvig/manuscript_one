@@ -1,8 +1,11 @@
 project:
   type: manuscript
+  render:
+  - "!notebooks/proteomics/"
+  - "!notebooks/qPCR/old_qPCR_import/"
 
 execute:
-  freeze: auto
+  freeze: false
 
 format:
   html:

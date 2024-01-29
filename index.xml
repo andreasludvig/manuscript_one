@@ -366,6 +366,16 @@ administration</role>
   </sec>
   <sec id="mrna">
     <title>mRNA</title>
+    <fig id="fig-mrna-3a4-il6">
+      <caption><p>Figure 5: Small points are mean of three donors for 72
+      and 120 hours, and two donors for 24 hours</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-qPCR-mRNA-fig-mrna-3a4-il6-output-1.png" />
+    </fig>
+    <fig id="fig-mrna-120hours">
+      <caption><p>Figure 6: Means of each donor for just 120 hours.
+      Donor one had way higher Cq values</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-qPCR-mRNA-fig-mrna-120hours-output-1.png" />
+    </fig>
   </sec>
   <sec id="activity-1">
     <title>Activity</title>
@@ -731,7 +741,7 @@ administration</role>
 </fn-group>
 </back>
 
-<sub-article article-type="notebook" id="nb-12-nb-article">
+<sub-article article-type="notebook" id="nb-8-nb-article">
 <front-stub>
 <title-group>
 <article-title>Manuscript 1</article-title>
@@ -1096,6 +1106,33 @@ groundhog.library(pkgs, groundhog.day)</code>
   </sec>
   <sec id="mrna-nb-article">
     <title>mRNA</title>
+    <sec id="cell-fig-mrna-3a4-il6-nb-article" specific-use="notebook-code">
+    <code language="python">ggplot(data = cyp3A4_IL6, aes(x = treatment, y = time_means, color = factor(time))) +
+  geom_point() +
+  stat_summary(fun = &quot;mean&quot;, geom = &quot;point&quot;, color = &quot;black&quot;, size = 5, alpha = 0.5) +
+  geom_hline(yintercept = 1) +
+  labs(title = &quot;CYP3A4 mRNA expression relative to vehicle control after IL-6 treatment&quot;) +
+  ylab(&quot;Relative mRNA expression&quot;) +
+  xlab(&quot;Treatment&quot;)</code>
+    <sec id="cell-fig-mrna-3a4-il6-output-0-nb-article" specific-use="notebook-output">
+    <fig id="fig-mrna-3a4-il6-nb-article">
+      <caption><p>Figure 5: Small points are mean of three donors for 72
+      and 120 hours, and two donors for 24 hours</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-qPCR-mRNA-fig-mrna-3a4-il6-output-1.png" />
+    </fig>
+    </sec>
+    </sec>
+    <sec id="cell-fig-mrna-120hours-nb-article" specific-use="notebook-code">
+    <code language="python">ggplot(data = cyp3A4_IL6[time == 120], aes(x = treatment, y = bio_group_mean_expression)) +
+  geom_point(aes(color = experiment))</code>
+    <sec id="cell-fig-mrna-120hours-output-0-nb-article" specific-use="notebook-output">
+    <fig id="fig-mrna-120hours-nb-article">
+      <caption><p>Figure 6: Means of each donor for just 120 hours.
+      Donor one had way higher Cq values</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-qPCR-mRNA-fig-mrna-120hours-output-1.png" />
+    </fig>
+    </sec>
+    </sec>
   </sec>
   <sec id="activity-1-nb-article">
     <title>Activity</title>
@@ -1475,30 +1512,17 @@ mean_act_120h_IL6_0.001 &lt;- round(mean_act_120h_IL6_0.001, digits = 2) *100</c
 
 
 </sub-article>
-<sub-article article-type="notebook" id="nb-4-nb-1">
+<sub-article article-type="notebook" id="nb-2-nb-1">
 <front-stub>
-<title-group>
-<article-title>Viability</article-title>
-</title-group>
-<contrib-group>
-<contrib contrib-type="author">
-<name>
-<surname>Svendsen</surname>
-<given-names>Andreas</given-names>
-</name>
-<string-name>Andreas Svendsen</string-name>
-
-</contrib>
-</contrib-group>
 </front-stub>
 
 <body>
-<sec id="viability-nb-1">
-  <title>Viability</title>
+<sec id="lcms-nb-1">
+  <title>LCMS</title>
   <sec id="setup-nb-1">
     <title>Setup</title>
     <sec id="nb-code-cell-1-nb-1" specific-use="notebook-code">
-    <code language="r script">
+    <code language="r script">library(readxl)
 library(data.table)
 library(ggplot2)
 library(patchwork)
@@ -1509,242 +1533,10 @@ library(here)
     </sec>
     </sec>
   </sec>
-  <sec id="load-and-wrangle-data-nb-1">
-    <title>Load and wrangle data</title>
-    <sec id="nb-code-cell-2-nb-1" specific-use="notebook-code">
-    <code language="r script">data &lt;- readRDS(here(&quot;notebooks/viability/data_processed/final_viability.rds&quot;))
-
-# Convert 'day' to a factor
-data[, day := as.factor(day)]
-
-# Calculate the mean ATP for each donor on day 5
-mean_day5 &lt;- data[day == 5, .(mean_ATP_day5 = mean(ATP)), by = .(donor)]
-
-# Merge this back with the main data
-data &lt;- merge(data, mean_day5, by = &quot;donor&quot;)
-
-# Calculate the relative ATP
-data[, relative_ATP := ATP / mean_ATP_day5]
-
-# Calculate the mean relative ATP for each donor and day
-mean_data &lt;- data[, .(mean_relative_ATP = mean(relative_ATP)), by = .(day, donor)]
-
-# Calculate the overall mean across all donors for each day
-overall_mean &lt;- mean_data[, .(overall_mean_ATP = mean(mean_relative_ATP)), by = day]
-    </code>
-    </sec>
-  </sec>
-  <sec id="plotting-nb-1">
-    <title>Plotting</title>
-    <sec id="overall-relative-viability-nb-1">
-      <title>Overall relative viability</title>
-      <sec id="nb-code-cell-3-nb-1" specific-use="notebook-code">
-      <code language="r script"># Plotting
-plot_relative_viability &lt;- 
-ggplot() +
-  geom_point(data = mean_data,
-             mapping = aes(x = day, y = mean_relative_ATP, color = as.factor(donor))) +
-  geom_point(data = overall_mean,
-             mapping = aes(x = day, y = overall_mean_ATP),
-             size = 5,
-             alpha = 0.5) +
-  labs(title = &quot;Mean ATP Relative to Day 5 Across Donors&quot;,
-       x = &quot;Day&quot;,
-       y = &quot;Mean Relative ATP&quot;) +
-  scale_y_continuous(
-    name = &quot;Relative viability&quot;,
-    limits = c(0, NA)
-  )
-      </code>
-      </sec>
-      <sec id="cell-fig-viability-relative-overall-nb-1" specific-use="notebook-code">
-      <code language="r script">plot_relative_viability
-      </code>
-      <fig id="fig-viability-relative-overall-nb-1">
-        <caption><p>Note that the concentration of ATP of donor one on
-        day 5 was to high. Data for this donor/day not
-        trustworthy/viability to high. This yields a steep fall from day
-        5 to 7</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="Viability_files/figure-jats/fig-viability-relative-overall-1.png" />
-      </fig>
-      </sec>
-    </sec>
-    <sec id="overall-absolute-viability-nb-1">
-      <title>Overall absolute viability</title>
-      <sec id="nb-code-cell-4-nb-1" specific-use="notebook-code">
-      <code language="r script">data &lt;- readRDS(here(&quot;notebooks/viability/data_processed/final_viability.rds&quot;))
-
-mean_ATP &lt;- data[, mean(ATP, na.rm = TRUE), by = .(day, donor)]
-
-plot_absolute_viability &lt;- 
-ggplot() +
-  geom_point(
-    data = mean_ATP,
-    mapping = aes(
-      x = day,
-      y = V1,
-      color = as.factor(donor)
-    )
-  ) +
-  labs(title = &quot;Absolute ATP content&quot;,
-       x = &quot;Day&quot;,
-       y = &quot;ATP content (pmol/spheroid&quot;) +
-  scale_y_continuous(limits = c(0, NA))
-      </code>
-      </sec>
-      <sec id="cell-fig-viability-absolute-overall-nb-1" specific-use="notebook-code">
-      <code language="r script">#|
-plot_absolute_viability
-      </code>
-      <fig id="fig-viability-absolute-overall-nb-1">
-        <caption><p>Note that the concentration of ATP of donor one on
-        day 5 was to high. Data for this donor/day not
-        trustworthy/viability to high</p></caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="Viability_files/figure-jats/fig-viability-absolute-overall-1.png" />
-      </fig>
-      </sec>
-    </sec>
-    <sec id="plot-individual-donors-nb-1">
-      <title>Plot individual donors</title>
-      <sec id="nb-code-cell-5-nb-1" specific-use="notebook-code">
-      <code language="r script"># Load data ---------------------------------------------------------------
-data &lt;- readRDS(here(&quot;notebooks/viability/data_processed/final_viability.rds&quot;))
-
-
-#### Donor 1 ####
-donor_1 &lt;- data[donor == 1]
-
-donor_1[, mean_ATP := mean(ATP), by = .(day)]
-
-calibrator &lt;- donor_1[day == 5, mean_ATP][1]
-
-donor_1[, relative_ATP := ATP / calibrator]
-
-plot_donor_1 &lt;- 
-ggplot(
-  data = donor_1,
-  aes(
-    x=as.factor(day),
-    y = relative_ATP
-    )
-  ) +
-  geom_point() +
-  stat_summary(fun = mean, color = &quot;red&quot;) +
-  scale_y_continuous(name = &quot;ATP content relative to day 5&quot;, limits = c(0, 1.5))
-
-
-#### Donor 2 ####
-donor_2 &lt;- data[donor == 2]
-
-donor_2[, mean_ATP := mean(ATP), by = .(day)]
-
-calibrator &lt;- donor_2[day == 5, mean_ATP][1]
-
-donor_2[, relative_ATP := ATP / calibrator]
-
-plot_donor_2 &lt;- 
-ggplot(
-  data = donor_2,
-  aes(
-    x=as.factor(day),
-    y = relative_ATP
-  )
-) +
-  geom_point() +
-  stat_summary(fun = mean, color = &quot;red&quot;) +
-  scale_y_continuous(limits = c(0, 1.5))
-
-
-#### Donor 3 ####
-donor_3 &lt;- data[donor == 3]
-
-donor_3[, mean_ATP := mean(ATP), by = .(day)]
-
-calibrator &lt;- donor_3[day == 5, mean_ATP][1]
-
-donor_3[, relative_ATP := ATP / calibrator]
-
-plot_donor_3 &lt;- 
-ggplot(
-  data = donor_3,
-  aes(
-    x=as.factor(day),
-    y = relative_ATP
-  )
-) +
-  geom_point() +
-  stat_summary(fun = mean, color = &quot;red&quot;)+
-  scale_y_continuous(limits = c(0, 1.5))
-
-
-plot_donor_relative_viability &lt;- 
-  wrap_plots(list(plot_donor_1, plot_donor_2, plot_donor_3)) +
-  plot_annotation(title = &quot;Individual donor viability relative to day 5&quot;)
-
-# ggsave(plot = donor_relative_viability,
-#        filename = here(&quot;notebooks/viability/output/donor_relative_viability.png&quot;))
-      </code>
-      </sec>
-      <sec id="cell-fig-donor-viabilities-nb-1" specific-use="notebook-code">
-      <code language="r script">
-plot_donor_relative_viability
-      </code>
-      <fig id="fig-donor-viabilities-nb-1">
-        <caption><p></p></caption>
-        <graphic id="fig-donor-viabilities-nb-1" mimetype="image" mime-subtype="png" xlink:href="Viability_files/figure-jats/fig-donor-viabilities-1.png" />
-      </fig>
-      <sec id="cell-fig-donor-viabilities-output-0-nb-1" specific-use="notebook-output">
-      <preformat>Warning: Removed 5 rows containing missing values (`geom_segment()`).</preformat>
-      </sec>
-      <sec id="cell-fig-donor-viabilities-output-1-nb-1" specific-use="notebook-output">
-      <preformat>Warning: Removed 6 rows containing missing values (`geom_segment()`).</preformat>
-      </sec>
-      <sec id="cell-fig-donor-viabilities-output-2-nb-1" specific-use="notebook-output">
-      <preformat>Warning: Removed 9 rows containing missing values (`geom_segment()`).</preformat>
-      </sec>
-      </sec>
-      <sec id="nb-code-cell-6-nb-1" specific-use="notebook-code">
-      <code language="r script">rmv &lt;- ls()[-grep(&quot;plot&quot;, ls())]
-rm(list = rmv, rmv)
-      </code>
-      </sec>
-    </sec>
-  </sec>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-8-nb-2">
-<front-stub>
-</front-stub>
-
-<body>
-<sec id="lcms-nb-2">
-  <title>LCMS</title>
-  <sec id="setup-nb-2">
-    <title>Setup</title>
-    <sec id="nb-code-cell-1-nb-2" specific-use="notebook-code">
-    <code language="r script">library(readxl)
-library(data.table)
-library(ggplot2)
-library(patchwork)
-library(here)
-    </code>
-    <sec id="nb-code-cell-1-output-0-nb-2" specific-use="notebook-output">
-    <preformat>here() starts at C:/Users/alosvendsen/Documents/R/manuscript_one</preformat>
-    </sec>
-    </sec>
-  </sec>
-  <sec id="donor-3-as0013b-midazolam-nb-2">
+  <sec id="donor-3-as0013b-midazolam-nb-1">
     <title>Donor 3, AS0013B, Midazolam</title>
     <p><bold>Load data</bold></p>
-    <sec id="nb-code-cell-2-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-2-nb-1" specific-use="notebook-code">
     <code language="r script">
 # Ignore warnings. Just NA's as expected
 data &lt;-
@@ -1769,59 +1561,59 @@ data$metabolite &lt;- metabolite
 setDT(data)
 data &lt;- data[grepl(&quot;AS&quot;, data$sample_name)] # get samples of interest
     </code>
-    <sec id="nb-code-cell-2-output-0-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-0-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I5 / R5C9: got 'Amount'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-1-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-1-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I6 / R6C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-2-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-2-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I18 / R18C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-3-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-3-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I19 / R19C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-4-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-4-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I22 / R22C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-5-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-5-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I211 / R211C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-6-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-6-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I213 / R213C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-7-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-7-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I214 / R214C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-8-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-8-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I215 / R215C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-9-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-9-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I216 / R216C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-10-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-10-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I217 / R217C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-11-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-11-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I219 / R219C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-12-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-12-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I220 / R220C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-13-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-13-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I223 / R223C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-14-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-14-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I227 / R227C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-15-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-15-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I230 / R230C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-2-output-16-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-2-output-16-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I232 / R232C9: got 'NF'</preformat>
     </sec>
     </sec>
-    <sec id="nb-code-cell-3-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-3-nb-1" specific-use="notebook-code">
     <code language="r script">sample_info &lt;- read_excel(here(&quot;notebooks/LCMS/data_raw/AS0013B_sample_info.xlsx&quot;))
 
 tidy_data &lt;- merge.data.table(data, sample_info, by = &quot;sample_name&quot;)
@@ -1848,7 +1640,7 @@ tidy_data &lt;-
                                 )
             ]
     </code>
-    <sec id="nb-code-cell-3-output-0-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-3-output-0-nb-1" specific-use="notebook-output">
     <preformat>Classes 'data.table' and 'data.frame':  180 obs. of  9 variables:
  $ sample_name    : chr  &quot;AS0013B_1&quot; &quot;AS0013B_10&quot; &quot;AS0013B_100&quot; &quot;AS0013B_101&quot; ...
  $ amount         : num  7.3 17.58 18.04 6.55 7.57 ...
@@ -1865,7 +1657,7 @@ tidy_data &lt;-
     </sec>
     <p>Check peak status’ for any amounts below what below/above the
     limit of our standard curve.</p>
-    <sec id="nb-code-cell-4-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-4-nb-1" specific-use="notebook-code">
     <code language="r script"># Check peak status'
 unique(tidy_data$peak_status)
     </code>
@@ -1913,17 +1705,17 @@ tidy_data[!is.na(peak_status)] |&gt; knitr::kable()
         </tbody>
       </table>
     </table-wrap>
-    <sec id="nb-code-cell-4-output-0-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-4-output-0-nb-1" specific-use="notebook-output">
     <preformat>[1] NA             &quot;Response Low&quot;</preformat>
     </sec>
     </sec>
-    <sec id="should-this-be-omitted-it-is-below-the-lowest-point-on-our-standard-curve-but-omitting-it-would-make-the-mean-higher-than-it-really-is-nb-2">
+    <sec id="should-this-be-omitted-it-is-below-the-lowest-point-on-our-standard-curve-but-omitting-it-would-make-the-mean-higher-than-it-really-is-nb-1">
       <title>Should this be omitted? It is below the lowest point on our
       standard curve, but omitting it would make the mean higher, than
       it really is?</title>
       <p><bold>Mean of replicates and activity relative to vehicle
       control</bold></p>
-      <sec id="nb-code-cell-5-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-5-nb-1" specific-use="notebook-code">
       <code language="r script"># Calculate the mean amount of replicates
 tidy_data[, 
           mean_amount := mean(amount, na.rm = TRUE), 
@@ -1947,18 +1739,18 @@ tidy_data[,
       </code>
       </sec>
       <p><bold>Save the data</bold></p>
-      <sec id="nb-code-cell-6-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-6-nb-1" specific-use="notebook-code">
       <code language="r script">saveRDS(tidy_data, file = here(&quot;notebooks/LCMS/data_processed/AS0013.rds&quot;))
       </code>
       </sec>
     </sec>
-    <sec id="plots-nb-2">
+    <sec id="plots-nb-1">
       <title><bold>Plots</bold></title>
-      <sec id="nb-code-cell-7-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-7-nb-1" specific-use="notebook-code">
       <code language="r script">tidy_data &lt;- readRDS(here(&quot;notebooks/LCMS/data_processed/AS0013.rds&quot;))
       </code>
       </sec>
-      <sec id="nb-code-cell-8-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-8-nb-1" specific-use="notebook-code">
       <code language="r script"># Create groups/look up tables for subsetting data
 group_IL6 &lt;- c(&quot;control&quot;, 
                #&quot;medium&quot;, 
@@ -1978,7 +1770,7 @@ group_IL1B &lt;- c(&quot;control&quot;,
       </code>
       </sec>
       <p>IL-6 effect on CYP3A4</p>
-      <sec id="nb-code-cell-9-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-9-nb-1" specific-use="notebook-code">
       <code language="r script">plot_data &lt;- tidy_data[time_incubation == 0.5 &amp;
   treatment %in% group_IL6]
 
@@ -2030,11 +1822,11 @@ act_3A4_IL_6_AS0013
   path = here(&quot;notebooks/LCMS/output&quot;)
   )
       </code>
-      <sec id="nb-code-cell-9-output-0-nb-2" specific-use="notebook-output">
+      <sec id="nb-code-cell-9-output-0-nb-1" specific-use="notebook-output">
       <preformat>Saving 7 x 5 in image</preformat>
       </sec>
       </sec>
-      <sec id="nb-code-cell-10-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-10-nb-1" specific-use="notebook-code">
       <code language="r script">plot_data &lt;- tidy_data[time_incubation == 0.5 &amp;
   treatment %in% group_IL1B]
 
@@ -2086,16 +1878,16 @@ act_3A4_IL_1B_AS0013
   path = here(&quot;notebooks/LCMS/output&quot;)
   )
       </code>
-      <sec id="nb-code-cell-10-output-0-nb-2" specific-use="notebook-output">
+      <sec id="nb-code-cell-10-output-0-nb-1" specific-use="notebook-output">
       <preformat>Saving 7 x 5 in image</preformat>
       </sec>
       </sec>
     </sec>
   </sec>
-  <sec id="donor-2-as0008-midazolam-nb-2">
+  <sec id="donor-2-as0008-midazolam-nb-1">
     <title>Donor 2, AS0008, midazolam</title>
     <p><bold>Load data</bold></p>
-    <sec id="nb-code-cell-11-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-11-nb-1" specific-use="notebook-code">
     <code language="r script">
 # Ignore warnings. Just NA's as expected
 data &lt;-
@@ -2120,77 +1912,77 @@ data$metabolite &lt;- metabolite
 setDT(data)
 data &lt;- data[grepl(&quot;AS&quot;, data$sample_name)] # get samples of interest
     </code>
-    <sec id="nb-code-cell-11-output-0-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-0-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I5 / R5C9: got 'Amount'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-1-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-1-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I24 / R24C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-2-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-2-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I25 / R25C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-3-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-3-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I26 / R26C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-4-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-4-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I27 / R27C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-5-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-5-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I28 / R28C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-6-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-6-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I29 / R29C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-7-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-7-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I30 / R30C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-8-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-8-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I31 / R31C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-9-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-9-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I32 / R32C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-10-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-10-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I33 / R33C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-11-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-11-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I34 / R34C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-12-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-12-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I35 / R35C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-13-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-13-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I36 / R36C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-14-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-14-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I37 / R37C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-15-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-15-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I38 / R38C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-16-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-16-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I79 / R79C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-17-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-17-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I80 / R80C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-18-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-18-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I89 / R89C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-19-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-19-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I90 / R90C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-20-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-20-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I99 / R99C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-21-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-21-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I100 / R100C9: got 'NF'</preformat>
     </sec>
-    <sec id="nb-code-cell-11-output-22-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-11-output-22-nb-1" specific-use="notebook-output">
     <preformat>Warning: Expecting numeric in I161 / R161C9: got 'NF'</preformat>
     </sec>
     </sec>
-    <sec id="nb-code-cell-12-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-12-nb-1" specific-use="notebook-code">
     <code language="r script">sample_info &lt;- read_excel(here(&quot;notebooks/LCMS/data_raw/AS0008_sample_info.xlsx&quot;))
 
 tidy_data &lt;- merge.data.table(data, sample_info, by = &quot;sample_name&quot;)
@@ -2217,7 +2009,7 @@ tidy_data &lt;-
                                 )
             ]
     </code>
-    <sec id="nb-code-cell-12-output-0-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-12-output-0-nb-1" specific-use="notebook-output">
     <preformat>Classes 'data.table' and 'data.frame':  120 obs. of  9 variables:
  $ sample_name    : chr  &quot;AS0008_109&quot; &quot;AS0008_110&quot; &quot;AS0008_111&quot; &quot;AS0008_112&quot; ...
  $ amount         : num  7.71 7.6 7.3 6.63 4.6 ...
@@ -2234,7 +2026,7 @@ tidy_data &lt;-
     </sec>
     <p>Check peak status’ for any amounts below what below/above the
     limit of our standard curve.</p>
-    <sec id="nb-code-cell-13-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-13-nb-1" specific-use="notebook-code">
     <code language="r script"># Check peak status'
 unique(tidy_data$peak_status)
     </code>
@@ -2356,10 +2148,10 @@ remove_samples |&gt; knitr::kable()
     </table-wrap>
     <code language="r script">tidy_data &lt;- tidy_data[!remove_samples, ]
     </code>
-    <sec id="nb-code-cell-13-output-0-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-13-output-0-nb-1" specific-use="notebook-output">
     <preformat>[1] NA             &quot;Response Low&quot; &quot;Not Found&quot;   </preformat>
     </sec>
-    <sec id="nb-code-cell-13-output-1-nb-2" specific-use="notebook-output">
+    <sec id="nb-code-cell-13-output-1-nb-1" specific-use="notebook-output">
     <preformat>   sample_name     amount  peak_status       metabolite donor       treatment
 1:  AS0008_135  0.9118640 Response Low Hydroxymidazolam     2   10 ng/ml IL-6
 2:  AS0008_152         NA    Not Found Hydroxymidazolam     2   1 ng/ml IL-1B
@@ -2382,13 +2174,13 @@ remove_samples |&gt; knitr::kable()
 9:            120             0.5   1</preformat>
     </sec>
     </sec>
-    <sec id="same-as-for-other-donor-should-the-response-low-samples-be-removed-it-is-below-the-lowest-point-on-our-standard-curve-but-omitting-it-would-make-the-mean-higher-than-it-really-is-nb-2">
+    <sec id="same-as-for-other-donor-should-the-response-low-samples-be-removed-it-is-below-the-lowest-point-on-our-standard-curve-but-omitting-it-would-make-the-mean-higher-than-it-really-is-nb-1">
       <title>Same as for other donor, should the response low samples be
       removed? It is below the lowest point on our standard curve, but
       omitting it would make the mean higher, than it really is?</title>
       <p><bold>Mean of replicates and activity relative to vehicle
       control</bold></p>
-      <sec id="nb-code-cell-14-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-14-nb-1" specific-use="notebook-code">
       <code language="r script"># Calculate the mean amount of replicates
 tidy_data[, 
           mean_amount := mean(amount, na.rm = TRUE), 
@@ -2412,18 +2204,18 @@ tidy_data[,
       </code>
       </sec>
       <p><bold>Save the data</bold></p>
-      <sec id="nb-code-cell-15-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-15-nb-1" specific-use="notebook-code">
       <code language="r script">saveRDS(tidy_data, file = here(&quot;notebooks/LCMS/data_processed/AS0008.rds&quot;))
       </code>
       </sec>
     </sec>
-    <sec id="plots-1-nb-2">
+    <sec id="plots-1-nb-1">
       <title><bold>Plots</bold></title>
-      <sec id="nb-code-cell-16-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-16-nb-1" specific-use="notebook-code">
       <code language="r script">tidy_data &lt;- readRDS(here(&quot;notebooks/LCMS/data_processed/AS0008.rds&quot;))
       </code>
       </sec>
-      <sec id="nb-code-cell-17-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-17-nb-1" specific-use="notebook-code">
       <code language="r script"># Create groups/look up tables for subsetting data
 group_IL6 &lt;- c(&quot;control&quot;, 
                #&quot;medium&quot;, 
@@ -2442,7 +2234,7 @@ group_IL1B &lt;- c(&quot;control&quot;,
                 )
       </code>
       </sec>
-      <sec id="nb-code-cell-18-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-18-nb-1" specific-use="notebook-code">
       <code language="r script">plot_data &lt;- tidy_data[time_incubation == 0.5 &amp;
   treatment %in% group_IL6]
 
@@ -2494,11 +2286,11 @@ act_3A4_IL_6_AS008
   path = here(&quot;notebooks/LCMS/output&quot;)
   )
       </code>
-      <sec id="nb-code-cell-18-output-0-nb-2" specific-use="notebook-output">
+      <sec id="nb-code-cell-18-output-0-nb-1" specific-use="notebook-output">
       <preformat>Saving 7 x 5 in image</preformat>
       </sec>
       </sec>
-      <sec id="nb-code-cell-19-nb-2" specific-use="notebook-code">
+      <sec id="nb-code-cell-19-nb-1" specific-use="notebook-code">
       <code language="r script">plot_data &lt;- tidy_data[time_incubation == 0.5 &amp;
   treatment %in% group_IL1B]
 
@@ -2550,15 +2342,15 @@ act_3A4_IL_1B_AS008
   path = here(&quot;notebooks/LCMS/output&quot;)
   )
       </code>
-      <sec id="nb-code-cell-19-output-0-nb-2" specific-use="notebook-output">
+      <sec id="nb-code-cell-19-output-0-nb-1" specific-use="notebook-output">
       <preformat>Saving 7 x 5 in image</preformat>
       </sec>
       </sec>
     </sec>
   </sec>
-  <sec id="combine-and-save-final-dataframe-nb-2">
+  <sec id="combine-and-save-final-dataframe-nb-1">
     <title>Combine and save final dataframe</title>
-    <sec id="nb-code-cell-20-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-20-nb-1" specific-use="notebook-code">
     <code language="r script">files &lt;- fs::dir_ls(here(&quot;notebooks/LCMS/data_processed&quot;), regexp = &quot;AS&quot;)
 
 data &lt;- lapply(files, readRDS)
@@ -2570,14 +2362,14 @@ saveRDS(final_data, file = here(&quot;notebooks/LCMS/data_processed/final_data.r
     </code>
     </sec>
   </sec>
-  <sec id="main-plots-nb-2">
+  <sec id="main-plots-nb-1">
     <title>Main plots</title>
     <p>load data</p>
-    <sec id="nb-code-cell-21-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-21-nb-1" specific-use="notebook-code">
     <code language="r script">data &lt;- readRDS(here(&quot;notebooks/LCMS/data_processed/final_data.rds&quot;))
     </code>
     </sec>
-    <sec id="nb-code-cell-22-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-22-nb-1" specific-use="notebook-code">
     <code language="r script"># Create groups/look up tables for subsetting data
 group_IL6 &lt;- c(&quot;control&quot;, 
                #&quot;medium&quot;, 
@@ -2597,7 +2389,7 @@ group_IL1B &lt;- c(&quot;control&quot;,
     </code>
     </sec>
     <p>IL-6</p>
-    <sec id="nb-code-cell-23-nb-2" specific-use="notebook-code">
+    <sec id="nb-code-cell-23-nb-1" specific-use="notebook-code">
     <code language="r script">plot_data_IL6 &lt;- data[time_incubation == 0.5 
                       &amp; treatment %in% group_IL6
                       &amp; time_treatment != 24]
@@ -2621,19 +2413,19 @@ act_3A4_IL6 &lt;- ggplot(data = plot_data_IL6) +
   scale_y_continuous(limits = c(0, NA))
     </code>
     </sec>
-    <sec id="cell-fig-act-cyp3A4-IL6-nb-2" specific-use="notebook-code">
+    <sec id="cell-fig-act-cyp3A4-IL6-nb-1" specific-use="notebook-code">
     <code language="r script">
 act_3A4_IL6
     </code>
-    <fig id="fig-act-cyp3A4-IL6-nb-2">
+    <fig id="fig-act-cyp3A4-IL6-nb-1">
       <caption><p></p></caption>
-      <graphic id="fig-act-cyp3A4-IL6-nb-2" mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/fig-act-cyp3A4-IL6-1.png" />
+      <graphic id="fig-act-cyp3A4-IL6-nb-1" mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/fig-act-cyp3A4-IL6-1.png" />
     </fig>
     </sec>
     <p>CONSIDER REMOVING THE OUTLIER IN 120 hour IL-6 and IL1B. See the
     individual plots above.</p>
     <p>IL-1B</p>
-    <sec id="cell-fig-act-cyp3A4-IL1B-nb-2" specific-use="notebook-code">
+    <sec id="cell-fig-act-cyp3A4-IL1B-nb-1" specific-use="notebook-code">
     <code language="r script">
 plot_data_I1B &lt;- data[time_incubation == 0.5 
                       &amp; treatment %in% group_IL1B
@@ -2657,14 +2449,516 @@ ggplot(data = plot_data_I1B) +
   ylab(&quot;Relative activity&quot;)  +
   scale_y_continuous(limits = c(0, NA))
     </code>
-    <fig id="fig-act-cyp3A4-IL1B-nb-2">
+    <fig id="fig-act-cyp3A4-IL1B-nb-1">
       <caption><p></p></caption>
-      <graphic id="fig-act-cyp3A4-IL1B-nb-2" mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/fig-act-cyp3A4-IL1B-1.png" />
+      <graphic id="fig-act-cyp3A4-IL1B-nb-1" mimetype="image" mime-subtype="png" xlink:href="LCMS_files/figure-jats/fig-act-cyp3A4-IL1B-1.png" />
     </fig>
     </sec>
   </sec>
-  <sec id="ec50-nb-2">
+  <sec id="ec50-nb-1">
     <title>EC50</title>
+  </sec>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-4-nb-2">
+<front-stub>
+<title-group>
+<article-title>mRNA</article-title>
+</title-group>
+</front-stub>
+
+<body>
+<p>All data manipulation was done before the start of this quarto
+manuscript project. Code is in: C:/Users/alosvendsen/OneDrive - Syddansk
+Universitet/PhD/R_code/manuscript_1 And copied to this project:
+/notebooks/qPCR/old_qPCR_import</p>
+<p>Donor 1: timepoints = 72 and 120 hours Donor 2: timepoints = 24, 72,
+and 120 hours Donor 2: timepoints = 24, 72, and 120 hours</p>
+<sec id="setup-nb-2">
+  <title>Setup</title>
+  <sec id="nb-code-cell-1-nb-2" specific-use="notebook-code">
+  <code language="r script">
+groundhog.date &lt;- &quot;2024-01-01&quot;
+groundhog::meta.groundhog(date = groundhog.date)
+  </code>
+  <code language="r script">
+pckgs &lt;- c(&quot;here&quot;,
+           &quot;data.table&quot;,
+           &quot;ggplot2&quot;)
+
+groundhog.library(pkg = pckgs, date = groundhog.date)
+  </code>
+  <code language="r script">
+source(here(&quot;notebooks/qPCR/custom_functions.R&quot;))
+  </code>
+  <sec id="nb-code-cell-1-output-0-nb-2" specific-use="notebook-output">
+  <preformat>[1;36mNow using 'groundhog_3.1.2'.[0m</preformat>
+  </sec>
+  <sec id="nb-code-cell-1-output-1-nb-2" specific-use="notebook-output">
+  <preformat>here() starts at C:/Users/alosvendsen/Documents/R/manuscript_one</preformat>
+  </sec>
+  <sec id="nb-code-cell-1-output-2-nb-2" specific-use="notebook-output">
+  <preformat>[36mSuccessfully attached 'here_1.0.1'[0m</preformat>
+  </sec>
+  <sec id="nb-code-cell-1-output-3-nb-2" specific-use="notebook-output">
+  <preformat>[36mSuccessfully attached 'data.table_1.14.10'[0m</preformat>
+  </sec>
+  <sec id="nb-code-cell-1-output-4-nb-2" specific-use="notebook-output">
+  <preformat>[36mSuccessfully attached 'ggplot2_3.4.4'[0m</preformat>
+  </sec>
+  </sec>
+</sec>
+<sec id="finalize-the-data-and-save-the-data-table-nb-2">
+  <title>Finalize the data and save the data table</title>
+  <sec id="load-data-remove-0.001-ngml-cytokine-concentrations-calculate-means-for-each-experiment.-nb-2">
+    <title>Load data, remove 0.001 ng/ml cytokine concentrations,
+    calculate means for each experiment.</title>
+    <sec id="nb-code-cell-2-nb-2" specific-use="notebook-code">
+    <code language="r script">#### Load data, filter data and calculate geometric means
+data &lt;- readRDS(here(&quot;notebooks/qPCR/data_processed/final_dataframe.rds&quot;))
+
+# Remove the lowest concentrations of cytokines, since not used in all 
+# Experiments. Note 24 hour time points was only used in one experiment
+plot_data &lt;- data[!treatment %chin% c(&quot;0.001 ng/ml IL-1B&quot;, &quot;0.001 ng/ml IL-6&quot;)]
+
+
+# Calculate the mean expression grouped by experiment, condition, treatment, and time. USE GEOMETRIC MEAN when averaging normalized expression (RQ) values. 
+plot_data[,
+          bio_group_mean_expression := geometric_mean(normalized_expression),
+          by = .(experiment, condition, treatment, time, target)
+          ]
+
+# Save the data
+saveRDS(plot_data, here(&quot;notebooks/qPCR/data_final_for_plotting/plot_data.rds&quot;))
+    </code>
+    </sec>
+    <sec id="nb-code-cell-3-nb-2" specific-use="notebook-code">
+    <code language="r script">rmv &lt;- ls()[!grepl(x =ls(), pattern = &quot;geometric&quot;)]
+
+rm(list = rmv)
+    </code>
+    </sec>
+  </sec>
+</sec>
+<sec id="plots-nb-2">
+  <title>Plots</title>
+  <sec id="nb-code-cell-4-nb-2" specific-use="notebook-code">
+  <code language="r script">plot_data &lt;- readRDS(here(&quot;notebooks/qPCR/data_final_for_plotting/plot_data.rds&quot;))
+  </code>
+  </sec>
+  <sec id="a4-il-6-nb-2">
+    <title>3A4 IL-6</title>
+    <sec id="nb-code-cell-5-nb-2" specific-use="notebook-code">
+    <code language="r script"># Subset for 3A4 and IL-6
+cyp3A4_IL6 &lt;- plot_data[treatment != &quot;0.0001% BSA&quot; &amp; condition == &quot;IL-6&quot; &amp; target == &quot;CYP3A4&quot;]
+cyp3A4_IL6[,
+           time_means := geometric_mean(bio_group_mean_expression),
+           by = .(treatment, time)
+           ]
+    </code>
+    </sec>
+    <sec id="cell-fig-mrna-3a4-il6-nb-2" specific-use="notebook-code">
+    <code language="r script">
+ggplot(data = cyp3A4_IL6, aes(x = treatment, y = time_means, color = factor(time))) +
+  geom_point() +
+  stat_summary(fun = &quot;mean&quot;, geom = &quot;point&quot;, color = &quot;black&quot;, size = 5, alpha = 0.5) +
+  geom_hline(yintercept = 1) +
+  labs(title = &quot;CYP3A4 mRNA expression relative to vehicle control after IL-6 treatment&quot;) +
+  ylab(&quot;Relative mRNA expression&quot;) +
+  xlab(&quot;Treatment&quot;)
+    </code>
+    <fig id="fig-mrna-3a4-il6-nb-2">
+      <caption><p>Small points are mean of three donors for 72 and 120
+      hours, and two donors for 24 hours</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="mRNA_files/figure-jats/fig-mrna-3a4-il6-1.png" />
+    </fig>
+    </sec>
+    <sec id="cell-fig-mrna-120hours-nb-2" specific-use="notebook-code">
+    <code language="r script">
+ggplot(data = cyp3A4_IL6[time == 120], aes(x = treatment, y = bio_group_mean_expression)) +
+  geom_point(aes(color = experiment))
+    </code>
+    <fig id="fig-mrna-120hours-nb-2">
+      <caption><p>Means of each donor for just 120 hours. Donor one had
+      way higher Cq values</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="mRNA_files/figure-jats/fig-mrna-120hours-1.png" />
+    </fig>
+    </sec>
+    <sec id="nb-code-cell-6-nb-2" specific-use="notebook-code">
+    <code language="r script"># #### Load data, filter data and calculate geometric means
+# data &lt;- readRDS(here(&quot;notebooks/qPCR/data_processed/final_dataframe.rds&quot;))
+# 
+# # Remove the lowest concentrations of cytokines, since not used in all
+# # Experiments. Note 24 hour time points was only used in one experiment
+# plotting_data &lt;- data[!treatment %chin% c(&quot;0.001 ng/ml IL-1B&quot;, &quot;0.001 ng/ml IL-6&quot;)]
+# 
+# 
+# # Calculate the mean expression grouped by experiment, condition, treatment, and time. USE GEOMETRIC MEAN when averaging normalized expression (RQ) values.
+# plotting_data[, bio_group_mean_expression := geometric_mean(normalized_expression), by = .(experiment, condition, treatment, time, target)]
+# 
+# # Subset for 3A4 and IL-6
+# plotting_data_1B &lt;- plotting_data[treatment != &quot;0.0001% BSA&quot; &amp; condition == &quot;IL-1B&quot; &amp; target == &quot;CYP3A4&quot;]
+# 
+# plotting_data_1B[, time_means := geometric_mean(bio_group_mean_expression), by = .(treatment, time)]
+# 
+# 
+# ggplot(data = plotting_data_1B, aes(x = treatment, y = time_means, color = factor(time))) +
+#   geom_point() +
+#   stat_summary(fun = &quot;mean&quot;, geom = &quot;point&quot;, color = &quot;black&quot;, size = 5, alpha = 0.5) +
+#   geom_hline(yintercept = 1) +
+#   labs(title = &quot;CYP3A4 mRNA expression relative to vehicle control after IL-1B treatment&quot;) +
+#   ylab(&quot;Relative mRNA expression&quot;) +
+#   xlab(&quot;Treatment&quot;)
+    </code>
+    </sec>
+    <sec id="nb-code-cell-7-nb-2" specific-use="notebook-code">
+    <code language="r script"># # Create base plot. Set data = Null, to assign the data later.
+# base_plot &lt;-
+#   ggplot(
+#     data = NULL,
+#     mapping = aes(
+#       x = treatment,
+#       y = mean_expression,
+#       color = factor(time),
+#       fill = factor(time)
+#     )
+#   ) +
+#   geom_point(shape = 21, 
+#              size = 3, 
+#              color = &quot;black&quot;, 
+#              alpha = 0.6,
+#              stroke = 1.5
+#              ) +
+#   scale_fill_viridis_d() +
+#   stat_summary(
+#     fun = geometric_mean,
+#     na.rm = TRUE, 
+#     color = &quot;black&quot;,
+#     alpha = 0.5,
+#     size = 1.75
+#   ) +
+#   geom_hline(yintercept = 1) +
+#   theme_bw() +
+#   theme(axis.text = element_text(size = 15),
+#         axis.text.x = element_text(angle = 45, hjust = 1),
+#         strip.text = element_text(size = 15),
+#         axis.title.x  = element_text(size = 20, margin = margin(t = 20)),
+#         axis.title.y = element_text(size = 20, margin = margin(r = 20))
+#         )
+# 
+# # Filter data for the first condition (e.g., &quot;IL-6&quot;)
+# data_3A4_condition1 &lt;- data_3A4[condition == &quot;IL-6&quot; &amp; !treatment == &quot;0.001 ng/ml IL-6&quot;, ]
+# base_plot$data &lt;- data_3A4_condition1
+# base_plot
+# plot_3A4 &lt;- base_plot
+    </code>
+    </sec>
+    <sec id="nb-code-cell-8-nb-2" specific-use="notebook-code">
+    <code language="r script"># # Filter data for the first condition (e.g., &quot;IL-6&quot;)
+# data_3A4_condition1 &lt;- data_3A4[condition == &quot;IL-6&quot;, ]
+# 
+# # Plot for the first condition
+# ggplot(data_3A4_condition1, aes(x = treatment, y = mean_expression, color = factor(time))) +
+#   geom_point() +
+#   theme_bw() +
+#   labs(title = &quot;Condition: IL-6&quot;,
+#        x = &quot;Treatment&quot;,
+#        y = &quot;Mean Expression&quot;,
+#        color = &quot;Time (hours)&quot;) +
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+# ```
+# 
+# ```{r}
+# # Filter for CYP enzymes only
+# cyp_data &lt;- data[target %like% &quot;CYP&quot;]
+# 
+# # Split data based on condition
+# cyp_data_IL6 &lt;- cyp_data[condition == &quot;IL-6&quot;]
+# cyp_data_IL1B &lt;- cyp_data[condition == &quot;IL-1B&quot;]
+# 
+# # Define a function to create the plot
+# create_plot &lt;- function(cyp_data) {
+#   # Calculate mean normalized expression for each combination of CYP enzyme, treatment, and experiment
+#   cyp_means &lt;- cyp_data[, .(mean_normalized_expression = mean(normalized_expression)), 
+#                         by = .(experiment, treatment, target, time)]
+# 
+#   # Calculate the overall mean across experiments
+#   cyp_overall_means &lt;- cyp_means[, .(overall_mean_normalized_expression = mean(mean_normalized_expression)), 
+#                                  by = .(treatment, target, time)]
+# 
+#   # Create and return the plot
+#   ggplot() +
+#     geom_point(data = cyp_means, aes(x = treatment, y = mean_normalized_expression, color = target), alpha = 0.5) +
+#     geom_point(data = cyp_overall_means, aes(x = treatment, y = overall_mean_normalized_expression), 
+#                color = &quot;black&quot;, size = 3, shape = 18) +
+#     facet_wrap(~ target + time, ncol = 3) +
+#     labs(x = &quot;Treatment&quot;, y = &quot;Mean Normalized Expression&quot;) +
+#     theme_minimal() +
+#     theme(axis.text.x = element_text(angle = 45, hjust = 1))
+# }
+# 
+# # Create plots
+# plot_IL6 &lt;- create_plot(cyp_data_IL6)
+# plot_IL1B &lt;- create_plot(cyp_data_IL1B)
+# 
+# # You can now view, save, or further manipulate these plots:
+# plot_IL6
+# plot_IL1B
+    </code>
+    </sec>
+  </sec>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-6-nb-3">
+<front-stub>
+<title-group>
+<article-title>Viability</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Svendsen</surname>
+<given-names>Andreas</given-names>
+</name>
+<string-name>Andreas Svendsen</string-name>
+
+</contrib>
+</contrib-group>
+</front-stub>
+
+<body>
+<sec id="viability-nb-3">
+  <title>Viability</title>
+  <sec id="setup-nb-3">
+    <title>Setup</title>
+    <sec id="nb-code-cell-1-nb-3" specific-use="notebook-code">
+    <code language="r script">
+library(data.table)
+library(ggplot2)
+library(patchwork)
+library(here)
+    </code>
+    <sec id="nb-code-cell-1-output-0-nb-3" specific-use="notebook-output">
+    <preformat>here() starts at C:/Users/alosvendsen/Documents/R/manuscript_one</preformat>
+    </sec>
+    </sec>
+  </sec>
+  <sec id="load-and-wrangle-data-nb-3">
+    <title>Load and wrangle data</title>
+    <sec id="nb-code-cell-2-nb-3" specific-use="notebook-code">
+    <code language="r script">data &lt;- readRDS(here(&quot;notebooks/viability/data_processed/final_viability.rds&quot;))
+
+# Convert 'day' to a factor
+data[, day := as.factor(day)]
+
+# Calculate the mean ATP for each donor on day 5
+mean_day5 &lt;- data[day == 5, .(mean_ATP_day5 = mean(ATP)), by = .(donor)]
+
+# Merge this back with the main data
+data &lt;- merge(data, mean_day5, by = &quot;donor&quot;)
+
+# Calculate the relative ATP
+data[, relative_ATP := ATP / mean_ATP_day5]
+
+# Calculate the mean relative ATP for each donor and day
+mean_data &lt;- data[, .(mean_relative_ATP = mean(relative_ATP)), by = .(day, donor)]
+
+# Calculate the overall mean across all donors for each day
+overall_mean &lt;- mean_data[, .(overall_mean_ATP = mean(mean_relative_ATP)), by = day]
+    </code>
+    </sec>
+  </sec>
+  <sec id="plotting-nb-3">
+    <title>Plotting</title>
+    <sec id="overall-relative-viability-nb-3">
+      <title>Overall relative viability</title>
+      <sec id="nb-code-cell-3-nb-3" specific-use="notebook-code">
+      <code language="r script"># Plotting
+plot_relative_viability &lt;- 
+ggplot() +
+  geom_point(data = mean_data,
+             mapping = aes(x = day, y = mean_relative_ATP, color = as.factor(donor))) +
+  geom_point(data = overall_mean,
+             mapping = aes(x = day, y = overall_mean_ATP),
+             size = 5,
+             alpha = 0.5) +
+  labs(title = &quot;Mean ATP Relative to Day 5 Across Donors&quot;,
+       x = &quot;Day&quot;,
+       y = &quot;Mean Relative ATP&quot;) +
+  scale_y_continuous(
+    name = &quot;Relative viability&quot;,
+    limits = c(0, NA)
+  )
+      </code>
+      </sec>
+      <sec id="cell-fig-viability-relative-overall-nb-3" specific-use="notebook-code">
+      <code language="r script">plot_relative_viability
+      </code>
+      <fig id="fig-viability-relative-overall-nb-3">
+        <caption><p>Note that the concentration of ATP of donor one on
+        day 5 was to high. Data for this donor/day not
+        trustworthy/viability to high. This yields a steep fall from day
+        5 to 7</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="Viability_files/figure-jats/fig-viability-relative-overall-1.png" />
+      </fig>
+      </sec>
+    </sec>
+    <sec id="overall-absolute-viability-nb-3">
+      <title>Overall absolute viability</title>
+      <sec id="nb-code-cell-4-nb-3" specific-use="notebook-code">
+      <code language="r script">data &lt;- readRDS(here(&quot;notebooks/viability/data_processed/final_viability.rds&quot;))
+
+mean_ATP &lt;- data[, mean(ATP, na.rm = TRUE), by = .(day, donor)]
+
+plot_absolute_viability &lt;- 
+ggplot() +
+  geom_point(
+    data = mean_ATP,
+    mapping = aes(
+      x = day,
+      y = V1,
+      color = as.factor(donor)
+    )
+  ) +
+  labs(title = &quot;Absolute ATP content&quot;,
+       x = &quot;Day&quot;,
+       y = &quot;ATP content (pmol/spheroid&quot;) +
+  scale_y_continuous(limits = c(0, NA))
+      </code>
+      </sec>
+      <sec id="cell-fig-viability-absolute-overall-nb-3" specific-use="notebook-code">
+      <code language="r script">#|
+plot_absolute_viability
+      </code>
+      <fig id="fig-viability-absolute-overall-nb-3">
+        <caption><p>Note that the concentration of ATP of donor one on
+        day 5 was to high. Data for this donor/day not
+        trustworthy/viability to high</p></caption>
+        <graphic mimetype="image" mime-subtype="png" xlink:href="Viability_files/figure-jats/fig-viability-absolute-overall-1.png" />
+      </fig>
+      </sec>
+    </sec>
+    <sec id="plot-individual-donors-nb-3">
+      <title>Plot individual donors</title>
+      <sec id="nb-code-cell-5-nb-3" specific-use="notebook-code">
+      <code language="r script"># Load data ---------------------------------------------------------------
+data &lt;- readRDS(here(&quot;notebooks/viability/data_processed/final_viability.rds&quot;))
+
+
+#### Donor 1 ####
+donor_1 &lt;- data[donor == 1]
+
+donor_1[, mean_ATP := mean(ATP), by = .(day)]
+
+calibrator &lt;- donor_1[day == 5, mean_ATP][1]
+
+donor_1[, relative_ATP := ATP / calibrator]
+
+plot_donor_1 &lt;- 
+ggplot(
+  data = donor_1,
+  aes(
+    x=as.factor(day),
+    y = relative_ATP
+    )
+  ) +
+  geom_point() +
+  stat_summary(fun = mean, color = &quot;red&quot;) +
+  scale_y_continuous(name = &quot;ATP content relative to day 5&quot;, limits = c(0, 1.5))
+
+
+#### Donor 2 ####
+donor_2 &lt;- data[donor == 2]
+
+donor_2[, mean_ATP := mean(ATP), by = .(day)]
+
+calibrator &lt;- donor_2[day == 5, mean_ATP][1]
+
+donor_2[, relative_ATP := ATP / calibrator]
+
+plot_donor_2 &lt;- 
+ggplot(
+  data = donor_2,
+  aes(
+    x=as.factor(day),
+    y = relative_ATP
+  )
+) +
+  geom_point() +
+  stat_summary(fun = mean, color = &quot;red&quot;) +
+  scale_y_continuous(limits = c(0, 1.5))
+
+
+#### Donor 3 ####
+donor_3 &lt;- data[donor == 3]
+
+donor_3[, mean_ATP := mean(ATP), by = .(day)]
+
+calibrator &lt;- donor_3[day == 5, mean_ATP][1]
+
+donor_3[, relative_ATP := ATP / calibrator]
+
+plot_donor_3 &lt;- 
+ggplot(
+  data = donor_3,
+  aes(
+    x=as.factor(day),
+    y = relative_ATP
+  )
+) +
+  geom_point() +
+  stat_summary(fun = mean, color = &quot;red&quot;)+
+  scale_y_continuous(limits = c(0, 1.5))
+
+
+plot_donor_relative_viability &lt;- 
+  wrap_plots(list(plot_donor_1, plot_donor_2, plot_donor_3)) +
+  plot_annotation(title = &quot;Individual donor viability relative to day 5&quot;)
+
+# ggsave(plot = donor_relative_viability,
+#        filename = here(&quot;notebooks/viability/output/donor_relative_viability.png&quot;))
+      </code>
+      </sec>
+      <sec id="cell-fig-donor-viabilities-nb-3" specific-use="notebook-code">
+      <code language="r script">
+plot_donor_relative_viability
+      </code>
+      <fig id="fig-donor-viabilities-nb-3">
+        <caption><p></p></caption>
+        <graphic id="fig-donor-viabilities-nb-3" mimetype="image" mime-subtype="png" xlink:href="Viability_files/figure-jats/fig-donor-viabilities-1.png" />
+      </fig>
+      <sec id="cell-fig-donor-viabilities-output-0-nb-3" specific-use="notebook-output">
+      <preformat>Warning: Removed 5 rows containing missing values (`geom_segment()`).</preformat>
+      </sec>
+      <sec id="cell-fig-donor-viabilities-output-1-nb-3" specific-use="notebook-output">
+      <preformat>Warning: Removed 6 rows containing missing values (`geom_segment()`).</preformat>
+      </sec>
+      <sec id="cell-fig-donor-viabilities-output-2-nb-3" specific-use="notebook-output">
+      <preformat>Warning: Removed 9 rows containing missing values (`geom_segment()`).</preformat>
+      </sec>
+      </sec>
+      <sec id="nb-code-cell-6-nb-3" specific-use="notebook-code">
+      <code language="r script">rmv &lt;- ls()[-grep(&quot;plot&quot;, ls())]
+rm(list = rmv, rmv)
+      </code>
+      </sec>
+    </sec>
   </sec>
 </sec>
 </body>

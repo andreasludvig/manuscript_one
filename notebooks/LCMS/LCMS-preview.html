@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.5.4">
+    <meta name="generator" content="quarto-1.4.539">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -128,7 +128,7 @@
             // if location was not changed in 100 ms, then there is no history back
             if(currentUrl === window.location.href){              
                 // redirect to site root
-                window.location.href = "../../index.html";
+                window.location.href = ".....html";
             }
         }, 100);
       }
@@ -194,7 +194,7 @@
   </ul>
 </nav>
 </div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      <section id="lcms" class="level1">
 <h1>LCMS</h1>
@@ -1080,7 +1080,7 @@
 <div id="fig-act-cyp3A4-IL6" class="quarto-figure quarto-figure-center quarto-float anchored" width="960">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-act-cyp3A4-IL6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="LCMS_files/figure-html/fig-act-cyp3A4-IL6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5"><img src="LCMS_files/figure-html/fig-act-cyp3A4-IL6-1.png" id="fig-act-cyp3A4-IL6" class="img-fluid figure-img" width="960"></a>
+<a href="LCMS_files/figure-html/fig-act-cyp3A4-IL6-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5"><img src="LCMS_files/figure-html/fig-act-cyp3A4-IL6-1.png" id="fig-act-cyp3A4-IL6" class="img-fluid figure-img" width="960"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-act-cyp3A4-IL6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 </figcaption>
@@ -1117,7 +1117,7 @@
 <div id="fig-act-cyp3A4-IL1B" class="quarto-figure quarto-figure-center quarto-float anchored" width="960">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-act-cyp3A4-IL1B-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="LCMS_files/figure-html/fig-act-cyp3A4-IL1B-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" data-glightbox="description: .lightbox-desc-6"><img src="LCMS_files/figure-html/fig-act-cyp3A4-IL1B-1.png" id="fig-act-cyp3A4-IL1B" class="img-fluid figure-img" width="960"></a>
+<a href="LCMS_files/figure-html/fig-act-cyp3A4-IL1B-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6"><img src="LCMS_files/figure-html/fig-act-cyp3A4-IL1B-1.png" id="fig-act-cyp3A4-IL1B" class="img-fluid figure-img" width="960"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-act-cyp3A4-IL1B-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 </figcaption>
@@ -1296,12 +1296,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1521,7 +1516,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

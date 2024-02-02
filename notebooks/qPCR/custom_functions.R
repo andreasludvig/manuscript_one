@@ -7,8 +7,8 @@
 #'
 #' @return Returns a numeric vector of one with the geometric mean of input
 #'
-geometric_mean <- function(x) {
-  exp(mean(log(x)))
+geometric_mean <- function(x, na.rm = TRUE) {
+  exp(mean(log(x), na.rm = na.rm))
 }
 
 
